@@ -8,7 +8,7 @@ using Microsoft.Bot.Builder.Luis.Models;
 using RestSharp;
 using Newtonsoft.Json.Linq;
 
-namespace GavelChatbot
+namespace Microsoft.Bot.Sample.LuisBot
 {
     // For more information about this template visit http://aka.ms/azurebots-csharp-luis
     [Serializable]
