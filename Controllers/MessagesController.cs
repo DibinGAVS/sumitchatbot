@@ -8,7 +8,7 @@ using System.Web.Http.Description;
 using System.Net.Http;
 using System.Diagnostics;
 
-namespace Microsoft.Bot.Sample.LuisBot
+namespace GavelChatbot
 {
     [BotAuthentication]
     public class MessagesController : ApiController
