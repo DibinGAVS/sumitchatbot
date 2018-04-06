@@ -7,9 +7,6 @@ using Microsoft.Bot.Builder.Luis;
 using Microsoft.Bot.Builder.Luis.Models;
 using RestSharp;
 using Newtonsoft.Json.Linq;
-using System.Web.Script.Serialization;
-using Newtonsoft.Json;
-using LuisBot.Model;
 using System.Text;
 
 namespace Microsoft.Bot.Sample.LuisBot
@@ -95,20 +92,20 @@ namespace Microsoft.Bot.Sample.LuisBot
             var SessionToken = GetSession();
             string TicketStatus = GetTicketStatus(SessionToken);
             JObject TicketResult = JObject.Parse(TicketStatus);
-            int unAssigned =(int)TicketResult["unAssigned"];
-            int assigned = (int)TicketResult["assigned"];
+            //int unAssigned =(int)TicketResult["unAssigned"];
+            //int assigned = (int)TicketResult["assigned"];
             int inprogress = (int)TicketResult["inprogress"];
             int pending = (int)TicketResult["pending"];
-            int closed = (int)TicketResult["closed"];
-            int brokenTickets = (int)TicketResult["brokenTickets"];
-            int lostTickets = (int)TicketResult["lostTickets"];
+           // int closed = (int)TicketResult["closed"];
+           // int brokenTickets = (int)TicketResult["brokenTickets"];
+           // int lostTickets = (int)TicketResult["lostTickets"];
             int newticket =(int)TicketResult["new"];
-            int critical = (int)TicketResult["critical"];
-            int assignedToMe = (int)TicketResult["assignedToMe"];
-            int happyCustomers = (int)TicketResult["happyCutomers"];
-            int responseBreach = (int)TicketResult["responseBreach"];
-            int resolutionBreach = (int)TicketResult["resolutionBreach"];
-            string status = "The current status of Edelman ticket status are as follows," + " " + "Unassigned " + " " + unAssigned + "," + " " + "Assigned" + " " + assigned + "," + " " + "In progress" + " " + inprogress + "," + " " + "Pending" + " " + pending + "," + " " + "Closed" + " " + closed + "," + " " + "Broken Tickets" + " " + brokenTickets + "," + " " + "Lost Tickets" + " " + lostTickets + ","+" "+ "New"+" " + newticket +"," + " " + "Critical" + " " + critical + "," + " " + "Assigned To Me" + " " + assignedToMe + "," + " " + "Happy Customers" + " " + happyCustomers + "," + " " + "Response Breach" + " " + responseBreach + "," + " " + "Resolution Breach" + " " + resolutionBreach + ".";
+            // int critical = (int)TicketResult["critical"];
+            // int assignedToMe = (int)TicketResult["assignedToMe"];
+            // int happyCustomers = (int)TicketResult["happyCutomers"];
+            // int responseBreach = (int)TicketResult["responseBreach"];
+            // int resolutionBreach = (int)TicketResult["resolutionBreach"];
+            string status = "Sure. As of now, we have" + " " + newticket+" "+ "New Tickets, " + " " + inprogress +" "+ "In progress tickets and " + " " + pending +" "+ "Pending Tickets.";
             await context.SayAsync(text: status, speak: status);
         }
 
@@ -119,7 +116,7 @@ namespace Microsoft.Bot.Sample.LuisBot
             string EdelmanOnHoldTicket = GetTicketStatus(SessionToken);
             JObject EdelmanOnHoldResult = JObject.Parse(EdelmanOnHoldTicket);
             int pending = (int)EdelmanOnHoldResult["pending"];
-            string status = "Edelman Onhold Ticket is" + " " + pending;
+            string status = "Currently, there are" + " " + pending + " " + "tickets which are On hold.";
             await context.SayAsync(text: status, speak: status);
         }
 
@@ -132,7 +129,7 @@ namespace Microsoft.Bot.Sample.LuisBot
             int unAssigned = (int)OpenTicketsResult["unAssigned"];
             int assigned = (int)OpenTicketsResult["assigned"];
             int TotalOpenticket= unAssigned + assigned;
-            string status = "Open Ticket is" + " " + TotalOpenticket +" "+ "UnAssigned" + " " + unAssigned + "," + " " + "Assigned" + " " + assigned;
+            string status = "Right now, I could see there are" + " " + TotalOpenticket + " " + "open tickets, in which " + " " + "Assigned" + " " + "are assigned to the engineers and " + " " + "UnAssigned" + " " + "are not.";
             await context.SayAsync(text: status, speak: status);
         }
 
@@ -143,7 +140,7 @@ namespace Microsoft.Bot.Sample.LuisBot
             string CriticalTicket = GetTicketStatus(SessionToken);
             JObject CriticalTicketResult = JObject.Parse(CriticalTicket);
             int critical = (int)CriticalTicketResult["critical"];
-            string status = "Edelman Critical Ticket is" + " "+ critical;
+            string status = "Well, for now, you have "+ " "+ critical +" " +"critical tickets. Ask me later or check Gavel portal to stay updated on this.";
             await context.SayAsync(text: status, speak: status);
         }
         [LuisIntent("EdelmanBreachStatus")]
@@ -154,7 +151,7 @@ namespace Microsoft.Bot.Sample.LuisBot
             JObject EdelmanBreachStatusResult = JObject.Parse(EdelmanBreachStatusTicket);
             int responseBreach = (int)EdelmanBreachStatusResult["responseBreach"];
             int resolutionBreach = (int)EdelmanBreachStatusResult["resolutionBreach"];
-            string status = "Response about to Breach" +" " + responseBreach + "," +" "+ "Resolution about to  Breach" + " "+ resolutionBreach;
+            string status = "Okay. Looks like you have" + " " + responseBreach + " " + "resolutions which are about to breach. And as far responses are concerned, you have " + " " + resolutionBreach + " " + "to breach.";
             await context.SayAsync(text: status, speak: status);
         }
         [LuisIntent("EdelmanCSAT")]
@@ -169,7 +166,7 @@ namespace Microsoft.Bot.Sample.LuisBot
             int Negative = (int)CSATResult["negative"];
             int Neutral = (int)CSATResult["neutral"];
             int happyCustomer = (int)HappyCustomerResult["happyCutomers"];
-            string status = "Edelman CSAT," + " " + "Positive " + " " + Positive + "," + " " + "Negative" + " " + Negative + "," + " " + "Neutral" + " " + Neutral+","+" "+ "Happy Customers"+" "+ happyCustomer+"%";
+            string status = "I could see that you have" + " " + Positive + " " + "positives, " + " " + Negative + " " + "negatives and" + " " + Neutral + " " + " neutral ratings, which makes a C Sat score of" + " " + happyCustomer + " %.";
             await context.SayAsync(text: status, speak: status);
         }
 
@@ -186,7 +183,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                 propertyValue = (string)parsedObject["key"];
                 amountMsg.AppendFormat(propertyValue +", ");
             }
-            string status = "Edelman Top Five Issues are," + " " + amountMsg;
+            string status = "Looking at the Heatmap of Edelman, I could see that your top 5 issues are" + " " + amountMsg;
             await context.SayAsync(text: status, speak: status);
         }
 
