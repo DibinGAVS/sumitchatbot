@@ -166,7 +166,7 @@ namespace Microsoft.Bot.Sample.LuisBot
             int Negative = (int)CSATResult["negative"];
             int Neutral = (int)CSATResult["neutral"];
             int happyCustomer = (int)HappyCustomerResult["happyCutomers"];
-            string status = "I could see that you have" + " " + Positive + " " + "positives, " + " " + Negative + " " + "negatives and" + " " + Neutral + " " + " neutral ratings, which makes your C Sat score a" + " " + happyCustomer + "%.";
+            string status = "I could see that you have" + " " + Positive + " " + "positives, " + " " + Negative + " " + "negatives and" + " " + Neutral + " " + " neutral ratings, which makes your C Sat score, a" + " " + happyCustomer + "%.";
             await context.SayAsync(text: status, speak: status);
         }
 
