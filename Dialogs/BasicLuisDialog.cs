@@ -64,7 +64,7 @@ namespace Microsoft.Bot.Sample.LuisBot
         /// <returns></returns>
         public string GetEdelmanTopFiveIssues(string sessionToken)
         {
-            string Edelman_TopFiveIssues_ServiceURL = "https://gavel.gavstech.com/v3/customers/edelman/heatMapTickets?fromDate=2018-04-05T00:00:00Z&size=5&toDate=2018-04-05T23:59:59Z";
+            string Edelman_TopFiveIssues_ServiceURL = "https://gavel.gavstech.com/v3/customers/edelman/heatMapTickets?fromDate=2018-04-06T00:00:00Z&size=5&toDate=2018-04-06T23:59:59Z";
             var client = new RestClient(Edelman_TopFiveIssues_ServiceURL);
             var request = new RestRequest(Method.GET);
             request.AddHeader("user-key", UserKey);
@@ -75,7 +75,7 @@ namespace Microsoft.Bot.Sample.LuisBot
 
         public string GetEdelmanCSAT(string sessionToken)
         {
-            string EdelmanServiceURL = "https://gavel.gavstech.com/v3/customers/edelman/csat-metrics?fromDate=2018-04-05T00:00:00Z&toDate=2018-04-05T23:59:59Z";
+            string EdelmanServiceURL = "https://gavel.gavstech.com/v3/customers/edelman/csat-metrics?fromDate=2018-04-06T00:00:00Z&toDate=2018-04-06T23:59:59Z";
             var client = new RestClient(EdelmanServiceURL);
             var request = new RestRequest(Method.GET);
             request.AddHeader("user-key", UserKey);
@@ -166,7 +166,7 @@ namespace Microsoft.Bot.Sample.LuisBot
             int Negative = (int)CSATResult["negative"];
             int Neutral = (int)CSATResult["neutral"];
             int happyCustomer = (int)HappyCustomerResult["happyCutomers"];
-            string status = "I could see that you have" + " " + Positive + " " + "positives, " + " " + Negative + " " + "negatives and" + " " + Neutral + " " + " neutral ratings, which makes a C Sat score of" + " " + happyCustomer + " %.";
+            string status = "I could see that you have" + " " + Positive + " " + "positives, " + " " + Negative + " " + "negatives and" + " " + Neutral + " " + " neutral ratings, which makes a C Sat score of" + " " + happyCustomer + "%.";
             await context.SayAsync(text: status, speak: status);
         }
 
