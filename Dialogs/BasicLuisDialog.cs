@@ -129,7 +129,7 @@ namespace Microsoft.Bot.Sample.LuisBot
             int unAssigned = (int)OpenTicketsResult["unAssigned"];
             int assigned = (int)OpenTicketsResult["assigned"];
             int TotalOpenticket= unAssigned + assigned;
-            string status = "Right now, I could see there are" + " " + TotalOpenticket + " " + "open tickets, in which " + " " + "Assigned" + " " + "are assigned to the engineers and " + " " + "UnAssigned" + " " + "are not.";
+            string status = "Right now, I could see there are" + " " + TotalOpenticket + " " + "open tickets, in which" + " " + assigned + " " + "are assigned to the engineers and " + " " + unAssigned + " " + "are not.";
             await context.SayAsync(text: status, speak: status);
         }
 
@@ -166,7 +166,7 @@ namespace Microsoft.Bot.Sample.LuisBot
             int Negative = (int)CSATResult["negative"];
             int Neutral = (int)CSATResult["neutral"];
             int happyCustomer = (int)HappyCustomerResult["happyCutomers"];
-            string status = "I could see that you have" + " " + Positive + " " + "positives, " + " " + Negative + " " + "negatives and" + " " + Neutral + " " + " neutral ratings, which makes a C Sat score of" + " " + happyCustomer + "%.";
+            string status = "I could see that you have" + " " + Positive + " " + "positives, " + " " + Negative + " " + "negatives and" + " " + Neutral + " " + " neutral ratings, which makes your C Sat score a" + " " + happyCustomer + "%.";
             await context.SayAsync(text: status, speak: status);
         }
 
@@ -176,14 +176,14 @@ namespace Microsoft.Bot.Sample.LuisBot
             var SessionToken = GetSession();
             string TopFiveIssue = GetEdelmanTopFiveIssues(SessionToken);
             JArray parsedArray = JArray.Parse(TopFiveIssue);
-            StringBuilder amountMsg = new StringBuilder();
+            StringBuilder TopFive = new StringBuilder();
             string propertyValue = string.Empty;
             foreach (JObject parsedObject in parsedArray)
             {
                 propertyValue = (string)parsedObject["key"];
-                amountMsg.AppendFormat(propertyValue +", ");
+                TopFive.AppendFormat(propertyValue +", ");
             }
-            string status = "Looking at the Heatmap of Edelman, I could see that your top 5 issues are" + " " + amountMsg;
+            string status = "By looking at the Heatmap of Edelman, I could see that your top 5 issues are" + " " + TopFive;
             await context.SayAsync(text: status, speak: status);
         }
 
