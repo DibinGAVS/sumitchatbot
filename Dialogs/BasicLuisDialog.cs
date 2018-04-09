@@ -24,6 +24,8 @@ namespace Microsoft.Bot.Sample.LuisBot
 
         public string UserKey = ConfigurationManager.AppSettings["UserKey"];
 
+
+        #region -- API Methods --
         /// <summary>
         /// Get session token to authenticated
         /// </summary>
@@ -84,6 +86,19 @@ namespace Microsoft.Bot.Sample.LuisBot
             return response.Content;
         }
 
+        public string GetEdelmanOpportunities(string sessionToken)
+        {
+            string EdelmanServiceURL = "https://gavel.gavstech.com/v3/opportunities/customers/blhc/status/open?order=asc&size=9&sort=ExpectedOccurrenceDate&start=0&status=open";
+            var client = new RestClient(EdelmanServiceURL);
+            var request = new RestRequest(Method.GET);
+            request.AddHeader("user-key", UserKey);
+            request.AddHeader("Session-Token", sessionToken);
+            IRestResponse response = client.Execute(request);
+            return response.Content;
+        }
+
+        #endregion
+
         #region -- Intent--
 
         [LuisIntent("EdelmanTicketStatus")]
@@ -106,9 +121,29 @@ namespace Microsoft.Bot.Sample.LuisBot
             // int responseBreach = (int)TicketResult["responseBreach"];
             // int resolutionBreach = (int)TicketResult["resolutionBreach"];
             string status = "Sure. As of now, we have" + " " + newticket+" "+ "New Tickets, " + " " + inprogress +" "+ "In progress tickets and " + " " + pending +" "+ "Pending Tickets.";
-            await context.SayAsync(text: status, speak: status);
+
+            await context.SayAsync(status, status, new MessageOptions() { InputHint = Connector.InputHints.ExpectingInput });
         }
 
+        [LuisIntent("BLHCOpportunities")]
+        public async Task EdelmanBLHCOpportunitiesIntent(IDialogContext context, LuisResult result)
+        {
+            var SessionToken = GetSession();
+            string BLHCOpportunities = GetEdelmanOpportunities(SessionToken);
+            JObject BLHCOpportunitiesResult = JObject.Parse(BLHCOpportunities);
+            int open = (int)BLHCOpportunitiesResult["open"];
+            string status = "New Opportunities for BLH is" + " " + open +".";
+
+
+            //var response = context.MakeMessage();
+            //response.Text = status;
+            //response.Speak = status;
+            //response.InputHint = Connector.InputHints.ExpectingInput;
+            //await context.PostAsync(response);
+
+            await context.SayAsync(status, status, new MessageOptions() { InputHint = Connector.InputHints.ExpectingInput });
+            //await context.SayAsync(text: status, speak: status);
+        }
         [LuisIntent("EdelmanOnHoldTickets")]
         public async Task EdelmanOnHoldTicketsIntent(IDialogContext context, LuisResult result)
         {
@@ -117,7 +152,7 @@ namespace Microsoft.Bot.Sample.LuisBot
             JObject EdelmanOnHoldResult = JObject.Parse(EdelmanOnHoldTicket);
             int pending = (int)EdelmanOnHoldResult["pending"];
             string status = "Currently, there are" + " " + pending + " " + "tickets which are On hold.";
-            await context.SayAsync(text: status, speak: status);
+            await context.SayAsync(status, status, new MessageOptions() { InputHint = Connector.InputHints.ExpectingInput });
         }
 
         [LuisIntent("EdelmanOpenTickets")]
@@ -130,7 +165,7 @@ namespace Microsoft.Bot.Sample.LuisBot
             int assigned = (int)OpenTicketsResult["assigned"];
             int TotalOpenticket= unAssigned + assigned;
             string status = "Right now, I could see there are" + " " + TotalOpenticket + " " + "open tickets, in which" + " " + assigned + " " + "are assigned to the engineers and " + " " + unAssigned + " " + "are not.";
-            await context.SayAsync(text: status, speak: status);
+            await context.SayAsync(status, status, new MessageOptions() { InputHint = Connector.InputHints.ExpectingInput });
         }
 
         [LuisIntent("EdelmanCriticalTickets")]
@@ -141,7 +176,7 @@ namespace Microsoft.Bot.Sample.LuisBot
             JObject CriticalTicketResult = JObject.Parse(CriticalTicket);
             int critical = (int)CriticalTicketResult["critical"];
             string status = "Well, for now, you have "+ " "+ critical +" " +"critical tickets. Ask me later or check Gavel portal to stay updated on this.";
-            await context.SayAsync(text: status, speak: status);
+            await context.SayAsync(status, status, new MessageOptions() { InputHint = Connector.InputHints.ExpectingInput });
         }
         [LuisIntent("EdelmanBreachStatus")]
         public async Task EdelmanBreachStatusIntent(IDialogContext context, LuisResult result)
@@ -152,7 +187,7 @@ namespace Microsoft.Bot.Sample.LuisBot
             int responseBreach = (int)EdelmanBreachStatusResult["responseBreach"];
             int resolutionBreach = (int)EdelmanBreachStatusResult["resolutionBreach"];
             string status = "Okay. Looks like you have" + " " + responseBreach + " " + "resolutions which are about to breach. And as far responses are concerned, you have " + " " + resolutionBreach + " " + "to breach.";
-            await context.SayAsync(text: status, speak: status);
+            await context.SayAsync(status, status, new MessageOptions() { InputHint = Connector.InputHints.ExpectingInput });
         }
         [LuisIntent("EdelmanCSAT")]
         public async Task EdelmanCSATIntent(IDialogContext context, LuisResult result)
@@ -167,7 +202,7 @@ namespace Microsoft.Bot.Sample.LuisBot
             int Neutral = (int)CSATResult["neutral"];
             int happyCustomer = (int)HappyCustomerResult["happyCutomers"];
             string status = "I could see that you have" + " " + Positive + " " + "positives, " + " " + Negative + " " + "negatives and" + " " + Neutral + " " + " neutral ratings, which makes your C Sat score a" + " " + happyCustomer + "%.";
-            await context.SayAsync(text: status, speak: status);
+            await context.SayAsync(status, status, new MessageOptions() { InputHint = Connector.InputHints.ExpectingInput });
         }
 
         [LuisIntent("EdelmanTopFiveIssues")]
@@ -184,31 +219,36 @@ namespace Microsoft.Bot.Sample.LuisBot
                 TopFive.AppendFormat(propertyValue +", ");
             }
             string status = "By looking at the Heatmap of Edelman, I could see that your top 5 issues are" + " " + TopFive;
-            await context.SayAsync(text: status, speak: status);
+            await context.SayAsync(status, status, new MessageOptions() { InputHint = Connector.InputHints.ExpectingInput });
         }
 
         [LuisIntent("None")]
         public async Task NoneIntent(IDialogContext context, LuisResult result)
         {
-            await context.SayAsync(text: "Sorry i dont know that. Try saying, Tell me the ticket status.", speak: "Sorry i dont know that. Try saying, Tell me the ticket status.");
+            string status = "Sorry i dont know that. Try saying, Tell me the ticket status.";
+            await context.SayAsync(status, status, new MessageOptions() { InputHint = Connector.InputHints.ExpectingInput });
         }
 
         [LuisIntent("Greeting")]
         public async Task GreetingIntent(IDialogContext context, LuisResult result)
         {
-            await context.SayAsync(text: "Hey!", speak: "Hey!");
+            string status = "Hey!";
+            await context.SayAsync(status, status, new MessageOptions() { InputHint = Connector.InputHints.ExpectingInput });
         }
 
         [LuisIntent("Cancel")]
         public async Task CancelIntent(IDialogContext context, LuisResult result)
         {
-            await context.SayAsync(text: "Okay cancelling", speak: "Okay cancelling.");
+            string status = "Okay cancelling";
+            await context.SayAsync(status, status, new MessageOptions() { InputHint = Connector.InputHints.ExpectingInput });
         }
 
         [LuisIntent("Help")]
         public async Task HelpIntent(IDialogContext context, LuisResult result)
         {
-            await context.SayAsync(text: "Ok.", speak: "My creator is working on that. Could you query about Ticket status?");
+            string Text = "Ok.";
+            string Speak = "My creator is working on that. Could you query about Ticket status?";
+            await context.SayAsync(Text, Speak, new MessageOptions() { InputHint = Connector.InputHints.ExpectingInput });
         }
 
 
