@@ -142,7 +142,6 @@ namespace Microsoft.Bot.Sample.LuisBot
             //await context.PostAsync(response);
 
             await context.SayAsync(status, status, new MessageOptions() { InputHint = Connector.InputHints.ExpectingInput });
-            //await context.SayAsync(text: status, speak: status);
         }
         [LuisIntent("EdelmanOnHoldTickets")]
         public async Task EdelmanOnHoldTicketsIntent(IDialogContext context, LuisResult result)
@@ -152,7 +151,7 @@ namespace Microsoft.Bot.Sample.LuisBot
             JObject EdelmanOnHoldResult = JObject.Parse(EdelmanOnHoldTicket);
             int pending = (int)EdelmanOnHoldResult["pending"];
             string status = "Currently, there are" + " " + pending + " " + "tickets which are On hold.";
-            await context.SayAsync(status, status, new MessageOptions() { InputHint = Connector.InputHints.AcceptingInput });
+            await context.SayAsync(status, status, new MessageOptions() { InputHint = Connector.InputHints.ExpectingInput });
         }
 
         [LuisIntent("EdelmanOpenTickets")]
@@ -165,7 +164,7 @@ namespace Microsoft.Bot.Sample.LuisBot
             int assigned = (int)OpenTicketsResult["assigned"];
             int TotalOpenticket= unAssigned + assigned;
             string status = "Right now, I could see there are" + " " + TotalOpenticket + " " + "open tickets, in which" + " " + assigned + " " + "are assigned to the engineers and " + " " + unAssigned + " " + "are not.";
-            await context.SayAsync(status, status, new MessageOptions() { InputHint = Connector.InputHints.AcceptingInput });
+            await context.SayAsync(status, status, new MessageOptions() { InputHint = Connector.InputHints.ExpectingInput });
         }
 
         [LuisIntent("EdelmanCriticalTickets")]
