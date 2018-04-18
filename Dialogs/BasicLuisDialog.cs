@@ -142,7 +142,6 @@ namespace Microsoft.Bot.Sample.LuisBot
             //await context.PostAsync(response);
 
             await context.SayAsync(status, status, new MessageOptions() { InputHint = Connector.InputHints.ExpectingInput });
-            //await context.SayAsync(text: status, speak: status);
         }
         [LuisIntent("EdelmanOnHoldTickets")]
         public async Task EdelmanOnHoldTicketsIntent(IDialogContext context, LuisResult result)
