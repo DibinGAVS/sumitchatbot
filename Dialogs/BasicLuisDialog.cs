@@ -66,7 +66,7 @@ namespace Microsoft.Bot.Sample.LuisBot
         /// <returns></returns>
         public string GetEdelmanTopFiveIssues(string sessionToken)
         {
-            string Edelman_TopFiveIssues_ServiceURL = "https://gavel.gavstech.com/v3/customers/edelman/heatMapTickets?fromDate=2018-04-18T00:00:00Z&size=5&toDate=2018-04-18T23:59:59Z";
+            string Edelman_TopFiveIssues_ServiceURL = "https://gavel.gavstech.com/v3/customers/edelman/heatMapTickets?fromDate=2018-04-11T00:00:00Z&size=5&toDate=2018-04-11T23:59:59Z";
             var client = new RestClient(Edelman_TopFiveIssues_ServiceURL);
             var request = new RestRequest(Method.GET);
             request.AddHeader("user-key", UserKey);
@@ -77,7 +77,7 @@ namespace Microsoft.Bot.Sample.LuisBot
 
         public string GetEdelmanCSAT(string sessionToken)
         {
-            string EdelmanServiceURL = "https://gavel.gavstech.com/v3/customers/edelman/csat-metrics?fromDate=2018-04-18T00:00:00Z&toDate=2018-04-18T23:59:59Z";
+            string EdelmanServiceURL = "https://gavel.gavstech.com/v3/customers/edelman/csat-metrics?fromDate=2018-04-11T00:00:00Z&toDate=2018-04-11T23:59:59Z";
             var client = new RestClient(EdelmanServiceURL);
             var request = new RestRequest(Method.GET);
             request.AddHeader("user-key", UserKey);
