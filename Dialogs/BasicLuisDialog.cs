@@ -8,6 +8,10 @@ using Microsoft.Bot.Builder.Luis.Models;
 using RestSharp;
 using Newtonsoft.Json.Linq;
 using System.Text;
+using AdaptiveCards;
+using System.Collections.Generic;
+using Microsoft.Bot.Connector;
+using AdaptiveCards.Rendering.Config;
 
 namespace Microsoft.Bot.Sample.LuisBot
 {
@@ -16,8 +20,8 @@ namespace Microsoft.Bot.Sample.LuisBot
     public class BasicLuisDialog : LuisDialog<object>
     {
         public BasicLuisDialog() : base(new LuisService(new LuisModelAttribute(
-            ConfigurationManager.AppSettings["LuisAppId"], 
-            ConfigurationManager.AppSettings["LuisAPIKey"], 
+            ConfigurationManager.AppSettings["LuisAppId"],
+            ConfigurationManager.AppSettings["LuisAPIKey"],
             domain: ConfigurationManager.AppSettings["LuisAPIHostName"])))
         {
         }
@@ -107,22 +111,16 @@ namespace Microsoft.Bot.Sample.LuisBot
             var SessionToken = GetSession();
             string TicketStatus = GetTicketStatus(SessionToken);
             JObject TicketResult = JObject.Parse(TicketStatus);
-            //int unAssigned =(int)TicketResult["unAssigned"];
-            //int assigned = (int)TicketResult["assigned"];
             int inprogress = (int)TicketResult["inprogress"];
             int pending = (int)TicketResult["pending"];
-           // int closed = (int)TicketResult["closed"];
-           // int brokenTickets = (int)TicketResult["brokenTickets"];
-           // int lostTickets = (int)TicketResult["lostTickets"];
-            int newticket =(int)TicketResult["new"];
-            // int critical = (int)TicketResult["critical"];
-            // int assignedToMe = (int)TicketResult["assignedToMe"];
-            // int happyCustomers = (int)TicketResult["happyCutomers"];
-            // int responseBreach = (int)TicketResult["responseBreach"];
-            // int resolutionBreach = (int)TicketResult["resolutionBreach"];
-            string status = "Sure. As of now, we have" + " " + newticket+" "+ "New Tickets, " + " " + inprogress +" "+ "In progress tickets and " + " " + pending +" "+ "Pending Tickets.";
+            int newticket = (int)TicketResult["new"];
+            //string status = "Sure. As of now, we have" + " " + newticket+" "+ "New Tickets, " + " " + inprogress +" "+ "In progress tickets and " + " " + pending +" "+ "Pending Tickets.";
 
-            await context.SayAsync(status, status, new MessageOptions() { InputHint = Connector.InputHints.ExpectingInput });
+            //await context.SayAsync(status, status, new MessageOptions() { InputHint = Connector.InputHints.ExpectingInput });
+            var message = context.MakeMessage();
+            var attachment = GetAdaptiveCard();
+            message.Attachments.Add(attachment);
+            await context.PostAsync(message);
         }
 
         [LuisIntent("BLHCOpportunities")]
@@ -132,7 +130,7 @@ namespace Microsoft.Bot.Sample.LuisBot
             string BLHCOpportunities = GetEdelmanOpportunities(SessionToken);
             JObject BLHCOpportunitiesResult = JObject.Parse(BLHCOpportunities);
             int open = (int)BLHCOpportunitiesResult["open"];
-            string status = "New Opportunities for BLH is" + " " + open +".";
+            string status = "New Opportunities for BLH is" + " " + open + ".";
 
 
             //var response = context.MakeMessage();
@@ -162,7 +160,7 @@ namespace Microsoft.Bot.Sample.LuisBot
             JObject OpenTicketsResult = JObject.Parse(OpenTickets);
             int unAssigned = (int)OpenTicketsResult["unAssigned"];
             int assigned = (int)OpenTicketsResult["assigned"];
-            int TotalOpenticket= unAssigned + assigned;
+            int TotalOpenticket = unAssigned + assigned;
             string status = "Right now, I could see there are" + " " + TotalOpenticket + " " + "open tickets, in which" + " " + assigned + " " + "are assigned to the engineers and " + " " + unAssigned + " " + "are not.";
             await context.SayAsync(status, status, new MessageOptions() { InputHint = Connector.InputHints.ExpectingInput });
         }
@@ -174,7 +172,7 @@ namespace Microsoft.Bot.Sample.LuisBot
             string CriticalTicket = GetTicketStatus(SessionToken);
             JObject CriticalTicketResult = JObject.Parse(CriticalTicket);
             int critical = (int)CriticalTicketResult["critical"];
-            string status = "Well, for now, you have "+ " "+ critical +" " +"critical tickets. Ask me later or check Gavel portal to stay updated on this.";
+            string status = "Well, for now, you have " + " " + critical + " " + "critical tickets. Ask me later or check Gavel portal to stay updated on this.";
             await context.SayAsync(status, status, new MessageOptions() { InputHint = Connector.InputHints.ExpectingInput });
         }
         [LuisIntent("EdelmanBreachStatus")]
@@ -207,18 +205,631 @@ namespace Microsoft.Bot.Sample.LuisBot
         [LuisIntent("EdelmanTopFiveIssues")]
         public async Task EdelmanTopFiveIssuesIntent(IDialogContext context, LuisResult result)
         {
-            var SessionToken = GetSession();
-            string TopFiveIssue = GetEdelmanTopFiveIssues(SessionToken);
-            JArray parsedArray = JArray.Parse(TopFiveIssue);
-            StringBuilder TopFive = new StringBuilder();
-            string propertyValue = string.Empty;
-            foreach (JObject parsedObject in parsedArray)
+            var reply = context.MakeMessage();
+
+            #region Card One
+            AdaptiveCard cardone = new AdaptiveCard()
             {
-                propertyValue = (string)parsedObject["key"];
-                TopFive.AppendFormat(propertyValue +", ");
-            }
-            string status = "By looking at the Heatmap of Edelman, I could see that your top 5 issues are" + " " + TopFive;
-            await context.SayAsync(status, status, new MessageOptions() { InputHint = Connector.InputHints.ExpectingInput });
+                BackgroundImage = "D:/Kannan/Project/repo/sumitchatbot/Images/ic_background_02.png",
+                Title = "Riskfort Health Status",
+                Speak = "Riskfort Health Status",
+                Body = new List<CardElement>()
+              {
+                 // new Container()
+                 //   {
+                    
+                 //Items = new List<CardElement>()
+                 //   {
+                 
+                   new ColumnSet()
+                    {
+                    Columns = new List<Column>()
+                    {
+                                new Column()
+                                    {
+                                        Size =ColumnSize.Stretch,
+                                        Items = new List<CardElement>()
+                                        {
+                                            new Image()
+                                            {
+                                                Url = "",
+                                                Size = ImageSize.Auto,
+                                                Style = ImageStyle.Normal,
+                                                HorizontalAlignment=HorizontalAlignment.Center
+                                            }
+                                        }
+                                    },
+                                 new Column()
+                                    {
+                                        Items = new List<CardElement>()
+                                        {
+                                             new TextBlock()
+                                            {
+                                                Text =  "",
+                                                Weight = TextWeight.Normal,
+                                                HorizontalAlignment=HorizontalAlignment.Left,
+                                                Size=TextSize.ExtraLarge,
+                                                Wrap = true,
+                                                Color=TextColor.Light,
+                                            }
+                                        }
+                                    }
+                    }
+                    },
+                    new ColumnSet()
+                    {
+                    Columns = new List<Column>()
+                    {
+                                new Column()
+                                    {
+                                        Size =ColumnSize.Stretch,
+                                        Items = new List<CardElement>()
+                                        {
+                                            new Image()
+                                            {
+                                                Url = "",
+                                                Size = ImageSize.Auto,
+                                                Style = ImageStyle.Normal,
+                                                HorizontalAlignment=HorizontalAlignment.Center
+                                            }
+                                        }
+                                    },
+                                 new Column()
+                                    {
+                                        Items = new List<CardElement>()
+                                        {
+                                             new TextBlock()
+                                            {
+                                                Text =  "",
+                                                Weight = TextWeight.Normal,
+                                                HorizontalAlignment=HorizontalAlignment.Left,
+                                                Size=TextSize.ExtraLarge,
+                                                Wrap = true,
+                                                Color=TextColor.Light,
+                                            }
+                                        }
+                                    }
+                    }
+                    },
+                    new ColumnSet()
+                    {
+                    Columns = new List<Column>()
+                    {
+                                new Column()
+                                    {
+                                        Size =ColumnSize.Stretch,
+                                        Items = new List<CardElement>()
+                                        {
+                                            new Image()
+                                            {
+                                                Url = "",
+                                                Size = ImageSize.Auto,
+                                                Style = ImageStyle.Normal,
+                                                HorizontalAlignment=HorizontalAlignment.Center
+                                            }
+                                        }
+                                    },
+                                 new Column()
+                                    {
+                                        Items = new List<CardElement>()
+                                        {
+                                             new TextBlock()
+                                            {
+                                                Text =  "",
+                                                Weight = TextWeight.Normal,
+                                                HorizontalAlignment=HorizontalAlignment.Left,
+                                                Size=TextSize.ExtraLarge,
+                                                Wrap = true,
+                                                Color=TextColor.Light,
+                                            }
+                                        }
+                                    }
+                    }
+                    },
+                    new ColumnSet()
+                    {
+                    Columns = new List<Column>()
+                    {
+                                new Column()
+                                    {
+                                        Items = new List<CardElement>()
+                                        {
+                                            new Image()
+                                            {
+                                                Url = "D:/Kannan/Project/repo/sumitchatbot/Images/ic_healthy.png",
+                                                Size = ImageSize.Auto,
+                                                Style = ImageStyle.Normal,
+                                                HorizontalAlignment=HorizontalAlignment.Right
+                                            }
+                                        }
+                                    },
+                                 new Column()
+                                    {
+                                        Items = new List<CardElement>()
+                                        {
+                                             new TextBlock()
+                                            {
+                                                Text =  "Riskfort",
+                                                Weight = TextWeight.Normal,
+                                                HorizontalAlignment=HorizontalAlignment.Left,
+                                                Size=TextSize.Medium,
+                                                Wrap = true,
+                                                Color=TextColor.Light,
+                                            }
+                                        }
+                                    }
+                    }
+                    },
+                    new ColumnSet()
+                    {
+                    Columns = new List<Column>()
+                    {
+                                new Column()
+                                    {
+                                       Size =ColumnSize.Stretch,
+                                        Items = new List<CardElement>()
+                                        {
+                                            new Image()
+                                            {
+                                                Url = "",
+                                                Size = ImageSize.Auto,
+                                                Style = ImageStyle.Normal,
+                                                HorizontalAlignment=HorizontalAlignment.Center
+                                            }
+                                        }
+                                    },
+                                 new Column()
+                                    {
+                                        Items = new List<CardElement>()
+                                        {
+                                             new TextBlock()
+                                            {
+                                                Text =  "",
+                                                Weight = TextWeight.Normal,
+                                                HorizontalAlignment=HorizontalAlignment.Left,
+                                                Size=TextSize.ExtraLarge,
+                                                Wrap = true,
+                                                Color=TextColor.Light,
+                                            }
+                                        }
+                                    }
+                    }
+                    },
+                    new ColumnSet()
+                    {
+                    Columns = new List<Column>()
+                    {
+                                    new Column()
+                                    {
+                                         Size =ColumnSize.Stretch,
+                                        Items = new List<CardElement>()
+                                        {
+                                            new Image()
+                                            {
+                                                Url = "D:/Kannan/Project/repo/sumitchatbot/Images/ic_single_app.png",
+                                                Size = ImageSize.Large,
+                                                Style = ImageStyle.Normal
+                                            }
+                                        }
+                                    },
+                                     new Column()
+                                    {
+                                        Items = new List<CardElement>()
+                                        {
+                                             new Image()
+                                            {
+                                                Url = "D:/Kannan/Project/repo/sumitchatbot/Images/ic_alert_large.png",
+                                                Size = ImageSize.Auto,
+                                                Style = ImageStyle.Normal
+                                            },
+                                        }
+                                     },
+                                    new Column()
+                                    {
+                                        Items = new List<CardElement>()
+                                        {
+                                            new TextBlock()
+                                            {
+                                                Text =  "20 Alerts",
+                                                Speak = "20 Alerts",
+                                                Weight = TextWeight.Normal,
+                                                HorizontalAlignment=HorizontalAlignment.Center,
+                                                Size=TextSize.Normal,
+                                                Wrap = true,
+                                                Color=TextColor.Light,
+                                                Separation=SeparationStyle.Strong,
+                                            },
+                                        }
+                                    },
+                                    new Column()
+                                    {
+                                        Separation=SeparationStyle.Strong,
+                                        Items= new List<CardElement>()
+                                        {
+                                            new Image()
+                                            {
+                                                Url = "D:/Kannan/Project/repo/sumitchatbot/Images/ic_correlation.png",
+                                                Size = ImageSize.Auto,
+                                                Style = ImageStyle.Person,
+                                            }
+                                        }
+                                    },
+                                    new Column()
+                                    {
+                                        Items= new List<CardElement>()
+                                        {
+                                             new TextBlock()
+                                            {
+                                                Text = "12 Correlation",
+                                                Speak= "12 Correlation",
+                                                Weight = TextWeight.Normal,
+                                                HorizontalAlignment=HorizontalAlignment.Center,
+                                                Size=TextSize.Normal,
+                                                Wrap = true,
+                                                Color=TextColor.Light
+                                            }
+                                        }
+                                    }
+                                }
+                             },
+                    new ColumnSet()
+                    {
+                    Columns = new List<Column>()
+                    {
+                                new Column()
+                                    {
+                                        Size =ColumnSize.Stretch,
+                                        Items = new List<CardElement>()
+                                        {
+                                            new Image()
+                                            {
+                                                Url = "",
+                                                Size = ImageSize.Auto,
+                                                Style = ImageStyle.Normal,
+                                                HorizontalAlignment=HorizontalAlignment.Center
+                                            }
+                                        }
+                                    },
+                                 new Column()
+                                    {
+                                        Items = new List<CardElement>()
+                                        {
+                                             new TextBlock()
+                                            {
+                                                Text =  "",
+                                                Weight = TextWeight.Normal,
+                                                HorizontalAlignment=HorizontalAlignment.Left,
+                                                Size=TextSize.ExtraLarge,
+                                                Wrap = true,
+                                                Color=TextColor.Light,
+                                            }
+                                        }
+                                    }
+                    }
+                    },
+                    new ColumnSet()
+                    {
+                    Columns = new List<Column>()
+                    {
+                                new Column()
+                                    {
+                                       Size =ColumnSize.Stretch,
+                                        Items = new List<CardElement>()
+                                        {
+                                            new Image()
+                                            {
+                                                Url = "",
+                                                Size = ImageSize.Auto,
+                                                Style = ImageStyle.Normal,
+                                                HorizontalAlignment=HorizontalAlignment.Center
+                                            }
+                                        }
+                                    },
+                                 new Column()
+                                    {
+                                        Items = new List<CardElement>()
+                                        {
+                                             new TextBlock()
+                                            {
+                                                Text =  "",
+                                                Weight = TextWeight.Normal,
+                                                HorizontalAlignment=HorizontalAlignment.Left,
+                                                Size=TextSize.ExtraLarge,
+                                                Wrap = true,
+                                                Color=TextColor.Light,
+                                            }
+                                        }
+                                    }
+                    }
+                    },
+                    new ColumnSet()
+                    {
+                    Columns = new List<Column>()
+                    {
+                                new Column()
+                                    {
+                                        Size =ColumnSize.Stretch,
+                                        Items = new List<CardElement>()
+                                        {
+                                            new Image()
+                                            {
+                                                Url = "",
+                                                Size = ImageSize.Auto,
+                                                Style = ImageStyle.Normal,
+                                                HorizontalAlignment=HorizontalAlignment.Center
+
+                                            }
+
+                                        }
+                                    },
+                                 new Column()
+                                    {
+                                        Items = new List<CardElement>()
+                                        {
+                                             new TextBlock()
+                                            {
+                                                Text =  "",
+                                                Weight = TextWeight.Normal,
+                                                HorizontalAlignment=HorizontalAlignment.Left,
+                                                Size=TextSize.ExtraLarge,
+                                                Wrap = true,
+                                                Color=TextColor.Light,
+                                            }
+                                        }
+                                    }
+                    }
+                    },
+                    new ColumnSet()
+                    {
+
+                    Columns = new List<Column>()
+                    {
+                                new Column()
+                                    {
+                                        Size =ColumnSize.Stretch,
+                                        Items = new List<CardElement>()
+                                        {
+                                            new Image()
+                                            {
+                                                Url = "",
+                                                Size = ImageSize.Auto,
+                                                Style = ImageStyle.Normal,
+                                                HorizontalAlignment=HorizontalAlignment.Center
+                                            }
+                                        }
+                                    },
+                                 new Column()
+                                    {
+                                        Items = new List<CardElement>()
+                                        {
+                                             new TextBlock()
+                                            {
+                                                Text =  "",
+                                                Weight = TextWeight.Normal,
+                                                HorizontalAlignment=HorizontalAlignment.Left,
+                                                Size=TextSize.ExtraLarge,
+                                                Wrap = true,
+                                                Color=TextColor.Light,
+                                            }
+                                        }
+                                    }
+                    }
+                    },
+                 // third column
+                 
+                    new ColumnSet()
+                    {
+                    Columns = new List<Column>()
+                    {
+                             new Column()
+                                    {
+                                        Items = new List<CardElement>()
+                                        {
+                                                new Image()
+                                            {
+                                                Url = "D:/Kannan/Project/repo/sumitchatbot/Images/ic_apm_healthy.png",
+                                                Size = ImageSize.Small,
+                                                Style = ImageStyle.Normal,
+                                            },
+                                            new TextBlock()
+                                            {
+                                                Type="TextBlock",
+                                                Text = "APM",
+                                                Weight = TextWeight.Normal,
+                                                Size=TextSize.Normal,
+                                                Wrap = true,
+                                                Color=TextColor.Light
+                                            }
+
+                                        }
+                                    },
+                             new Column()
+                                    {
+                                        Separation=SeparationStyle.Strong,
+                                        Items = new List<CardElement>()
+                                        {
+                                                new Image()
+                                            {
+                                                Url = "D:/Kannan/Project/repo/sumitchatbot/Images/ic_server_up.png",
+                                                Size = ImageSize.Small,
+                                                Style = ImageStyle.Normal,
+
+                                            },
+                                            new TextBlock()
+                                            {
+                                                Type="TextBlock",
+                                                Text = "Server",
+                                                Weight = TextWeight.Normal,
+                                                Size=TextSize.Normal,
+                                                Color=TextColor.Light,
+                                                Wrap = true,
+                                            }
+
+                                        }
+                                    },
+                             new Column()
+                                    {
+                                        Separation=SeparationStyle.Strong,
+                                        Items = new List<CardElement>()
+                                        {
+                                                new Image()
+                                            {
+                                                Url = "D:/Kannan/Project/repo/sumitchatbot/Images/ic_database_down.png",
+                                                Size = ImageSize.Small,
+                                                Style = ImageStyle.Normal,
+
+                                            },
+                                            new TextBlock()
+                                            {
+                                                Type="TextBlock",
+                                                Text = "Database",
+                                                Weight = TextWeight.Normal,
+                                                Size=TextSize.Normal,
+                                                Color=TextColor.Light,
+                                                Wrap = true,
+                                            }
+
+                                        }
+                                    },
+                             new Column()
+                                    {
+                                        Separation=SeparationStyle.Strong,
+                                        Items = new List<CardElement>()
+                                        {
+                                                new Image()
+                                            {
+                                                Url = "D:/Kannan/Project/repo/sumitchatbot/Images/ic_network_up.png",
+                                                Size = ImageSize.Small,
+                                                Style = ImageStyle.Normal,
+
+                                            },
+                                            new TextBlock()
+                                            {
+                                                Type="TextBlock",
+                                                Text = "Network",
+                                                Weight = TextWeight.Normal,
+                                                Size=TextSize.Normal,
+                                                Wrap = true,
+                                                Color=TextColor.Light
+                                            }
+
+                                        }
+                                    },
+                             new Column()
+                                    {
+                                        Separation=SeparationStyle.Strong,
+                                        Items = new List<CardElement>()
+                                        {
+                                                new Image()
+                                            {
+                                                Url = "D:/Kannan/Project/repo/sumitchatbot/Images/ic_storage_down.png",
+                                                Size = ImageSize.Small,
+                                                Style = ImageStyle.Normal,
+
+                                            },
+                                            new TextBlock()
+                                            {
+                                                Type="TextBlock",
+                                                Text = "Storage",
+                                                Weight = TextWeight.Normal,
+                                                Size=TextSize.Normal,
+                                                Color=TextColor.Light,
+                                                Wrap = true,
+                                            }
+
+                                        }
+                                    },
+
+                            }
+
+                         },
+                    new ColumnSet()
+                    {
+                    Columns = new List<Column>()
+                    {
+                                new Column()
+                                    {
+                                       Size =ColumnSize.Stretch,
+                                        Items = new List<CardElement>()
+                                        {
+                                            new Image()
+                                            {
+                                                Url = "",
+                                                Size = ImageSize.Auto,
+                                                Style = ImageStyle.Normal,
+                                                HorizontalAlignment=HorizontalAlignment.Center
+                                            }
+
+                                        }
+                                    },
+                                 new Column()
+                                    {
+                                        Items = new List<CardElement>()
+                                        {
+                                             new TextBlock()
+                                            {
+                                                Text =  "",
+                                                Weight = TextWeight.Normal,
+                                                HorizontalAlignment=HorizontalAlignment.Left,
+                                                Size=TextSize.ExtraLarge,
+                                                Wrap = true,
+                                                Color=TextColor.Light,
+                                            }
+                                        }
+                                    }
+                    }
+                    },
+                    new ColumnSet()
+                    {
+                    Columns = new List<Column>()
+                                {
+                                new Column()
+                                    {
+                                       Size =ColumnSize.Stretch,
+                                        Items = new List<CardElement>()
+                                        {
+                                            new Image()
+                                            {
+                                                Url = "",
+                                                Size = ImageSize.Auto,
+                                                Style = ImageStyle.Normal,
+                                                HorizontalAlignment=HorizontalAlignment.Center
+                                            }
+                                        }
+                                    },
+                                 new Column()
+                                    {
+                                        Items = new List<CardElement>()
+                                        {
+                                             new TextBlock()
+                                            {
+                                                Text =  "",
+                                                Weight = TextWeight.Normal,
+                                                HorizontalAlignment=HorizontalAlignment.Left,
+                                                Size=TextSize.ExtraLarge,
+                                                Wrap = true,
+                                                Color=TextColor.Light,
+                                            }
+                                        }
+                                    }
+                    }
+                    },
+
+                   }
+                //}
+                //}
+            };
+
+            Attachment attachment = new Attachment()
+            {
+                ContentType = AdaptiveCard.ContentType,
+                Content = cardone
+            };
+            #endregion
+
+            reply.Attachments.Add(attachment);
+
+            await context.PostAsync(reply);
         }
 
         [LuisIntent("None")]
@@ -249,6 +860,889 @@ namespace Microsoft.Bot.Sample.LuisBot
             await context.SayAsync(Text, Speak, new MessageOptions() { InputHint = Connector.InputHints.ExpectingInput });
         }
 
+       
+        private static Attachment GetAdaptiveCard()
+        {
+            var Adaptcard = new AdaptiveCard
+            {
+                BackgroundImage = "D:/Kannan/Project/repo/sumitchatbot/Images/img_background_01.png",
+                Title = "Over All Applciation Health",
+                Speak = "<s>Over All Applciation Health.</s>",
+                Body = new List<CardElement>()
+                {
+                    //EMpty Columnset
+                new ColumnSet()
+                {
+                    Columns = new List<Column>()
+                    {
+                        new Column()
+                        {
+                            Size = ColumnSize.Stretch,
+                            Items = new List<CardElement>()
+                            {
+                                new Image()
+                                {
+                                    Url = " ",
+                                    Size = ImageSize.Auto,
+                                    Style = ImageStyle.Normal,
+                                    HorizontalAlignment = HorizontalAlignment.Right
+                                }
+                            }
+                        },
+                        new Column()
+                        {
+                            Size = ColumnSize.Stretch,
+                            Items = new List<CardElement>()
+                            {
+                                new TextBlock()
+                                {
+                                    Text = "",
+                                    Size = TextSize.Normal,
+                                    Weight = TextWeight.Normal,
+                                    HorizontalAlignment = HorizontalAlignment.Right
+                                }
+                            }
+                        }
+                    }
+                },
+                new ColumnSet()
+                {
+                    Columns = new List<Column>()
+                    {
+                        new Column()
+                        {
+                            Size = ColumnSize.Stretch,
+                            Items = new List<CardElement>()
+                            {
+                                new Image()
+
+                                {
+                                    Url = " ",
+                                    Size = ImageSize.Auto,
+                                    Style = ImageStyle.Normal,
+                                    HorizontalAlignment = HorizontalAlignment.Right
+                                }
+                            }
+                        },
+                        new Column()
+                        {
+                            Size = ColumnSize.Stretch,
+                            Items = new List<CardElement>()
+                            {
+                                new TextBlock()
+
+                                {
+                                  Text = "",
+                                    Size = TextSize.Normal,
+                                    Weight = TextWeight.Normal,
+                                    HorizontalAlignment = HorizontalAlignment.Right
+                                }
+                            }
+                        }
+                    }
+                },
+                new ColumnSet()
+                {
+                    Columns = new List<Column>()
+                    {
+                        new Column()
+                        {
+                            Size = ColumnSize.Stretch,
+                            Items = new List<CardElement>()
+                            {
+                                new Image()
+
+                                {
+                                    Url = " ",
+                                    Size = ImageSize.Auto,
+                                    Style = ImageStyle.Normal,
+                                    HorizontalAlignment = HorizontalAlignment.Right
+                                }
+                            }
+                        },
+                        new Column()
+                        {
+                            Size = ColumnSize.Stretch,
+                            Items = new List<CardElement>()
+                            {
+                                new TextBlock()
+
+                                {
+                                  Text = "",
+                                    Size = TextSize.Normal,
+                                    Weight = TextWeight.Normal,
+                                    HorizontalAlignment = HorizontalAlignment.Right
+                                }
+                            }
+                        }
+                    }
+                },
+                //First Column
+                new ColumnSet()
+                    {
+                        Columns = new List<Column>()
+                        {
+                        new Column()
+                            {
+                            Size = "40"  ,
+                            Items = new List<CardElement>()
+                                {
+                                new Image()
+                                    {
+                                    Url = "D:/Kannan/Project/repo/sumitchatbot/Images/ic_application.png",
+                                    Size = ImageSize.Large,
+                                    Style = ImageStyle.Normal,
+                                    HorizontalAlignment = HorizontalAlignment.Center
+                                    }
+                                }
+                            },
+                        new Column()
+                            {
+                                Size = "25",
+                                Style = ContainerStyle.Normal,
+
+                                Items = new List<CardElement>()
+                                {
+                                     new Image()
+                                    {
+                                    Url = "D:/Kannan/Project/repo/sumitchatbot/Images/ic_risk.png",
+                                    Size = ImageSize.Large,
+                                    Style = ImageStyle.Normal,
+                                    HorizontalAlignment = HorizontalAlignment.Center
+                                    },
+                                new TextBlock()
+                                    {
+                                    Text =  "15",
+                                    Weight = TextWeight.Bolder,
+                                    Size = TextSize.ExtraLarge,
+                                    IsSubtle = true,
+                                      Color = TextColor.Attention,
+                                    HorizontalAlignment = HorizontalAlignment.Center,
+                                    Wrap = true
+                                    }
+                                ,
+                                new TextBlock()
+                                    {
+                                    Text = "Applications",
+                                    Speak= "15 Applications",
+                                    Size = TextSize.Small,
+                                    Color = TextColor.Light,
+                                    Wrap = true,
+                                     HorizontalAlignment = HorizontalAlignment.Center,
+                                       Separation= SeparationStyle.None
+                                    }
+                                }
+                            },
+                        new Column()
+                            {
+                                Size = "15",
+                                 Style = ContainerStyle.Normal,
+                                 Separation = SeparationStyle.Strong,
+                                Items = new List<CardElement>()
+                                {
+                                     new Image()
+                                    {
+                                    Url = "D:/Kannan/Project/repo/sumitchatbot/Images/ic_alert.png",
+                                    Size = ImageSize.Large,
+                                    Style = ImageStyle.Person,
+                                    HorizontalAlignment = HorizontalAlignment.Center
+                                    },
+                                new TextBlock()
+                                    {
+                                    Text =  "8",
+                                    Weight = TextWeight.Bolder,
+                                    Size = TextSize.ExtraLarge,  Color = TextColor.Warning,
+                                    IsSubtle = true,
+                                    HorizontalAlignment = HorizontalAlignment.Center,
+                                    Wrap = true
+                                    }
+                                ,
+                                new TextBlock()
+                                    {
+                                    Text = "Risk",
+                                    Speak= "8 Risk",
+                                    Size = TextSize.Small,
+                                    Color = TextColor.Light,
+                                    Wrap = true,
+                                     HorizontalAlignment = HorizontalAlignment.Center,
+                                       Separation= SeparationStyle.None
+                                    }
+                                }
+                            },new Column()
+                            {
+                                Size = "20",
+                                Separation = SeparationStyle.Strong,
+                                Items = new List<CardElement>()
+                                {
+                                     new Image()
+                                    {
+                                    Url = "D:/Kannan/Project/repo/sumitchatbot/Images/ic_healthy.png",
+                                    Size = ImageSize.Large,
+                                    Style = ImageStyle.Normal,
+                                    HorizontalAlignment = HorizontalAlignment.Center
+                                    },
+                                new TextBlock()
+                                    {
+                                    Text =  "2",
+                                    Weight = TextWeight.Bolder,
+                                    Size = TextSize.ExtraLarge,  Color = TextColor.Good,
+                                    IsSubtle = true,
+                                    HorizontalAlignment = HorizontalAlignment.Center,
+                                    Wrap = true
+                                    }
+                                ,
+                                new TextBlock()
+                                    {
+                                    Text = "Warning",
+                                    Speak= "2 Warning",
+                                    Size = TextSize.Small,
+                                    Color = TextColor.Light,
+                                    Wrap = true,
+                                     HorizontalAlignment = HorizontalAlignment.Center,
+                                       Separation= SeparationStyle.None
+                                    }
+                                }
+                            }
+
+                        }
+                    }
+                ,
+                new ColumnSet()
+                {
+                    Columns = new List<Column>()
+                    {
+                        new Column()
+                        {
+                            Size = ColumnSize.Stretch,
+                            Items = new List<CardElement>()
+                            {
+                                new Image()
+
+                                {
+                                    Url = " ",
+                                    Size = ImageSize.Auto,
+                                    Style = ImageStyle.Normal,
+                                    HorizontalAlignment = HorizontalAlignment.Right
+                                }
+                            }
+                        },
+                        new Column()
+                        {
+                            Size = ColumnSize.Stretch,
+                            Items = new List<CardElement>()
+                            {
+                                new TextBlock()
+
+                                {
+                                  Text = "",
+                                    Size = TextSize.Normal,
+                                    Weight = TextWeight.Normal,
+                                    HorizontalAlignment = HorizontalAlignment.Right
+                                }
+                            }
+                        }
+                    }
+                 }
+                ,
+                new ColumnSet()
+                {
+                    Columns = new List<Column>()
+                    {
+                        new Column()
+                        {
+                            Size = ColumnSize.Stretch,
+                            Items = new List<CardElement>()
+                            {
+                                new Image()
+
+                                {
+                                    Url = " ",
+                                    Size = ImageSize.Auto,
+                                    Style = ImageStyle.Normal,
+                                    HorizontalAlignment = HorizontalAlignment.Right
+                                }
+                            }
+                        },
+                        new Column()
+                        {
+                            Size = ColumnSize.Stretch,
+                            Items = new List<CardElement>()
+                            {
+                                new TextBlock()
+
+                                {
+                                  Text = "",
+                                   Size = TextSize.Normal,
+                                    Weight = TextWeight.Normal,
+                                    HorizontalAlignment = HorizontalAlignment.Right
+                                }
+                            }
+                        }
+                    }
+                 },
+                new ColumnSet()
+                {
+                    Columns = new List<Column>()
+                    {
+                        new Column()
+                        {
+                            Size = ColumnSize.Stretch,
+                            Items = new List<CardElement>()
+                            {
+                                new Image()
+
+                                {
+                                    Url = " ",
+                                    Size = ImageSize.Auto,
+                                    Style = ImageStyle.Normal,
+                                    HorizontalAlignment = HorizontalAlignment.Right
+                                }
+                            }
+                        },
+                        new Column()
+                        {
+                            Size = ColumnSize.Stretch,
+                            Items = new List<CardElement>()
+                            {
+                                new TextBlock()
+
+                                {
+                                  Text = "",
+                                    Size = TextSize.Normal,
+                                    Weight = TextWeight.Normal,
+                                    HorizontalAlignment = HorizontalAlignment.Right
+                                }
+                            }
+                        }
+                    }
+                 },
+                new ColumnSet()
+                {
+                    Columns = new List<Column>()
+                    {
+                        new Column()
+                        {
+                            Size = ColumnSize.Stretch,
+                            Items = new List<CardElement>()
+                            {
+                                new Image()
+
+                                {
+                                    Url = " ",
+                                    Size = ImageSize.Auto,
+                                    Style = ImageStyle.Normal,
+                                    HorizontalAlignment = HorizontalAlignment.Right
+                                }
+                            }
+                        },
+                        new Column()
+                        {
+                            Size = ColumnSize.Stretch,
+                            Items = new List<CardElement>()
+                            {
+                                new TextBlock()
+
+                               {
+                                  Text = "",
+                                    Size = TextSize.Normal,
+                                    Weight = TextWeight.Normal,
+                                    HorizontalAlignment = HorizontalAlignment.Right
+                                }
+                            }
+                        }
+                    }
+                 },
+                //Second ColumnSet
+                new ColumnSet()
+                {
+                    Columns = new List<Column>()
+                    {
+                        new Column()
+                        {
+                            Size = "10",
+                            Items = new List<CardElement>()
+                            {
+                                new Image()
+
+                                {
+                                    Url = "D:/Kannan/Project/repo/sumitchatbot/Images/ic_risk.png",
+                                    Size = ImageSize.Auto,
+                                    Style = ImageStyle.Normal,
+                                    HorizontalAlignment = HorizontalAlignment.Right
+                                }
+                            }
+                        },
+                         new Column()
+                        {
+                            Size = "30",                            
+                            
+                            Items = new List<CardElement>()
+                            {
+                                new TextBlock()
+                                {
+                                    Text =  "Riskfort",
+                                    HorizontalAlignment = HorizontalAlignment.Left,
+                                    Color = TextColor.Light,
+                                    Wrap = false
+                                }
+                            }
+                        },
+                         new Column()
+                        {
+                            Size = "5",
+                            Items = new List<CardElement>()
+                            {
+                                new Image()
+
+                                {
+                                    Url = "",
+                                    Size = ImageSize.Auto,
+                                    Style = ImageStyle.Normal,
+                                    HorizontalAlignment = HorizontalAlignment.Right
+                                }
+                            }
+                        },
+                         new Column()
+                        {
+                            Size = "10",
+                            Items = new List<CardElement>()
+                            {
+                                new Image()
+
+                                {
+                                    Url = "D:/Kannan/Project/repo/sumitchatbot/Images/ic_alert.png",
+                                    Size = ImageSize.Auto,
+                                    Style = ImageStyle.Normal,
+                                    HorizontalAlignment = HorizontalAlignment.Right
+                                }
+                            }
+                         }, new Column()
+                        {
+                            Size = "30",
+                            Items = new List<CardElement>()
+                            {
+                                new TextBlock()
+                                {
+                                    Text =  "iView",
+                                    HorizontalAlignment = HorizontalAlignment.Left,
+                                    Color = TextColor.Light,
+                                    Wrap = false
+                                }
+                            }
+                        },
+                         new Column()
+                        {
+                            Size = "5",
+                            Items = new List<CardElement>()
+                            {
+                                new Image()
+
+                                {
+                                    Url = "",
+                                    Size = ImageSize.Auto,
+                                    Style = ImageStyle.Normal,
+                                    HorizontalAlignment = HorizontalAlignment.Right
+                                }
+                            }
+                        },
+                          new Column()
+                        {
+                            Size = "10",
+                            Items = new List<CardElement>()
+                            {
+                                new Image()
+
+                                {
+                                    Url = "D:/Kannan/Project/repo/sumitchatbot/Images/ic_healthy.png",
+                                    Size = ImageSize.Auto,
+                                    Style = ImageStyle.Normal,
+                                    HorizontalAlignment = HorizontalAlignment.Right
+                                }
+                            }
+                          },
+                          new Column()
+                        {
+                            Size = "30",
+                            Items = new List<CardElement>()
+                            {
+                                new TextBlock()
+                                {
+                                    Text =  "WEBFORT",
+                                    HorizontalAlignment = HorizontalAlignment.Left,
+                                    Color = TextColor.Light,
+                                    Wrap = false
+                                }
+                            }
+                        }
+                        }
+                    },
+                //Third Columnset
+                new ColumnSet()
+                {
+                    Columns = new List<Column>()
+                    {
+                        new Column()
+                        {
+                            Size = "10",
+                            Items = new List<CardElement>()
+                            {
+                                new Image()
+
+                                {
+                                    Url = "D:/Kannan/Project/repo/sumitchatbot/Images/ic_risk.png",
+                                    Size = ImageSize.Auto,
+                                    Style = ImageStyle.Normal,
+                                    HorizontalAlignment = HorizontalAlignment.Right
+                                }
+                            }
+                        },
+                         new Column()
+                        {
+                            Size = "30",
+                            Items = new List<CardElement>()
+                            {
+                                new TextBlock()
+                                {
+                                    Text =  "IMPS",
+                                    HorizontalAlignment = HorizontalAlignment.Left,
+                                    Color = TextColor.Light,
+                                    Wrap = false
+                                }
+                            }
+                        },
+                         new Column()
+                        {
+                            Size = "5",
+                            Items = new List<CardElement>()
+                            {
+                                new Image()
+
+                                {
+                                    Url = "",
+                                    Size = ImageSize.Auto,
+                                    Style = ImageStyle.Normal,
+                                    HorizontalAlignment = HorizontalAlignment.Right
+                                }
+                            }
+                        },
+                         new Column()
+                        {
+                            Size = "10",
+                            Items = new List<CardElement>()
+                            {
+                                new Image()
+
+                                {
+                                    Url = "D:/Kannan/Project/repo/sumitchatbot/Images/ic_alert.png",
+                                    Size = ImageSize.Auto,
+                                    Style = ImageStyle.Normal,
+                                    HorizontalAlignment = HorizontalAlignment.Right
+                                }
+                            }
+                         }, new Column()
+                        {
+                            Size = "30",
+                            Items = new List<CardElement>()
+                            {
+                                new TextBlock()
+                                {
+                                    Text =  "3DSecure",
+                                    HorizontalAlignment = HorizontalAlignment.Left,
+                                    Color = TextColor.Light,
+                                    Wrap = false
+                                }
+                            }
+                        },
+                         new Column()
+                        {
+                            Size = "5",
+                            Items = new List<CardElement>()
+                            {
+                                new Image()
+
+                                {
+                                    Url = "",
+                                    Size = ImageSize.Auto,
+                                    Style = ImageStyle.Normal,
+                                    HorizontalAlignment = HorizontalAlignment.Right
+                                }
+                            }
+                        },
+                          new Column()
+                        {
+                            Size = "10",
+                            Items = new List<CardElement>()
+                            {
+                                new Image()
+
+                                {
+                                    Url = "D:/Kannan/Project/repo/sumitchatbot/Images/ic_healthy.png",
+                                    Size = ImageSize.Auto,
+                                    Style = ImageStyle.Normal,
+                                    HorizontalAlignment = HorizontalAlignment.Right
+                                }
+                            }
+                          },
+                          new Column()
+                        {
+                            Size = "30",
+                            Items = new List<CardElement>()
+                            {
+                                new TextBlock()
+                                {
+                                    Text =  "iCore",
+                                    HorizontalAlignment = HorizontalAlignment.Left,
+                                    Color = TextColor.Light,
+                                    Wrap = false
+                                }
+                            }
+                        }
+                        }
+                    },
+                //Fourth Columnset
+                new ColumnSet()
+                {
+                    Columns = new List<Column>()
+                    {
+                        new Column()
+                        {
+                            Size = "10",
+                            Items = new List<CardElement>()
+                            {
+                                new Image()
+
+                                {
+                                    Url = "D:/Kannan/Project/repo/sumitchatbot/Images/ic_risk.png",
+                                    Size = ImageSize.Auto,
+                                    Style = ImageStyle.Normal,
+                                    HorizontalAlignment = HorizontalAlignment.Right
+                                }
+                            }
+                        },
+                         new Column()
+                        {
+                            Size = "30",
+                            Items = new List<CardElement>()
+                            {
+                                new TextBlock()
+                                {
+                                    Text =  "DBP",
+                                    HorizontalAlignment = HorizontalAlignment.Left,
+                                    Color = TextColor.Light,
+                                    Wrap = false
+                                }
+                            }
+                        },
+                         new Column()
+                        {
+                            Size = "5",
+                            Items = new List<CardElement>()
+                            {
+                                new Image()
+
+                                {
+                                    Url = "",
+                                    Size = ImageSize.Auto,
+                                    Style = ImageStyle.Normal,
+                                    HorizontalAlignment = HorizontalAlignment.Right
+                                }
+                            }
+                        },
+                         new Column()
+                        {
+                            Size = "10",
+                            Items = new List<CardElement>()
+                            {
+                                new Image()
+
+                                {
+                                    Url = "D:/Kannan/Project/repo/sumitchatbot/Images/ic_alert.png",
+                                    Size = ImageSize.Auto,
+                                    Style = ImageStyle.Normal,
+                                    HorizontalAlignment = HorizontalAlignment.Right
+                                }
+                            }
+                         }, new Column()
+                        {
+                            Size = "30",
+                            Items = new List<CardElement>()
+                            {
+                                new TextBlock()
+                                {
+                                    Text =  "iLoans",
+                                    HorizontalAlignment = HorizontalAlignment.Left,
+                                    Color = TextColor.Light,
+                                    Wrap = false
+                                }
+                            }
+                        },
+                         new Column()
+                        {
+                            Size = "5",
+                            Items = new List<CardElement>()
+                            {
+                                new Image()
+
+                                {
+                                    Url = "",
+                                    Size = ImageSize.Auto,
+                                    Style = ImageStyle.Normal,
+                                    HorizontalAlignment = HorizontalAlignment.Right
+                                }
+                            }
+                        },
+                          new Column()
+                        {
+                            Size = "10",
+                            Items = new List<CardElement>()
+                            {
+                                new Image()
+
+                                {
+                                    Url = "D:/Kannan/Project/repo/sumitchatbot/Images/ic_healthy.png",
+                                    Size = ImageSize.Auto,
+                                    Style = ImageStyle.Normal,
+                                    HorizontalAlignment = HorizontalAlignment.Right
+                                }
+                            }
+                          },
+                          new Column()
+                        {
+                            Size = "30",
+                            Items = new List<CardElement>()
+                            {
+                                new TextBlock()
+                                {
+                                    Text =  "iMobile",
+                                    HorizontalAlignment = HorizontalAlignment.Left,
+                                    Color = TextColor.Light,
+                                    Wrap = false
+                                }
+                            }
+                        }
+                        }
+                    },
+                // Empty ColumnSet
+                new ColumnSet()
+               {
+                    Columns = new List<Column>()
+                    {
+                        new Column()
+                        {
+                            Size = ColumnSize.Stretch,
+                            Items = new List<CardElement>()
+                            {
+                                new Image()
+
+                                {
+                                    Url = " ",
+                                    Size = ImageSize.Auto,
+                                    Style = ImageStyle.Normal,
+                                    HorizontalAlignment = HorizontalAlignment.Right
+                                }
+                            }
+                        },
+                        new Column()
+                        {
+                            Size = ColumnSize.Stretch,
+                            Items = new List<CardElement>()
+                            {
+                                new TextBlock()
+
+                                {
+                                  Text = "",
+                                    Size = TextSize.Normal,
+                                    Weight = TextWeight.Normal,
+                                    HorizontalAlignment = HorizontalAlignment.Right
+                                }
+                            }
+                        }
+                    }
+                 },
+                new ColumnSet()
+                {
+                    Columns = new List<Column>()
+                    {
+                        new Column()
+                        {
+                            Size = ColumnSize.Stretch,
+                            Items = new List<CardElement>()
+                            {
+                                new Image()
+
+                                {
+                                    Url = " ",
+                                    Size = ImageSize.Auto,
+                                    Style = ImageStyle.Normal,
+                                    HorizontalAlignment = HorizontalAlignment.Right
+                                }
+                            }
+                        },
+                        new Column()
+                        {
+                            Size = ColumnSize.Stretch,
+                            Items = new List<CardElement>()
+                            {
+                                new TextBlock()
+
+                                {
+                                  Text = "",
+                                   Size = TextSize.Normal,
+                                    Weight = TextWeight.Normal,
+                                    HorizontalAlignment = HorizontalAlignment.Right
+                                }
+                            }
+                        }
+                    }
+                 },
+                new ColumnSet()
+                {
+                    Columns = new List<Column>()
+                    {
+                        new Column()
+                        {
+                            Size = ColumnSize.Stretch,
+                            Items = new List<CardElement>()
+                            {
+                                new Image()
+
+                                {
+                                    Url = " ",
+                                    Size = ImageSize.Auto,
+                                    Style = ImageStyle.Normal,
+                                    HorizontalAlignment = HorizontalAlignment.Right
+                                }
+                            }
+                        },
+                        new Column()
+                        {
+                            Size = ColumnSize.Stretch,
+                            Items = new List<CardElement>()
+                            {
+                                new TextBlock()
+
+                                {
+                                  Text = "",
+                                    Size = TextSize.Normal,
+                                    Weight = TextWeight.Normal,
+                                    HorizontalAlignment = HorizontalAlignment.Right
+                                }
+                            }
+                        }
+                    }
+                 }
+            }
+
+            };
+            // Create the attachment.
+
+            Attachment attachment = new Attachment()
+            {
+                ContentType = AdaptiveCard.ContentType,
+                Content = Adaptcard
+            };
+            return attachment;
+        }
 
         #endregion
 

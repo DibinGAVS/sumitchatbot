@@ -46,6 +46,10 @@
     <NoWarn>CS1998</NoWarn>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AdaptiveCards, Version=0.5.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AdaptiveCards.0.5.1\lib\net452\AdaptiveCards.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Autofac, Version=3.5.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <HintPath>packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
       <Private>True</Private>
@@ -181,6 +185,31 @@
   <ItemGroup>
     <Content Include="default.htm" />
     <Content Include="Global.asax" />
+    <Content Include="Images\ICICI_AdaptiveCard.jpg" />
+    <Content Include="Images\ic_alert.png" />
+    <Content Include="Images\ic_alert_large.png" />
+    <Content Include="Images\ic_apm.png" />
+    <Content Include="Images\ic_apm_down.png" />
+    <Content Include="Images\ic_apm_healthy.png" />
+    <Content Include="Images\ic_application.png" />
+    <Content Include="Images\ic_background_02.png" />
+    <Content Include="Images\ic_correlation.png" />
+    <Content Include="Images\ic_database.png" />
+    <Content Include="Images\ic_database_down.png" />
+    <Content Include="Images\ic_databse_up.png" />
+    <Content Include="Images\ic_healthy.png" />
+    <Content Include="Images\ic_network.png" />
+    <Content Include="Images\ic_network_up.png" />
+    <Content Include="Images\ic_risk.png" />
+    <Content Include="Images\ic_server.png" />
+    <Content Include="Images\ic_server_down.png" />
+    <Content Include="Images\ic_server_up.png" />
+    <Content Include="Images\ic_single_app.png" />
+    <Content Include="Images\ic_storage.png" />
+    <Content Include="Images\ic_storage_down.png" />
+    <Content Include="Images\ic_tick.png" />
+    <Content Include="Images\ic_wrong.png" />
+    <Content Include="Images\img_background_01.png" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
