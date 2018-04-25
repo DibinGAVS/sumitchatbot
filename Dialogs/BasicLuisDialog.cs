@@ -210,7 +210,7 @@ namespace Microsoft.Bot.Sample.LuisBot
             #region Card One
             AdaptiveCard cardone = new AdaptiveCard()
             {
-                BackgroundImage = "D:/Kannan/Project/repo/sumitchatbot/Images/ic_background_02.png",
+                BackgroundImage = "https://edelmangavelbot.azurewebsites.net/Images/ic_background_02.png",
                 Title = "Riskfort Health Status",
                 Speak = "Riskfort Health Status",
                 Body = new List<CardElement>()
@@ -336,7 +336,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                         {
                                             new Image()
                                             {
-                                                Url = "D:/Kannan/Project/repo/sumitchatbot/Images/ic_healthy.png",
+                                                Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_healthy.png",
                                                 Size = ImageSize.Auto,
                                                 Style = ImageStyle.Normal,
                                                 HorizontalAlignment=HorizontalAlignment.Right
@@ -406,7 +406,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                         {
                                             new Image()
                                             {
-                                                Url = "D:/Kannan/Project/repo/sumitchatbot/Images/ic_single_app.png",
+                                                Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_single_app.png",
                                                 Size = ImageSize.Large,
                                                 Style = ImageStyle.Normal
                                             }
@@ -418,7 +418,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                         {
                                              new Image()
                                             {
-                                                Url = "D:/Kannan/Project/repo/sumitchatbot/Images/ic_alert_large.png",
+                                                Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_alert_large.png",
                                                 Size = ImageSize.Auto,
                                                 Style = ImageStyle.Normal
                                             },
@@ -448,7 +448,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                         {
                                             new Image()
                                             {
-                                                Url = "D:/Kannan/Project/repo/sumitchatbot/Images/ic_correlation.png",
+                                                Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_correlation.png",
                                                 Size = ImageSize.Auto,
                                                 Style = ImageStyle.Person,
                                             }
@@ -627,7 +627,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                         {
                                                 new Image()
                                             {
-                                                Url = "D:/Kannan/Project/repo/sumitchatbot/Images/ic_apm_healthy.png",
+                                                Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_apm_healthy.png",
                                                 Size = ImageSize.Small,
                                                 Style = ImageStyle.Normal,
                                             },
@@ -650,7 +650,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                         {
                                                 new Image()
                                             {
-                                                Url = "D:/Kannan/Project/repo/sumitchatbot/Images/ic_server_up.png",
+                                                Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_server_up.png",
                                                 Size = ImageSize.Small,
                                                 Style = ImageStyle.Normal,
 
@@ -674,7 +674,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                         {
                                                 new Image()
                                             {
-                                                Url = "D:/Kannan/Project/repo/sumitchatbot/Images/ic_database_down.png",
+                                                Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_database_down.png",
                                                 Size = ImageSize.Small,
                                                 Style = ImageStyle.Normal,
 
@@ -698,7 +698,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                         {
                                                 new Image()
                                             {
-                                                Url = "D:/Kannan/Project/repo/sumitchatbot/Images/ic_network_up.png",
+                                                Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_network_up.png",
                                                 Size = ImageSize.Small,
                                                 Style = ImageStyle.Normal,
 
@@ -722,7 +722,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                         {
                                                 new Image()
                                             {
-                                                Url = "D:/Kannan/Project/repo/sumitchatbot/Images/ic_storage_down.png",
+                                                Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_storage_down.png",
                                                 Size = ImageSize.Small,
                                                 Style = ImageStyle.Normal,
 
@@ -865,7 +865,7 @@ namespace Microsoft.Bot.Sample.LuisBot
         {
             var Adaptcard = new AdaptiveCard
             {
-                BackgroundImage = "D:/Kannan/Project/repo/sumitchatbot/Images/img_background_01.png",
+                BackgroundImage = "https://edelmangavelbot.azurewebsites.net/Images/img_background_01.png",
                 Title = "Over All Applciation Health",
                 Speak = "<s>Over All Applciation Health.</s>",
                 Body = new List<CardElement>()
@@ -989,7 +989,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                 {
                                 new Image()
                                     {
-                                    Url = "D:/Kannan/Project/repo/sumitchatbot/Images/ic_application.png",
+                                    Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_application.png",
                                     Size = ImageSize.Large,
                                     Style = ImageStyle.Normal,
                                     HorizontalAlignment = HorizontalAlignment.Center
@@ -1005,7 +1005,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                 {
                                      new Image()
                                     {
-                                    Url = "D:/Kannan/Project/repo/sumitchatbot/Images/ic_risk.png",
+                                    Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_risk.png",
                                     Size = ImageSize.Large,
                                     Style = ImageStyle.Normal,
                                     HorizontalAlignment = HorizontalAlignment.Center
@@ -1042,7 +1042,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                 {
                                      new Image()
                                     {
-                                    Url = "D:/Kannan/Project/repo/sumitchatbot/Images/ic_alert.png",
+                                    Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_alert.png",
                                     Size = ImageSize.Large,
                                     Style = ImageStyle.Person,
                                     HorizontalAlignment = HorizontalAlignment.Center
@@ -1076,7 +1076,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                 {
                                      new Image()
                                     {
-                                    Url = "D:/Kannan/Project/repo/sumitchatbot/Images/ic_healthy.png",
+                                    Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_healthy.png",
                                     Size = ImageSize.Large,
                                     Style = ImageStyle.Normal,
                                     HorizontalAlignment = HorizontalAlignment.Center
@@ -1265,7 +1265,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                 new Image()
 
                                 {
-                                    Url = "D:/Kannan/Project/repo/sumitchatbot/Images/ic_risk.png",
+                                    Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_risk.png",
                                     Size = ImageSize.Auto,
                                     Style = ImageStyle.Normal,
                                     HorizontalAlignment = HorizontalAlignment.Right
@@ -1310,7 +1310,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                 new Image()
 
                                 {
-                                    Url = "D:/Kannan/Project/repo/sumitchatbot/Images/ic_alert.png",
+                                    Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_alert.png",
                                     Size = ImageSize.Auto,
                                     Style = ImageStyle.Normal,
                                     HorizontalAlignment = HorizontalAlignment.Right
@@ -1353,7 +1353,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                 new Image()
 
                                 {
-                                    Url = "D:/Kannan/Project/repo/sumitchatbot/Images/ic_healthy.png",
+                                    Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_healthy.png",
                                     Size = ImageSize.Auto,
                                     Style = ImageStyle.Normal,
                                     HorizontalAlignment = HorizontalAlignment.Right
@@ -1389,7 +1389,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                 new Image()
 
                                 {
-                                    Url = "D:/Kannan/Project/repo/sumitchatbot/Images/ic_risk.png",
+                                    Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_risk.png",
                                     Size = ImageSize.Auto,
                                     Style = ImageStyle.Normal,
                                     HorizontalAlignment = HorizontalAlignment.Right
@@ -1433,7 +1433,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                 new Image()
 
                                 {
-                                    Url = "D:/Kannan/Project/repo/sumitchatbot/Images/ic_alert.png",
+                                    Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_alert.png",
                                     Size = ImageSize.Auto,
                                     Style = ImageStyle.Normal,
                                     HorizontalAlignment = HorizontalAlignment.Right
@@ -1476,7 +1476,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                 new Image()
 
                                 {
-                                    Url = "D:/Kannan/Project/repo/sumitchatbot/Images/ic_healthy.png",
+                                    Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_healthy.png",
                                     Size = ImageSize.Auto,
                                     Style = ImageStyle.Normal,
                                     HorizontalAlignment = HorizontalAlignment.Right
@@ -1512,7 +1512,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                 new Image()
 
                                 {
-                                    Url = "D:/Kannan/Project/repo/sumitchatbot/Images/ic_risk.png",
+                                    Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_risk.png",
                                     Size = ImageSize.Auto,
                                     Style = ImageStyle.Normal,
                                     HorizontalAlignment = HorizontalAlignment.Right
@@ -1556,7 +1556,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                 new Image()
 
                                 {
-                                    Url = "D:/Kannan/Project/repo/sumitchatbot/Images/ic_alert.png",
+                                    Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_alert.png",
                                     Size = ImageSize.Auto,
                                     Style = ImageStyle.Normal,
                                     HorizontalAlignment = HorizontalAlignment.Right
@@ -1599,7 +1599,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                 new Image()
 
                                 {
-                                    Url = "D:/Kannan/Project/repo/sumitchatbot/Images/ic_healthy.png",
+                                    Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_healthy.png",
                                     Size = ImageSize.Auto,
                                     Style = ImageStyle.Normal,
                                     HorizontalAlignment = HorizontalAlignment.Right
