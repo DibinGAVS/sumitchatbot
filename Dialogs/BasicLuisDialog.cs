@@ -208,697 +208,699 @@ namespace Microsoft.Bot.Sample.LuisBot
             var reply = context.MakeMessage();
 
             #region Card One
-            //AdaptiveCard cardone = new AdaptiveCard()
-            //{
-            //    BackgroundImage = "https://edelmangavelbot.azurewebsites.net/Images/ic_background_02.png",
-            //    Title = "Riskfort Health Status",
-            //    Speak = "Riskfort Health Status",
-            //    Body = new List<CardElement>()
-            //  {
-            //     // new Container()
-            //     //   {
-
-            //     //Items = new List<CardElement>()
-            //     //   {
-
-            //       new ColumnSet()
-            //        {
-            //        Columns = new List<Column>()
-            //        {
-            //                    new Column()
-            //                        {
-            //                            Size =ColumnSize.Stretch,
-            //                            Items = new List<CardElement>()
-            //                            {
-            //                                new Image()
-            //                                {
-            //                                    Url = "",
-            //                                    Size = ImageSize.Auto,
-            //                                    Style = ImageStyle.Normal,
-            //                                    HorizontalAlignment=HorizontalAlignment.Center
-            //                                }
-            //                            }
-            //                        },
-            //                     new Column()
-            //                        {
-            //                            Items = new List<CardElement>()
-            //                            {
-            //                                 new TextBlock()
-            //                                {
-            //                                    Text =  "",
-            //                                    Weight = TextWeight.Normal,
-            //                                    HorizontalAlignment=HorizontalAlignment.Left,
-            //                                    Size=TextSize.ExtraLarge,
-            //                                    Wrap = true,
-            //                                    Color=TextColor.Light,
-            //                                }
-            //                            }
-            //                        }
-            //        }
-            //        },
-            //        new ColumnSet()
-            //        {
-            //        Columns = new List<Column>()
-            //        {
-            //                    new Column()
-            //                        {
-            //                            Size =ColumnSize.Stretch,
-            //                            Items = new List<CardElement>()
-            //                            {
-            //                                new Image()
-            //                                {
-            //                                    Url = "",
-            //                                    Size = ImageSize.Auto,
-            //                                    Style = ImageStyle.Normal,
-            //                                    HorizontalAlignment=HorizontalAlignment.Center
-            //                                }
-            //                            }
-            //                        },
-            //                     new Column()
-            //                        {
-            //                            Items = new List<CardElement>()
-            //                            {
-            //                                 new TextBlock()
-            //                                {
-            //                                    Text =  "",
-            //                                    Weight = TextWeight.Normal,
-            //                                    HorizontalAlignment=HorizontalAlignment.Left,
-            //                                    Size=TextSize.ExtraLarge,
-            //                                    Wrap = true,
-            //                                    Color=TextColor.Light,
-            //                                }
-            //                            }
-            //                        }
-            //        }
-            //        },
-            //        new ColumnSet()
-            //        {
-            //        Columns = new List<Column>()
-            //        {
-            //                    new Column()
-            //                        {
-            //                            Size =ColumnSize.Stretch,
-            //                            Items = new List<CardElement>()
-            //                            {
-            //                                new Image()
-            //                                {
-            //                                    Url = "",
-            //                                    Size = ImageSize.Auto,
-            //                                    Style = ImageStyle.Normal,
-            //                                    HorizontalAlignment=HorizontalAlignment.Center
-            //                                }
-            //                            }
-            //                        },
-            //                     new Column()
-            //                        {
-            //                            Items = new List<CardElement>()
-            //                            {
-            //                                 new TextBlock()
-            //                                {
-            //                                    Text =  "",
-            //                                    Weight = TextWeight.Normal,
-            //                                    HorizontalAlignment=HorizontalAlignment.Left,
-            //                                    Size=TextSize.ExtraLarge,
-            //                                    Wrap = true,
-            //                                    Color=TextColor.Light,
-            //                                }
-            //                            }
-            //                        }
-            //        }
-            //        },
-            //        new ColumnSet()
-            //        {
-            //        Columns = new List<Column>()
-            //        {
-            //                    new Column()
-            //                        {
-            //                            Items = new List<CardElement>()
-            //                            {
-            //                                new Image()
-            //                                {
-            //                                    Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_healthy.png",
-            //                                    Size = ImageSize.Auto,
-            //                                    Style = ImageStyle.Normal,
-            //                                    HorizontalAlignment=HorizontalAlignment.Right
-            //                                }
-            //                            }
-            //                        },
-            //                     new Column()
-            //                        {
-            //                            Items = new List<CardElement>()
-            //                            {
-            //                                 new TextBlock()
-            //                                {
-            //                                    Text =  "Riskfort",
-            //                                    Weight = TextWeight.Normal,
-            //                                    HorizontalAlignment=HorizontalAlignment.Left,
-            //                                    Size=TextSize.Medium,
-            //                                    Wrap = true,
-            //                                    Color=TextColor.Light,
-            //                                }
-            //                            }
-            //                        }
-            //        }
-            //        },
-            //        new ColumnSet()
-            //        {
-            //        Columns = new List<Column>()
-            //        {
-            //                    new Column()
-            //                        {
-            //                           Size =ColumnSize.Stretch,
-            //                            Items = new List<CardElement>()
-            //                            {
-            //                                new Image()
-            //                                {
-            //                                    Url = "",
-            //                                    Size = ImageSize.Auto,
-            //                                    Style = ImageStyle.Normal,
-            //                                    HorizontalAlignment=HorizontalAlignment.Center
-            //                                }
-            //                            }
-            //                        },
-            //                     new Column()
-            //                        {
-            //                            Items = new List<CardElement>()
-            //                            {
-            //                                 new TextBlock()
-            //                                {
-            //                                    Text =  "",
-            //                                    Weight = TextWeight.Normal,
-            //                                    HorizontalAlignment=HorizontalAlignment.Left,
-            //                                    Size=TextSize.ExtraLarge,
-            //                                    Wrap = true,
-            //                                    Color=TextColor.Light,
-            //                                }
-            //                            }
-            //                        }
-            //        }
-            //        },
-            //        new ColumnSet()
-            //        {
-            //        Columns = new List<Column>()
-            //        {
-            //                        new Column()
-            //                        {
-            //                             Size =ColumnSize.Stretch,
-            //                            Items = new List<CardElement>()
-            //                            {
-            //                                new Image()
-            //                                {
-            //                                    Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_single_app.png",
-            //                                    Size = ImageSize.Large,
-            //                                    Style = ImageStyle.Normal
-            //                                }
-            //                            }
-            //                        },
-            //                         new Column()
-            //                        {
-            //                            Items = new List<CardElement>()
-            //                            {
-            //                                 new Image()
-            //                                {
-            //                                    Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_alert_large.png",
-            //                                    Size = ImageSize.Auto,
-            //                                    Style = ImageStyle.Normal
-            //                                },
-            //                            }
-            //                         },
-            //                        new Column()
-            //                        {
-            //                            Items = new List<CardElement>()
-            //                            {
-            //                                new TextBlock()
-            //                                {
-            //                                    Text =  "20 Alerts",
-            //                                    Speak = "20 Alerts",
-            //                                    Weight = TextWeight.Normal,
-            //                                    HorizontalAlignment=HorizontalAlignment.Center,
-            //                                    Size=TextSize.Normal,
-            //                                    Wrap = true,
-            //                                    Color=TextColor.Light,
-            //                                    Separation=SeparationStyle.Strong,
-            //                                },
-            //                            }
-            //                        },
-            //                        new Column()
-            //                        {
-            //                            Separation=SeparationStyle.Strong,
-            //                            Items= new List<CardElement>()
-            //                            {
-            //                                new Image()
-            //                                {
-            //                                    Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_correlation.png",
-            //                                    Size = ImageSize.Auto,
-            //                                    Style = ImageStyle.Person,
-            //                                }
-            //                            }
-            //                        },
-            //                        new Column()
-            //                        {
-            //                            Items= new List<CardElement>()
-            //                            {
-            //                                 new TextBlock()
-            //                                {
-            //                                    Text = "12 Correlation",
-            //                                    Speak= "12 Correlation",
-            //                                    Weight = TextWeight.Normal,
-            //                                    HorizontalAlignment=HorizontalAlignment.Center,
-            //                                    Size=TextSize.Normal,
-            //                                    Wrap = true,
-            //                                    Color=TextColor.Light
-            //                                }
-            //                            }
-            //                        }
-            //                    }
-            //                 },
-            //        new ColumnSet()
-            //        {
-            //        Columns = new List<Column>()
-            //        {
-            //                    new Column()
-            //                        {
-            //                            Size =ColumnSize.Stretch,
-            //                            Items = new List<CardElement>()
-            //                            {
-            //                                new Image()
-            //                                {
-            //                                    Url = "",
-            //                                    Size = ImageSize.Auto,
-            //                                    Style = ImageStyle.Normal,
-            //                                    HorizontalAlignment=HorizontalAlignment.Center
-            //                                }
-            //                            }
-            //                        },
-            //                     new Column()
-            //                        {
-            //                            Items = new List<CardElement>()
-            //                            {
-            //                                 new TextBlock()
-            //                                {
-            //                                    Text =  "",
-            //                                    Weight = TextWeight.Normal,
-            //                                    HorizontalAlignment=HorizontalAlignment.Left,
-            //                                    Size=TextSize.ExtraLarge,
-            //                                    Wrap = true,
-            //                                    Color=TextColor.Light,
-            //                                }
-            //                            }
-            //                        }
-            //        }
-            //        },
-            //        new ColumnSet()
-            //        {
-            //        Columns = new List<Column>()
-            //        {
-            //                    new Column()
-            //                        {
-            //                           Size =ColumnSize.Stretch,
-            //                            Items = new List<CardElement>()
-            //                            {
-            //                                new Image()
-            //                                {
-            //                                    Url = "",
-            //                                    Size = ImageSize.Auto,
-            //                                    Style = ImageStyle.Normal,
-            //                                    HorizontalAlignment=HorizontalAlignment.Center
-            //                                }
-            //                            }
-            //                        },
-            //                     new Column()
-            //                        {
-            //                            Items = new List<CardElement>()
-            //                            {
-            //                                 new TextBlock()
-            //                                {
-            //                                    Text =  "",
-            //                                    Weight = TextWeight.Normal,
-            //                                    HorizontalAlignment=HorizontalAlignment.Left,
-            //                                    Size=TextSize.ExtraLarge,
-            //                                    Wrap = true,
-            //                                    Color=TextColor.Light,
-            //                                }
-            //                            }
-            //                        }
-            //        }
-            //        },
-            //        new ColumnSet()
-            //        {
-            //        Columns = new List<Column>()
-            //        {
-            //                    new Column()
-            //                        {
-            //                            Size =ColumnSize.Stretch,
-            //                            Items = new List<CardElement>()
-            //                            {
-            //                                new Image()
-            //                                {
-            //                                    Url = "",
-            //                                    Size = ImageSize.Auto,
-            //                                    Style = ImageStyle.Normal,
-            //                                    HorizontalAlignment=HorizontalAlignment.Center
-
-            //                                }
-
-            //                            }
-            //                        },
-            //                     new Column()
-            //                        {
-            //                            Items = new List<CardElement>()
-            //                            {
-            //                                 new TextBlock()
-            //                                {
-            //                                    Text =  "",
-            //                                    Weight = TextWeight.Normal,
-            //                                    HorizontalAlignment=HorizontalAlignment.Left,
-            //                                    Size=TextSize.ExtraLarge,
-            //                                    Wrap = true,
-            //                                    Color=TextColor.Light,
-            //                                }
-            //                            }
-            //                        }
-            //        }
-            //        },
-            //        new ColumnSet()
-            //        {
-
-            //        Columns = new List<Column>()
-            //        {
-            //                    new Column()
-            //                        {
-            //                            Size =ColumnSize.Stretch,
-            //                            Items = new List<CardElement>()
-            //                            {
-            //                                new Image()
-            //                                {
-            //                                    Url = "",
-            //                                    Size = ImageSize.Auto,
-            //                                    Style = ImageStyle.Normal,
-            //                                    HorizontalAlignment=HorizontalAlignment.Center
-            //                                }
-            //                            }
-            //                        },
-            //                     new Column()
-            //                        {
-            //                            Items = new List<CardElement>()
-            //                            {
-            //                                 new TextBlock()
-            //                                {
-            //                                    Text =  "",
-            //                                    Weight = TextWeight.Normal,
-            //                                    HorizontalAlignment=HorizontalAlignment.Left,
-            //                                    Size=TextSize.ExtraLarge,
-            //                                    Wrap = true,
-            //                                    Color=TextColor.Light,
-            //                                }
-            //                            }
-            //                        }
-            //        }
-            //        },
-            //     // third column
-
-            //        new ColumnSet()
-            //        {
-            //        Columns = new List<Column>()
-            //        {
-            //                 new Column()
-            //                        {
-            //                            Items = new List<CardElement>()
-            //                            {
-            //                                    new Image()
-            //                                {
-            //                                    Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_apm_healthy.png",
-            //                                    Size = ImageSize.Small,
-            //                                    Style = ImageStyle.Normal,
-            //                                },
-            //                                new TextBlock()
-            //                                {
-            //                                    Type="TextBlock",
-            //                                    Text = "APM",
-            //                                    Weight = TextWeight.Normal,
-            //                                    Size=TextSize.Normal,
-            //                                    Wrap = true,
-            //                                    Color=TextColor.Light
-            //                                }
-
-            //                            }
-            //                        },
-            //                 new Column()
-            //                        {
-            //                            Separation=SeparationStyle.Strong,
-            //                            Items = new List<CardElement>()
-            //                            {
-            //                                    new Image()
-            //                                {
-            //                                    Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_server_up.png",
-            //                                    Size = ImageSize.Small,
-            //                                    Style = ImageStyle.Normal,
-
-            //                                },
-            //                                new TextBlock()
-            //                                {
-            //                                    Type="TextBlock",
-            //                                    Text = "Server",
-            //                                    Weight = TextWeight.Normal,
-            //                                    Size=TextSize.Normal,
-            //                                    Color=TextColor.Light,
-            //                                    Wrap = true,
-            //                                }
-
-            //                            }
-            //                        },
-            //                 new Column()
-            //                        {
-            //                            Separation=SeparationStyle.Strong,
-            //                            Items = new List<CardElement>()
-            //                            {
-            //                                    new Image()
-            //                                {
-            //                                    Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_database_down.png",
-            //                                    Size = ImageSize.Small,
-            //                                    Style = ImageStyle.Normal,
-
-            //                                },
-            //                                new TextBlock()
-            //                                {
-            //                                    Type="TextBlock",
-            //                                    Text = "Database",
-            //                                    Weight = TextWeight.Normal,
-            //                                    Size=TextSize.Normal,
-            //                                    Color=TextColor.Light,
-            //                                    Wrap = true,
-            //                                }
-
-            //                            }
-            //                        },
-            //                 new Column()
-            //                        {
-            //                            Separation=SeparationStyle.Strong,
-            //                            Items = new List<CardElement>()
-            //                            {
-            //                                    new Image()
-            //                                {
-            //                                    Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_network_up.png",
-            //                                    Size = ImageSize.Small,
-            //                                    Style = ImageStyle.Normal,
-
-            //                                },
-            //                                new TextBlock()
-            //                                {
-            //                                    Type="TextBlock",
-            //                                    Text = "Network",
-            //                                    Weight = TextWeight.Normal,
-            //                                    Size=TextSize.Normal,
-            //                                    Wrap = true,
-            //                                    Color=TextColor.Light
-            //                                }
-
-            //                            }
-            //                        },
-            //                 new Column()
-            //                        {
-            //                            Separation=SeparationStyle.Strong,
-            //                            Items = new List<CardElement>()
-            //                            {
-            //                                    new Image()
-            //                                {
-            //                                    Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_storage_down.png",
-            //                                    Size = ImageSize.Small,
-            //                                    Style = ImageStyle.Normal,
-
-            //                                },
-            //                                new TextBlock()
-            //                                {
-            //                                    Type="TextBlock",
-            //                                    Text = "Storage",
-            //                                    Weight = TextWeight.Normal,
-            //                                    Size=TextSize.Normal,
-            //                                    Color=TextColor.Light,
-            //                                    Wrap = true,
-            //                                }
-
-            //                            }
-            //                        },
-
-            //                }
-
-            //             },
-            //        new ColumnSet()
-            //        {
-            //        Columns = new List<Column>()
-            //        {
-            //                    new Column()
-            //                        {
-            //                           Size =ColumnSize.Stretch,
-            //                            Items = new List<CardElement>()
-            //                            {
-            //                                new Image()
-            //                                {
-            //                                    Url = "",
-            //                                    Size = ImageSize.Auto,
-            //                                    Style = ImageStyle.Normal,
-            //                                    HorizontalAlignment=HorizontalAlignment.Center
-            //                                }
-
-            //                            }
-            //                        },
-            //                     new Column()
-            //                        {
-            //                            Items = new List<CardElement>()
-            //                            {
-            //                                 new TextBlock()
-            //                                {
-            //                                    Text =  "",
-            //                                    Weight = TextWeight.Normal,
-            //                                    HorizontalAlignment=HorizontalAlignment.Left,
-            //                                    Size=TextSize.ExtraLarge,
-            //                                    Wrap = true,
-            //                                    Color=TextColor.Light,
-            //                                }
-            //                            }
-            //                        }
-            //        }
-            //        },
-            //        new ColumnSet()
-            //        {
-            //        Columns = new List<Column>()
-            //                    {
-            //                    new Column()
-            //                        {
-            //                           Size =ColumnSize.Stretch,
-            //                            Items = new List<CardElement>()
-            //                            {
-            //                                new Image()
-            //                                {
-            //                                    Url = "",
-            //                                    Size = ImageSize.Auto,
-            //                                    Style = ImageStyle.Normal,
-            //                                    HorizontalAlignment=HorizontalAlignment.Center
-            //                                }
-            //                            }
-            //                        },
-            //                     new Column()
-            //                        {
-            //                            Items = new List<CardElement>()
-            //                            {
-            //                                 new TextBlock()
-            //                                {
-            //                                    Text =  "",
-            //                                    Weight = TextWeight.Normal,
-            //                                    HorizontalAlignment=HorizontalAlignment.Left,
-            //                                    Size=TextSize.ExtraLarge,
-            //                                    Wrap = true,
-            //                                    Color=TextColor.Light,
-            //                                }
-            //                            }
-            //                        }
-            //        }
-            //        },
-
-            //       }
-            //    //}
-            //    //}
-            //};
-
-            //Attachment attachment = new Attachment()
-            //{
-            //    ContentType = AdaptiveCard.ContentType,
-            //    Content = cardone
-            //};
-            #endregion
-
-            //reply.Attachments.Add(attachment);
-
-            //await context.PostAsync(reply);
-
-
-            AdaptiveCard card = new AdaptiveCard()
+            AdaptiveCard cardone = new AdaptiveCard()
             {
-                Title= "Hello!</s><s>Are you looking for a flight or a hotel?",
-                Speak= "Hello!</s><s>Are you looking for a flight or a hotel?",
+                BackgroundImage = "https://edelmangavelbot.azurewebsites.net/Images/ic_background_02.png",
+                Title = "Riskfort Health Status",
+                Speak = "Riskfort Health Status",
+                Version = "1.0",
+                Type="AdaptiveCard",
                 Body = new List<CardElement>()
-                {
-                    new Container()
+              {
+                  new Container()
                     {
-                       
-                        Items = new List<CardElement>()
-                        {
-                            new ColumnSet()
-                            {
-                                Columns = new List<Column>()
-                                {
-                                    new Column()
+
+                 Items = new List<CardElement>()
+                    {
+
+                   new ColumnSet()
+                    {
+                    Columns = new List<Column>()
+                    {
+                                new Column()
                                     {
-                                        Size = ColumnSize.Auto,
+                                        Size =ColumnSize.Stretch,
                                         Items = new List<CardElement>()
                                         {
                                             new Image()
                                             {
-                                                Url = "https://placeholdit.imgix.net/~text?txtsize=65&txt=Adaptive+Cards&w=300&h=300",
-                                                Size = ImageSize.Medium,
-                                                Style = ImageStyle.Person
+                                                Url = "",
+                                                Size = ImageSize.Auto,
+                                                Style = ImageStyle.Normal,
+                                                HorizontalAlignment=HorizontalAlignment.Center
+                                            }
+                                        }
+                                    },
+                                 new Column()
+                                    {
+                                        Items = new List<CardElement>()
+                                        {
+                                             new TextBlock()
+                                            {
+                                                Text =  "",
+                                                Weight = TextWeight.Normal,
+                                                HorizontalAlignment=HorizontalAlignment.Left,
+                                                Size=TextSize.ExtraLarge,
+                                                Wrap = true,
+                                                Color=TextColor.Light,
+                                            }
+                                        }
+                                    }
+                    }
+                    },
+                    new ColumnSet()
+                    {
+                    Columns = new List<Column>()
+                    {
+                                new Column()
+                                    {
+                                        Size =ColumnSize.Stretch,
+                                        Items = new List<CardElement>()
+                                        {
+                                            new Image()
+                                            {
+                                                Url = "",
+                                                Size = ImageSize.Auto,
+                                                Style = ImageStyle.Normal,
+                                                HorizontalAlignment=HorizontalAlignment.Center
+                                            }
+                                        }
+                                    },
+                                 new Column()
+                                    {
+                                        Items = new List<CardElement>()
+                                        {
+                                             new TextBlock()
+                                            {
+                                                Text =  "",
+                                                Weight = TextWeight.Normal,
+                                                HorizontalAlignment=HorizontalAlignment.Left,
+                                                Size=TextSize.ExtraLarge,
+                                                Wrap = true,
+                                                Color=TextColor.Light,
+                                            }
+                                        }
+                                    }
+                    }
+                    },
+                    new ColumnSet()
+                    {
+                    Columns = new List<Column>()
+                    {
+                                new Column()
+                                    {
+                                        Size =ColumnSize.Stretch,
+                                        Items = new List<CardElement>()
+                                        {
+                                            new Image()
+                                            {
+                                                Url = "",
+                                                Size = ImageSize.Auto,
+                                                Style = ImageStyle.Normal,
+                                                HorizontalAlignment=HorizontalAlignment.Center
+                                            }
+                                        }
+                                    },
+                                 new Column()
+                                    {
+                                        Items = new List<CardElement>()
+                                        {
+                                             new TextBlock()
+                                            {
+                                                Text =  "",
+                                                Weight = TextWeight.Normal,
+                                                HorizontalAlignment=HorizontalAlignment.Left,
+                                                Size=TextSize.ExtraLarge,
+                                                Wrap = true,
+                                                Color=TextColor.Light,
+                                            }
+                                        }
+                                    }
+                    }
+                    },
+                    new ColumnSet()
+                    {
+                    Columns = new List<Column>()
+                    {
+                                new Column()
+                                    {
+                                        Items = new List<CardElement>()
+                                        {
+                                            new Image()
+                                            {
+                                                Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_healthy.png",
+                                                Size = ImageSize.Auto,
+                                                Style = ImageStyle.Normal,
+                                                HorizontalAlignment=HorizontalAlignment.Right
+                                            }
+                                        }
+                                    },
+                                 new Column()
+                                    {
+                                        Items = new List<CardElement>()
+                                        {
+                                             new TextBlock()
+                                            {
+                                                Text =  "Riskfort",
+                                                Weight = TextWeight.Normal,
+                                                HorizontalAlignment=HorizontalAlignment.Left,
+                                                Size=TextSize.Medium,
+                                                Wrap = true,
+                                                Color=TextColor.Light,
+                                            }
+                                        }
+                                    }
+                    }
+                    },
+                    new ColumnSet()
+                    {
+                    Columns = new List<Column>()
+                    {
+                                new Column()
+                                    {
+                                       Size =ColumnSize.Stretch,
+                                        Items = new List<CardElement>()
+                                        {
+                                            new Image()
+                                            {
+                                                Url = "",
+                                                Size = ImageSize.Auto,
+                                                Style = ImageStyle.Normal,
+                                                HorizontalAlignment=HorizontalAlignment.Center
+                                            }
+                                        }
+                                    },
+                                 new Column()
+                                    {
+                                        Items = new List<CardElement>()
+                                        {
+                                             new TextBlock()
+                                            {
+                                                Text =  "",
+                                                Weight = TextWeight.Normal,
+                                                HorizontalAlignment=HorizontalAlignment.Left,
+                                                Size=TextSize.ExtraLarge,
+                                                Wrap = true,
+                                                Color=TextColor.Light,
+                                            }
+                                        }
+                                    }
+                    }
+                    },
+                    new ColumnSet()
+                    {
+                    Columns = new List<Column>()
+                    {
+                                    new Column()
+                                    {
+                                         Size =ColumnSize.Stretch,
+                                        Items = new List<CardElement>()
+                                        {
+                                            new Image()
+                                            {
+                                                Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_single_app.png",
+                                                Size = ImageSize.Large,
+                                                Style = ImageStyle.Normal
+                                            }
+                                        }
+                                    },
+                                     new Column()
+                                    {
+                                        Items = new List<CardElement>()
+                                        {
+                                             new Image()
+                                            {
+                                                Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_alert_large.png",
+                                                Size = ImageSize.Auto,
+                                                Style = ImageStyle.Normal
+                                            },
+                                        }
+                                     },
+                                    new Column()
+                                    {
+                                        Items = new List<CardElement>()
+                                        {
+                                            new TextBlock()
+                                            {
+                                                Text =  "20 Alerts",
+                                                Speak = "20 Alerts",
+                                                Weight = TextWeight.Normal,
+                                                HorizontalAlignment=HorizontalAlignment.Center,
+                                                Size=TextSize.Normal,
+                                                Wrap = true,
+                                                Color=TextColor.Light,
+                                                Separation=SeparationStyle.Strong,
+                                            },
+                                        }
+                                    },
+                                    new Column()
+                                    {
+                                        Separation=SeparationStyle.Strong,
+                                        Items= new List<CardElement>()
+                                        {
+                                            new Image()
+                                            {
+                                                Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_correlation.png",
+                                                Size = ImageSize.Auto,
+                                                Style = ImageStyle.Person,
                                             }
                                         }
                                     },
                                     new Column()
                                     {
-                                        Size = ColumnSize.Stretch,
-                                        Items = new List<CardElement>()
+                                        Items= new List<CardElement>()
                                         {
-                                            new TextBlock()
+                                             new TextBlock()
                                             {
-                                                Text =  "Hello!",
-                                                Speak="Hello",
-                                                Weight = TextWeight.Bolder,
-                                                IsSubtle = true
-                                            },
-                                            new TextBlock()
-                                            {
-                                                Text = "Are you looking for sub Content?",
+                                                Text = "12 Correlation",
+                                                Speak= "12 Correlation",
+                                                Weight = TextWeight.Normal,
+                                                HorizontalAlignment=HorizontalAlignment.Center,
+                                                Size=TextSize.Normal,
                                                 Wrap = true,
-                                                Speak="Are you looking for sub Content?"
-
+                                                Color=TextColor.Light
                                             }
                                         }
                                     }
                                 }
-                            }
-                        }
-                    }
-                },
-               
+                             },
+                 //   new ColumnSet()
+                 //   {
+                 //   Columns = new List<Column>()
+                 //   {
+                 //               new Column()
+                 //                   {
+                 //                       Size =ColumnSize.Stretch,
+                 //                       Items = new List<CardElement>()
+                 //                       {
+                 //                           new Image()
+                 //                           {
+                 //                               Url = "",
+                 //                               Size = ImageSize.Auto,
+                 //                               Style = ImageStyle.Normal,
+                 //                               HorizontalAlignment=HorizontalAlignment.Center
+                 //                           }
+                 //                       }
+                 //                   },
+                 //                new Column()
+                 //                   {
+                 //                       Items = new List<CardElement>()
+                 //                       {
+                 //                            new TextBlock()
+                 //                           {
+                 //                               Text =  "",
+                 //                               Weight = TextWeight.Normal,
+                 //                               HorizontalAlignment=HorizontalAlignment.Left,
+                 //                               Size=TextSize.ExtraLarge,
+                 //                               Wrap = true,
+                 //                               Color=TextColor.Light,
+                 //                           }
+                 //                       }
+                 //                   }
+                 //   }
+                 //   },
+                 //   new ColumnSet()
+                 //   {
+                 //   Columns = new List<Column>()
+                 //   {
+                 //               new Column()
+                 //                   {
+                 //                      Size =ColumnSize.Stretch,
+                 //                       Items = new List<CardElement>()
+                 //                       {
+                 //                           new Image()
+                 //                           {
+                 //                               Url = "",
+                 //                               Size = ImageSize.Auto,
+                 //                               Style = ImageStyle.Normal,
+                 //                               HorizontalAlignment=HorizontalAlignment.Center
+                 //                           }
+                 //                       }
+                 //                   },
+                 //                new Column()
+                 //                   {
+                 //                       Items = new List<CardElement>()
+                 //                       {
+                 //                            new TextBlock()
+                 //                           {
+                 //                               Text =  "",
+                 //                               Weight = TextWeight.Normal,
+                 //                               HorizontalAlignment=HorizontalAlignment.Left,
+                 //                               Size=TextSize.ExtraLarge,
+                 //                               Wrap = true,
+                 //                               Color=TextColor.Light,
+                 //                           }
+                 //                       }
+                 //                   }
+                 //   }
+                 //   },
+                 //   new ColumnSet()
+                 //   {
+                 //   Columns = new List<Column>()
+                 //   {
+                 //               new Column()
+                 //                   {
+                 //                       Size =ColumnSize.Stretch,
+                 //                       Items = new List<CardElement>()
+                 //                       {
+                 //                           new Image()
+                 //                           {
+                 //                               Url = "",
+                 //                               Size = ImageSize.Auto,
+                 //                               Style = ImageStyle.Normal,
+                 //                               HorizontalAlignment=HorizontalAlignment.Center
+
+                 //                           }
+
+                 //                       }
+                 //                   },
+                 //                new Column()
+                 //                   {
+                 //                       Items = new List<CardElement>()
+                 //                       {
+                 //                            new TextBlock()
+                 //                           {
+                 //                               Text =  "",
+                 //                               Weight = TextWeight.Normal,
+                 //                               HorizontalAlignment=HorizontalAlignment.Left,
+                 //                               Size=TextSize.ExtraLarge,
+                 //                               Wrap = true,
+                 //                               Color=TextColor.Light,
+                 //                           }
+                 //                       }
+                 //                   }
+                 //   }
+                 //   },
+                 //   new ColumnSet()
+                 //   {
+
+                 //   Columns = new List<Column>()
+                 //   {
+                 //               new Column()
+                 //                   {
+                 //                       Size =ColumnSize.Stretch,
+                 //                       Items = new List<CardElement>()
+                 //                       {
+                 //                           new Image()
+                 //                           {
+                 //                               Url = "",
+                 //                               Size = ImageSize.Auto,
+                 //                               Style = ImageStyle.Normal,
+                 //                               HorizontalAlignment=HorizontalAlignment.Center
+                 //                           }
+                 //                       }
+                 //                   },
+                 //                new Column()
+                 //                   {
+                 //                       Items = new List<CardElement>()
+                 //                       {
+                 //                            new TextBlock()
+                 //                           {
+                 //                               Text =  "",
+                 //                               Weight = TextWeight.Normal,
+                 //                               HorizontalAlignment=HorizontalAlignment.Left,
+                 //                               Size=TextSize.ExtraLarge,
+                 //                               Wrap = true,
+                 //                               Color=TextColor.Light,
+                 //                           }
+                 //                       }
+                 //                   }
+                 //   }
+                 //   },
+                 //// third column
+
+                 //   new ColumnSet()
+                 //   {
+                 //   Columns = new List<Column>()
+                 //   {
+                 //            new Column()
+                 //                   {
+                 //                       Items = new List<CardElement>()
+                 //                       {
+                 //                               new Image()
+                 //                           {
+                 //                               Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_apm_healthy.png",
+                 //                               Size = ImageSize.Small,
+                 //                               Style = ImageStyle.Normal,
+                 //                           },
+                 //                           new TextBlock()
+                 //                           {
+                 //                               Type="TextBlock",
+                 //                               Text = "APM",
+                 //                               Weight = TextWeight.Normal,
+                 //                               Size=TextSize.Normal,
+                 //                               Wrap = true,
+                 //                               Color=TextColor.Light
+                 //                           }
+
+                 //                       }
+                 //                   },
+                 //            new Column()
+                 //                   {
+                 //                       Separation=SeparationStyle.Strong,
+                 //                       Items = new List<CardElement>()
+                 //                       {
+                 //                               new Image()
+                 //                           {
+                 //                               Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_server_up.png",
+                 //                               Size = ImageSize.Small,
+                 //                               Style = ImageStyle.Normal,
+
+                 //                           },
+                 //                           new TextBlock()
+                 //                           {
+                 //                               Type="TextBlock",
+                 //                               Text = "Server",
+                 //                               Weight = TextWeight.Normal,
+                 //                               Size=TextSize.Normal,
+                 //                               Color=TextColor.Light,
+                 //                               Wrap = true,
+                 //                           }
+
+                 //                       }
+                 //                   },
+                 //            new Column()
+                 //                   {
+                 //                       Separation=SeparationStyle.Strong,
+                 //                       Items = new List<CardElement>()
+                 //                       {
+                 //                               new Image()
+                 //                           {
+                 //                               Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_database_down.png",
+                 //                               Size = ImageSize.Small,
+                 //                               Style = ImageStyle.Normal,
+
+                 //                           },
+                 //                           new TextBlock()
+                 //                           {
+                 //                               Type="TextBlock",
+                 //                               Text = "Database",
+                 //                               Weight = TextWeight.Normal,
+                 //                               Size=TextSize.Normal,
+                 //                               Color=TextColor.Light,
+                 //                               Wrap = true,
+                 //                           }
+
+                 //                       }
+                 //                   },
+                 //            new Column()
+                 //                   {
+                 //                       Separation=SeparationStyle.Strong,
+                 //                       Items = new List<CardElement>()
+                 //                       {
+                 //                               new Image()
+                 //                           {
+                 //                               Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_network_up.png",
+                 //                               Size = ImageSize.Small,
+                 //                               Style = ImageStyle.Normal,
+
+                 //                           },
+                 //                           new TextBlock()
+                 //                           {
+                 //                               Type="TextBlock",
+                 //                               Text = "Network",
+                 //                               Weight = TextWeight.Normal,
+                 //                               Size=TextSize.Normal,
+                 //                               Wrap = true,
+                 //                               Color=TextColor.Light
+                 //                           }
+
+                 //                       }
+                 //                   },
+                 //            new Column()
+                 //                   {
+                 //                       Separation=SeparationStyle.Strong,
+                 //                       Items = new List<CardElement>()
+                 //                       {
+                 //                               new Image()
+                 //                           {
+                 //                               Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_storage_down.png",
+                 //                               Size = ImageSize.Small,
+                 //                               Style = ImageStyle.Normal,
+
+                 //                           },
+                 //                           new TextBlock()
+                 //                           {
+                 //                               Type="TextBlock",
+                 //                               Text = "Storage",
+                 //                               Weight = TextWeight.Normal,
+                 //                               Size=TextSize.Normal,
+                 //                               Color=TextColor.Light,
+                 //                               Wrap = true,
+                 //                           }
+
+                 //                       }
+                 //                   },
+
+                 //           }
+
+                 //        },
+                 //   new ColumnSet()
+                 //   {
+                 //   Columns = new List<Column>()
+                 //   {
+                 //               new Column()
+                 //                   {
+                 //                      Size =ColumnSize.Stretch,
+                 //                       Items = new List<CardElement>()
+                 //                       {
+                 //                           new Image()
+                 //                           {
+                 //                               Url = "",
+                 //                               Size = ImageSize.Auto,
+                 //                               Style = ImageStyle.Normal,
+                 //                               HorizontalAlignment=HorizontalAlignment.Center
+                 //                           }
+
+                 //                       }
+                 //                   },
+                 //                new Column()
+                 //                   {
+                 //                       Items = new List<CardElement>()
+                 //                       {
+                 //                            new TextBlock()
+                 //                           {
+                 //                               Text =  "",
+                 //                               Weight = TextWeight.Normal,
+                 //                               HorizontalAlignment=HorizontalAlignment.Left,
+                 //                               Size=TextSize.ExtraLarge,
+                 //                               Wrap = true,
+                 //                               Color=TextColor.Light,
+                 //                           }
+                 //                       }
+                 //                   }
+                 //   }
+                 //   },
+                    //new ColumnSet()
+                    //{
+                    //Columns = new List<Column>()
+                    //            {
+                    //            new Column()
+                    //                {
+                    //                   Size =ColumnSize.Stretch,
+                    //                    Items = new List<CardElement>()
+                    //                    {
+                    //                        new Image()
+                    //                        {
+                    //                            Url = "",
+                    //                            Size = ImageSize.Auto,
+                    //                            Style = ImageStyle.Normal,
+                    //                            HorizontalAlignment=HorizontalAlignment.Center
+                    //                        }
+                    //                    }
+                    //                },
+                    //             new Column()
+                    //                {
+                    //                    Items = new List<CardElement>()
+                    //                    {
+                    //                         new TextBlock()
+                    //                        {
+                    //                            Text =  "",
+                    //                            Weight = TextWeight.Normal,
+                    //                            HorizontalAlignment=HorizontalAlignment.Left,
+                    //                            Size=TextSize.ExtraLarge,
+                    //                            Wrap = true,
+                    //                            Color=TextColor.Light,
+                    //                        }
+                    //                    }
+                    //                }
+                    //}
+                    //},
+
+                   }
+                }
+                }
             };
 
             Attachment attachment = new Attachment()
             {
                 ContentType = AdaptiveCard.ContentType,
-                Content = card
+                Content = cardone
             };
+            #endregion
 
-           // var reply = context.MakeMessage();
             reply.Attachments.Add(attachment);
 
             await context.PostAsync(reply);
+
+
+           // AdaptiveCard card = new AdaptiveCard()
+           // {
+           //     Title= "Hello!</s><s>Are you looking for a flight or a hotel?",
+           //     Speak= "Hello!</s><s>Are you looking for a flight or a hotel?",
+           //     Body = new List<CardElement>()
+           //     {
+           //         new Container()
+           //         {
+                       
+           //             Items = new List<CardElement>()
+           //             {
+           //                 new ColumnSet()
+           //                 {
+           //                     Columns = new List<Column>()
+           //                     {
+           //                         new Column()
+           //                         {
+           //                             Size = ColumnSize.Auto,
+           //                             Items = new List<CardElement>()
+           //                             {
+           //                                 new Image()
+           //                                 {
+           //                                     Url = "https://placeholdit.imgix.net/~text?txtsize=65&txt=Adaptive+Cards&w=300&h=300",
+           //                                     Size = ImageSize.Medium,
+           //                                     Style = ImageStyle.Person
+           //                                 }
+           //                             }
+           //                         },
+           //                         new Column()
+           //                         {
+           //                             Size = ColumnSize.Stretch,
+           //                             Items = new List<CardElement>()
+           //                             {
+           //                                 new TextBlock()
+           //                                 {
+           //                                     Text =  "Hello!",
+           //                                     Speak="Hello",
+           //                                     Weight = TextWeight.Bolder,
+           //                                     IsSubtle = true
+           //                                 },
+           //                                 new TextBlock()
+           //                                 {
+           //                                     Text = "Are you looking for sub Content?",
+           //                                     Wrap = true,
+           //                                     Speak="Are you looking for sub Content?"
+
+           //                                 }
+           //                             }
+           //                         }
+           //                     }
+           //                 }
+           //             }
+           //         }
+           //     },
+               
+           // };
+
+           // Attachment attachment = new Attachment()
+           // {
+           //     ContentType = AdaptiveCard.ContentType,
+           //     Content = card
+           // };
+
+           //// var reply = context.MakeMessage();
+           // reply.Attachments.Add(attachment);
+
+           // await context.PostAsync(reply);
 
         }
 
@@ -950,10 +952,15 @@ namespace Microsoft.Bot.Sample.LuisBot
             {
                 BackgroundImage = "https://edelmangavelbot.azurewebsites.net/Images/img_background_01.png",
                 Title = "Over All Applciation Health",
-                Speak = "<s>Over All Applciation Health.</s>",
+                Speak = "Over All Applciation Health",
+                Version="1.0",
                 Body = new List<CardElement>()
                 {
-                    //EMpty Columnset
+                new Container()
+                    {
+
+                 Items = new List<CardElement>()
+                    {
                 new ColumnSet()
                 {
                     Columns = new List<Column>()
@@ -1357,8 +1364,8 @@ namespace Microsoft.Bot.Sample.LuisBot
                         },
                          new Column()
                         {
-                            Size = "30",                            
-                            
+                            Size = "30",
+
                             Items = new List<CardElement>()
                             {
                                 new TextBlock()
@@ -1459,363 +1466,364 @@ namespace Microsoft.Bot.Sample.LuisBot
                         }
                         }
                     },
-                //Third Columnset
-                new ColumnSet()
-                {
-                    Columns = new List<Column>()
-                    {
-                        new Column()
-                        {
-                            Size = "10",
-                            Items = new List<CardElement>()
-                            {
-                                new Image()
+               // //Third Columnset
+               // new ColumnSet()
+               // {
+               //     Columns = new List<Column>()
+               //     {
+               //         new Column()
+               //         {
+               //             Size = "10",
+               //             Items = new List<CardElement>()
+               //             {
+               //                 new Image()
 
-                                {
-                                    Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_risk.png",
-                                    Size = ImageSize.Auto,
-                                    Style = ImageStyle.Normal,
-                                    HorizontalAlignment = HorizontalAlignment.Right
-                                }
-                            }
-                        },
-                         new Column()
-                        {
-                            Size = "30",
-                            Items = new List<CardElement>()
-                            {
-                                new TextBlock()
-                                {
-                                    Text =  "IMPS",
-                                    HorizontalAlignment = HorizontalAlignment.Left,
-                                    Color = TextColor.Light,
-                                    Wrap = false
-                                }
-                            }
-                        },
-                         new Column()
-                        {
-                            Size = "5",
-                            Items = new List<CardElement>()
-                            {
-                                new Image()
+               //                 {
+               //                     Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_risk.png",
+               //                     Size = ImageSize.Auto,
+               //                     Style = ImageStyle.Normal,
+               //                     HorizontalAlignment = HorizontalAlignment.Right
+               //                 }
+               //             }
+               //         },
+               //          new Column()
+               //         {
+               //             Size = "30",
+               //             Items = new List<CardElement>()
+               //             {
+               //                 new TextBlock()
+               //                 {
+               //                     Text =  "IMPS",
+               //                     HorizontalAlignment = HorizontalAlignment.Left,
+               //                     Color = TextColor.Light,
+               //                     Wrap = false
+               //                 }
+               //             }
+               //         },
+               //          new Column()
+               //         {
+               //             Size = "5",
+               //             Items = new List<CardElement>()
+               //             {
+               //                 new Image()
 
-                                {
-                                    Url = "",
-                                    Size = ImageSize.Auto,
-                                    Style = ImageStyle.Normal,
-                                    HorizontalAlignment = HorizontalAlignment.Right
-                                }
-                            }
-                        },
-                         new Column()
-                        {
-                            Size = "10",
-                            Items = new List<CardElement>()
-                            {
-                                new Image()
+               //                 {
+               //                     Url = "",
+               //                     Size = ImageSize.Auto,
+               //                     Style = ImageStyle.Normal,
+               //                     HorizontalAlignment = HorizontalAlignment.Right
+               //                 }
+               //             }
+               //         },
+               //          new Column()
+               //         {
+               //             Size = "10",
+               //             Items = new List<CardElement>()
+               //             {
+               //                 new Image()
 
-                                {
-                                    Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_alert.png",
-                                    Size = ImageSize.Auto,
-                                    Style = ImageStyle.Normal,
-                                    HorizontalAlignment = HorizontalAlignment.Right
-                                }
-                            }
-                         }, new Column()
-                        {
-                            Size = "30",
-                            Items = new List<CardElement>()
-                            {
-                                new TextBlock()
-                                {
-                                    Text =  "3DSecure",
-                                    HorizontalAlignment = HorizontalAlignment.Left,
-                                    Color = TextColor.Light,
-                                    Wrap = false
-                                }
-                            }
-                        },
-                         new Column()
-                        {
-                            Size = "5",
-                            Items = new List<CardElement>()
-                            {
-                                new Image()
+               //                 {
+               //                     Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_alert.png",
+               //                     Size = ImageSize.Auto,
+               //                     Style = ImageStyle.Normal,
+               //                     HorizontalAlignment = HorizontalAlignment.Right
+               //                 }
+               //             }
+               //          }, new Column()
+               //         {
+               //             Size = "30",
+               //             Items = new List<CardElement>()
+               //             {
+               //                 new TextBlock()
+               //                 {
+               //                     Text =  "3DSecure",
+               //                     HorizontalAlignment = HorizontalAlignment.Left,
+               //                     Color = TextColor.Light,
+               //                     Wrap = false
+               //                 }
+               //             }
+               //         },
+               //          new Column()
+               //         {
+               //             Size = "5",
+               //             Items = new List<CardElement>()
+               //             {
+               //                 new Image()
 
-                                {
-                                    Url = "",
-                                    Size = ImageSize.Auto,
-                                    Style = ImageStyle.Normal,
-                                    HorizontalAlignment = HorizontalAlignment.Right
-                                }
-                            }
-                        },
-                          new Column()
-                        {
-                            Size = "10",
-                            Items = new List<CardElement>()
-                            {
-                                new Image()
+               //                 {
+               //                     Url = "",
+               //                     Size = ImageSize.Auto,
+               //                     Style = ImageStyle.Normal,
+               //                     HorizontalAlignment = HorizontalAlignment.Right
+               //                 }
+               //             }
+               //         },
+               //           new Column()
+               //         {
+               //             Size = "10",
+               //             Items = new List<CardElement>()
+               //             {
+               //                 new Image()
 
-                                {
-                                    Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_healthy.png",
-                                    Size = ImageSize.Auto,
-                                    Style = ImageStyle.Normal,
-                                    HorizontalAlignment = HorizontalAlignment.Right
-                                }
-                            }
-                          },
-                          new Column()
-                        {
-                            Size = "30",
-                            Items = new List<CardElement>()
-                            {
-                                new TextBlock()
-                                {
-                                    Text =  "iCore",
-                                    HorizontalAlignment = HorizontalAlignment.Left,
-                                    Color = TextColor.Light,
-                                    Wrap = false
-                                }
-                            }
-                        }
-                        }
-                    },
-                //Fourth Columnset
-                new ColumnSet()
-                {
-                    Columns = new List<Column>()
-                    {
-                        new Column()
-                        {
-                            Size = "10",
-                            Items = new List<CardElement>()
-                            {
-                                new Image()
+               //                 {
+               //                     Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_healthy.png",
+               //                     Size = ImageSize.Auto,
+               //                     Style = ImageStyle.Normal,
+               //                     HorizontalAlignment = HorizontalAlignment.Right
+               //                 }
+               //             }
+               //           },
+               //           new Column()
+               //         {
+               //             Size = "30",
+               //             Items = new List<CardElement>()
+               //             {
+               //                 new TextBlock()
+               //                 {
+               //                     Text =  "iCore",
+               //                     HorizontalAlignment = HorizontalAlignment.Left,
+               //                     Color = TextColor.Light,
+               //                     Wrap = false
+               //                 }
+               //             }
+               //         }
+               //         }
+               //     },
+               // //Fourth Columnset
+               // new ColumnSet()
+               // {
+               //     Columns = new List<Column>()
+               //     {
+               //         new Column()
+               //         {
+               //             Size = "10",
+               //             Items = new List<CardElement>()
+               //             {
+               //                 new Image()
 
-                                {
-                                    Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_risk.png",
-                                    Size = ImageSize.Auto,
-                                    Style = ImageStyle.Normal,
-                                    HorizontalAlignment = HorizontalAlignment.Right
-                                }
-                            }
-                        },
-                         new Column()
-                        {
-                            Size = "30",
-                            Items = new List<CardElement>()
-                            {
-                                new TextBlock()
-                                {
-                                    Text =  "DBP",
-                                    HorizontalAlignment = HorizontalAlignment.Left,
-                                    Color = TextColor.Light,
-                                    Wrap = false
-                                }
-                            }
-                        },
-                         new Column()
-                        {
-                            Size = "5",
-                            Items = new List<CardElement>()
-                            {
-                                new Image()
+               //                 {
+               //                     Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_risk.png",
+               //                     Size = ImageSize.Auto,
+               //                     Style = ImageStyle.Normal,
+               //                     HorizontalAlignment = HorizontalAlignment.Right
+               //                 }
+               //             }
+               //         },
+               //          new Column()
+               //         {
+               //             Size = "30",
+               //             Items = new List<CardElement>()
+               //             {
+               //                 new TextBlock()
+               //                 {
+               //                     Text =  "DBP",
+               //                     HorizontalAlignment = HorizontalAlignment.Left,
+               //                     Color = TextColor.Light,
+               //                     Wrap = false
+               //                 }
+               //             }
+               //         },
+               //          new Column()
+               //         {
+               //             Size = "5",
+               //             Items = new List<CardElement>()
+               //             {
+               //                 new Image()
 
-                                {
-                                    Url = "",
-                                    Size = ImageSize.Auto,
-                                    Style = ImageStyle.Normal,
-                                    HorizontalAlignment = HorizontalAlignment.Right
-                                }
-                            }
-                        },
-                         new Column()
-                        {
-                            Size = "10",
-                            Items = new List<CardElement>()
-                            {
-                                new Image()
+               //                 {
+               //                     Url = "",
+               //                     Size = ImageSize.Auto,
+               //                     Style = ImageStyle.Normal,
+               //                     HorizontalAlignment = HorizontalAlignment.Right
+               //                 }
+               //             }
+               //         },
+               //          new Column()
+               //         {
+               //             Size = "10",
+               //             Items = new List<CardElement>()
+               //             {
+               //                 new Image()
 
-                                {
-                                    Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_alert.png",
-                                    Size = ImageSize.Auto,
-                                    Style = ImageStyle.Normal,
-                                    HorizontalAlignment = HorizontalAlignment.Right
-                                }
-                            }
-                         }, new Column()
-                        {
-                            Size = "30",
-                            Items = new List<CardElement>()
-                            {
-                                new TextBlock()
-                                {
-                                    Text =  "iLoans",
-                                    HorizontalAlignment = HorizontalAlignment.Left,
-                                    Color = TextColor.Light,
-                                    Wrap = false
-                                }
-                            }
-                        },
-                         new Column()
-                        {
-                            Size = "5",
-                            Items = new List<CardElement>()
-                            {
-                                new Image()
+               //                 {
+               //                     Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_alert.png",
+               //                     Size = ImageSize.Auto,
+               //                     Style = ImageStyle.Normal,
+               //                     HorizontalAlignment = HorizontalAlignment.Right
+               //                 }
+               //             }
+               //          }, new Column()
+               //         {
+               //             Size = "30",
+               //             Items = new List<CardElement>()
+               //             {
+               //                 new TextBlock()
+               //                 {
+               //                     Text =  "iLoans",
+               //                     HorizontalAlignment = HorizontalAlignment.Left,
+               //                     Color = TextColor.Light,
+               //                     Wrap = false
+               //                 }
+               //             }
+               //         },
+               //          new Column()
+               //         {
+               //             Size = "5",
+               //             Items = new List<CardElement>()
+               //             {
+               //                 new Image()
 
-                                {
-                                    Url = "",
-                                    Size = ImageSize.Auto,
-                                    Style = ImageStyle.Normal,
-                                    HorizontalAlignment = HorizontalAlignment.Right
-                                }
-                            }
-                        },
-                          new Column()
-                        {
-                            Size = "10",
-                            Items = new List<CardElement>()
-                            {
-                                new Image()
+               //                 {
+               //                     Url = "",
+               //                     Size = ImageSize.Auto,
+               //                     Style = ImageStyle.Normal,
+               //                     HorizontalAlignment = HorizontalAlignment.Right
+               //                 }
+               //             }
+               //         },
+               //           new Column()
+               //         {
+               //             Size = "10",
+               //             Items = new List<CardElement>()
+               //             {
+               //                 new Image()
 
-                                {
-                                    Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_healthy.png",
-                                    Size = ImageSize.Auto,
-                                    Style = ImageStyle.Normal,
-                                    HorizontalAlignment = HorizontalAlignment.Right
-                                }
-                            }
-                          },
-                          new Column()
-                        {
-                            Size = "30",
-                            Items = new List<CardElement>()
-                            {
-                                new TextBlock()
-                                {
-                                    Text =  "iMobile",
-                                    HorizontalAlignment = HorizontalAlignment.Left,
-                                    Color = TextColor.Light,
-                                    Wrap = false
-                                }
-                            }
-                        }
-                        }
-                    },
-                // Empty ColumnSet
-                new ColumnSet()
-               {
-                    Columns = new List<Column>()
-                    {
-                        new Column()
-                        {
-                            Size = ColumnSize.Stretch,
-                            Items = new List<CardElement>()
-                            {
-                                new Image()
+               //                 {
+               //                     Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_healthy.png",
+               //                     Size = ImageSize.Auto,
+               //                     Style = ImageStyle.Normal,
+               //                     HorizontalAlignment = HorizontalAlignment.Right
+               //                 }
+               //             }
+               //           },
+               //           new Column()
+               //         {
+               //             Size = "30",
+               //             Items = new List<CardElement>()
+               //             {
+               //                 new TextBlock()
+               //                 {
+               //                     Text =  "iMobile",
+               //                     HorizontalAlignment = HorizontalAlignment.Left,
+               //                     Color = TextColor.Light,
+               //                     Wrap = false
+               //                 }
+               //             }
+               //         }
+               //         }
+               //     },
+               // // Empty ColumnSet
+               // new ColumnSet()
+               //{
+               //     Columns = new List<Column>()
+               //     {
+               //         new Column()
+               //         {
+               //             Size = ColumnSize.Stretch,
+               //             Items = new List<CardElement>()
+               //             {
+               //                 new Image()
 
-                                {
-                                    Url = " ",
-                                    Size = ImageSize.Auto,
-                                    Style = ImageStyle.Normal,
-                                    HorizontalAlignment = HorizontalAlignment.Right
-                                }
-                            }
-                        },
-                        new Column()
-                        {
-                            Size = ColumnSize.Stretch,
-                            Items = new List<CardElement>()
-                            {
-                                new TextBlock()
+               //                 {
+               //                     Url = " ",
+               //                     Size = ImageSize.Auto,
+               //                     Style = ImageStyle.Normal,
+               //                     HorizontalAlignment = HorizontalAlignment.Right
+               //                 }
+               //             }
+               //         },
+               //         new Column()
+               //         {
+               //             Size = ColumnSize.Stretch,
+               //             Items = new List<CardElement>()
+               //             {
+               //                 new TextBlock()
 
-                                {
-                                  Text = "",
-                                    Size = TextSize.Normal,
-                                    Weight = TextWeight.Normal,
-                                    HorizontalAlignment = HorizontalAlignment.Right
-                                }
-                            }
-                        }
-                    }
-                 },
-                new ColumnSet()
-                {
-                    Columns = new List<Column>()
-                    {
-                        new Column()
-                        {
-                            Size = ColumnSize.Stretch,
-                            Items = new List<CardElement>()
-                            {
-                                new Image()
+               //                 {
+               //                   Text = "",
+               //                     Size = TextSize.Normal,
+               //                     Weight = TextWeight.Normal,
+               //                     HorizontalAlignment = HorizontalAlignment.Right
+               //                 }
+               //             }
+               //         }
+               //     }
+               //  },
+               // new ColumnSet()
+               // {
+               //     Columns = new List<Column>()
+               //     {
+               //         new Column()
+               //         {
+               //             Size = ColumnSize.Stretch,
+               //             Items = new List<CardElement>()
+               //             {
+               //                 new Image()
 
-                                {
-                                    Url = " ",
-                                    Size = ImageSize.Auto,
-                                    Style = ImageStyle.Normal,
-                                    HorizontalAlignment = HorizontalAlignment.Right
-                                }
-                            }
-                        },
-                        new Column()
-                        {
-                            Size = ColumnSize.Stretch,
-                            Items = new List<CardElement>()
-                            {
-                                new TextBlock()
+               //                 {
+               //                     Url = " ",
+               //                     Size = ImageSize.Auto,
+               //                     Style = ImageStyle.Normal,
+               //                     HorizontalAlignment = HorizontalAlignment.Right
+               //                 }
+               //             }
+               //         },
+               //         new Column()
+               //         {
+               //             Size = ColumnSize.Stretch,
+               //             Items = new List<CardElement>()
+               //             {
+               //                 new TextBlock()
 
-                                {
-                                  Text = "",
-                                   Size = TextSize.Normal,
-                                    Weight = TextWeight.Normal,
-                                    HorizontalAlignment = HorizontalAlignment.Right
-                                }
-                            }
-                        }
-                    }
-                 },
-                new ColumnSet()
-                {
-                    Columns = new List<Column>()
-                    {
-                        new Column()
-                        {
-                            Size = ColumnSize.Stretch,
-                            Items = new List<CardElement>()
-                            {
-                                new Image()
+               //                 {
+               //                   Text = "",
+               //                    Size = TextSize.Normal,
+               //                     Weight = TextWeight.Normal,
+               //                     HorizontalAlignment = HorizontalAlignment.Right
+               //                 }
+               //             }
+               //         }
+               //     }
+               //  },
+               // new ColumnSet()
+               // {
+               //     Columns = new List<Column>()
+               //     {
+               //         new Column()
+               //         {
+               //             Size = ColumnSize.Stretch,
+               //             Items = new List<CardElement>()
+               //             {
+               //                 new Image()
 
-                                {
-                                    Url = " ",
-                                    Size = ImageSize.Auto,
-                                    Style = ImageStyle.Normal,
-                                    HorizontalAlignment = HorizontalAlignment.Right
-                                }
-                            }
-                        },
-                        new Column()
-                        {
-                            Size = ColumnSize.Stretch,
-                            Items = new List<CardElement>()
-                            {
-                                new TextBlock()
+               //                 {
+               //                     Url = " ",
+               //                     Size = ImageSize.Auto,
+               //                     Style = ImageStyle.Normal,
+               //                     HorizontalAlignment = HorizontalAlignment.Right
+               //                 }
+               //             }
+               //         },
+               //         new Column()
+               //         {
+               //             Size = ColumnSize.Stretch,
+               //             Items = new List<CardElement>()
+               //             {
+               //                 new TextBlock()
 
-                                {
-                                  Text = "",
-                                    Size = TextSize.Normal,
-                                    Weight = TextWeight.Normal,
-                                    HorizontalAlignment = HorizontalAlignment.Right
-                                }
-                            }
-                        }
-                    }
-                 }
+               //                 {
+               //                   Text = "",
+               //                     Size = TextSize.Normal,
+               //                     Weight = TextWeight.Normal,
+               //                     HorizontalAlignment = HorizontalAlignment.Right
+               //                 }
+               //             }
+               //         }
+               //     }
+               //  }
             }
-
+                 }
+                }
             };
             // Create the attachment.
 
