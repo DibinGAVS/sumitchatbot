@@ -685,7 +685,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                 new Image()
                                     {
                                     Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_application.png",
-                                    Size = ImageSize.Large,
+                                    Size = ImageSize.Auto,
                                     Style = ImageStyle.Normal,
                                     HorizontalAlignment = HorizontalAlignment.Center
                                     }
@@ -693,7 +693,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                             },
                         new Column()
                             {
-                                Size = "25",
+                                Size = "20",
                                 Style = ContainerStyle.Normal,
 
                                 Items = new List<CardElement>()
@@ -701,7 +701,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                      new Image()
                                     {
                                     Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_risk.png",
-                                    Size = ImageSize.Large,
+                                    Size = ImageSize.Auto,
                                     Style = ImageStyle.Normal,
                                     HorizontalAlignment = HorizontalAlignment.Center
                                     },
@@ -730,7 +730,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                             },
                         new Column()
                             {
-                                Size = "15",
+                                Size = "20",
                                  Style = ContainerStyle.Normal,
                                  Separation = SeparationStyle.Strong,
                                 Items = new List<CardElement>()
@@ -738,8 +738,8 @@ namespace Microsoft.Bot.Sample.LuisBot
                                      new Image()
                                     {
                                     Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_alert.png",
-                                    Size = ImageSize.Large,
-                                    Style = ImageStyle.Person,
+                                    Size = ImageSize.Auto,
+                                    Style = ImageStyle.Normal,
                                     HorizontalAlignment = HorizontalAlignment.Center
                                     },
                                 new TextBlock()
@@ -772,7 +772,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                      new Image()
                                     {
                                     Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_healthy.png",
-                                    Size = ImageSize.Large,
+                                    Size = ImageSize.Auto,
                                     Style = ImageStyle.Normal,
                                     HorizontalAlignment = HorizontalAlignment.Center
                                     },
