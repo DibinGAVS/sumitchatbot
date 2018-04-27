@@ -204,7 +204,7 @@ namespace Microsoft.Bot.Sample.LuisBot
               {
                   new Container()
                     {
-
+                      Speak="Container",
                  Items = new List<CardElement>()
                     {
 
@@ -245,6 +245,16 @@ namespace Microsoft.Bot.Sample.LuisBot
                                 new Column()
                                     {
                                         Size =ColumnSize.Stretch,
+                                    },
+                    }
+                    },
+                    new ColumnSet()
+                    {
+                    Columns = new List<Column>()
+                    {
+                                new Column()
+                                    {
+                                        Size ="40",
                                         Items = new List<CardElement>()
                                         {
                                             new Image()
@@ -258,13 +268,14 @@ namespace Microsoft.Bot.Sample.LuisBot
                                     },
                                  new Column()
                                     {
+                                     Size="40",
                                         Items = new List<CardElement>()
                                         {
                                              new TextBlock()
                                             {
                                                 Text =  "Riskfort",
                                                 Weight = TextWeight.Normal,
-                                                HorizontalAlignment=HorizontalAlignment.Center,
+                                                HorizontalAlignment=HorizontalAlignment.Left,
                                                 Size=TextSize.Medium,
                                                 Wrap = true,
                                                 Color=TextColor.Light,
@@ -319,7 +330,6 @@ namespace Microsoft.Bot.Sample.LuisBot
                                             new TextBlock()
                                             {
                                                 Text =  "20 Alerts",
-                                                Speak = "20 Alerts",
                                                 Weight = TextWeight.Normal,
                                                 HorizontalAlignment=HorizontalAlignment.Center,
                                                 Size=TextSize.Normal,
@@ -349,7 +359,6 @@ namespace Microsoft.Bot.Sample.LuisBot
                                              new TextBlock()
                                             {
                                                 Text = "12 Correlation",
-                                                Speak= "12 Correlation",
                                                 Weight = TextWeight.Normal,
                                                 HorizontalAlignment=HorizontalAlignment.Center,
                                                 Size=TextSize.Normal,
@@ -409,6 +418,26 @@ namespace Microsoft.Bot.Sample.LuisBot
                                 
                     }
                     },
+                    new ColumnSet()
+                    {
+                    Columns = new List<Column>()
+                    {
+                                new Column()
+                                    {
+                                        Size =ColumnSize.Stretch,
+                                    },
+                    }
+                    },
+                    new ColumnSet()
+                    {
+                    Columns = new List<Column>()
+                    {
+                                new Column()
+                                    {
+                                        Size =ColumnSize.Stretch,
+                                    },
+                    }
+                    },
                  // third column
                  
                     new ColumnSet()
@@ -417,6 +446,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                     {
                              new Column()
                                     {
+                                 Size="10",
                                         Items = new List<CardElement>()
                                         {
                                                 new Image()
@@ -439,6 +469,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                     },
                              new Column()
                                     {
+                                 Size="12",
                                         Separation=SeparationStyle.Strong,
                                         Items = new List<CardElement>()
                                         {
@@ -463,6 +494,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                     },
                              new Column()
                                     {
+                                 Size="15",
                                         Separation=SeparationStyle.Strong,
                                         Items = new List<CardElement>()
                                         {
@@ -487,6 +519,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                     },
                              new Column()
                                     {
+                                 Size="15",
                                         Separation=SeparationStyle.Strong,
                                         Items = new List<CardElement>()
                                         {
@@ -511,6 +544,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                     },
                              new Column()
                                     {
+                                 Size="15",
                                         Separation=SeparationStyle.Strong,
                                         Items = new List<CardElement>()
                                         {
@@ -561,7 +595,42 @@ namespace Microsoft.Bot.Sample.LuisBot
                                
                     }
                     },
+                     new ColumnSet()
+                    {
+                    Columns = new List<Column>()
+                                {
+                                new Column()
+                                    {
+                                       Size =ColumnSize.Stretch,
 
+                                    },
+
+                    }
+                    },
+                      new ColumnSet()
+                    {
+                    Columns = new List<Column>()
+                                {
+                                new Column()
+                                    {
+                                       Size =ColumnSize.Stretch,
+
+                                    },
+
+                    }
+                    },
+                       new ColumnSet()
+                    {
+                    Columns = new List<Column>()
+                                {
+                                new Column()
+                                    {
+                                       Size =ColumnSize.Stretch,
+
+                                    },
+
+                    }
+                    },
                    }
                 }
                 }
@@ -619,7 +688,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                 {
                    new Container()
                     {
-
+                       Speak="Container",
                  Items = new List<CardElement>()
                     {
                 new ColumnSet()
@@ -691,7 +760,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                 new Image()
                                     {
                                     Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_application.png",
-                                    Size = ImageSize.Medium,
+                                    Size = ImageSize.Auto,
                                     Style = ImageStyle.Normal,
                                     HorizontalAlignment = HorizontalAlignment.Center
                                     }
@@ -761,7 +830,6 @@ namespace Microsoft.Bot.Sample.LuisBot
                                 new TextBlock()
                                     {
                                     Text = "Risk",
-                                    Speak= "8 Risk",
                                     Size = TextSize.Small,
                                     Color = TextColor.Light,
                                     Wrap = true,
@@ -795,7 +863,6 @@ namespace Microsoft.Bot.Sample.LuisBot
                                 new TextBlock()
                                     {
                                     Text = "Warning",
-                                    Speak= "2 Warning",
                                     Size = TextSize.Small,
                                     Color = TextColor.Light,
                                     Wrap = true,
