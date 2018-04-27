@@ -7,11 +7,9 @@ using Microsoft.Bot.Builder.Luis;
 using Microsoft.Bot.Builder.Luis.Models;
 using RestSharp;
 using Newtonsoft.Json.Linq;
-using System.Text;
 using AdaptiveCards;
 using System.Collections.Generic;
 using Microsoft.Bot.Connector;
-using AdaptiveCards.Rendering.Config;
 
 namespace Microsoft.Bot.Sample.LuisBot
 {
@@ -217,32 +215,9 @@ namespace Microsoft.Bot.Sample.LuisBot
                                 new Column()
                                     {
                                         Size =ColumnSize.Stretch,
-                                        Items = new List<CardElement>()
-                                        {
-                                            new Image()
-                                            {
-                                                Url = "",
-                                                Size = ImageSize.Auto,
-                                                Style = ImageStyle.Normal,
-                                                HorizontalAlignment=HorizontalAlignment.Center
-                                            }
-                                        }
+                                       
                                     },
-                                 new Column()
-                                    {
-                                        Items = new List<CardElement>()
-                                        {
-                                             new TextBlock()
-                                            {
-                                                Text =  "",
-                                                Weight = TextWeight.Normal,
-                                                HorizontalAlignment=HorizontalAlignment.Left,
-                                                Size=TextSize.ExtraLarge,
-                                                Wrap = true,
-                                                Color=TextColor.Light,
-                                            }
-                                        }
-                                    }
+                               
                     }
                     },
                     new ColumnSet()
@@ -252,32 +227,8 @@ namespace Microsoft.Bot.Sample.LuisBot
                                 new Column()
                                     {
                                         Size =ColumnSize.Stretch,
-                                        Items = new List<CardElement>()
-                                        {
-                                            new Image()
-                                            {
-                                                Url = "",
-                                                Size = ImageSize.Auto,
-                                                Style = ImageStyle.Normal,
-                                                HorizontalAlignment=HorizontalAlignment.Center
-                                            }
-                                        }
                                     },
-                                 new Column()
-                                    {
-                                        Items = new List<CardElement>()
-                                        {
-                                             new TextBlock()
-                                            {
-                                                Text =  "",
-                                                Weight = TextWeight.Normal,
-                                                HorizontalAlignment=HorizontalAlignment.Left,
-                                                Size=TextSize.ExtraLarge,
-                                                Wrap = true,
-                                                Color=TextColor.Light,
-                                            }
-                                        }
-                                    }
+                                 
                     }
                     },
                     new ColumnSet()
@@ -287,32 +238,9 @@ namespace Microsoft.Bot.Sample.LuisBot
                                 new Column()
                                     {
                                         Size =ColumnSize.Stretch,
-                                        Items = new List<CardElement>()
-                                        {
-                                            new Image()
-                                            {
-                                                Url = "",
-                                                Size = ImageSize.Auto,
-                                                Style = ImageStyle.Normal,
-                                                HorizontalAlignment=HorizontalAlignment.Center
-                                            }
-                                        }
+                                       
                                     },
-                                 new Column()
-                                    {
-                                        Items = new List<CardElement>()
-                                        {
-                                             new TextBlock()
-                                            {
-                                                Text =  "",
-                                                Weight = TextWeight.Normal,
-                                                HorizontalAlignment=HorizontalAlignment.Left,
-                                                Size=TextSize.ExtraLarge,
-                                                Wrap = true,
-                                                Color=TextColor.Light,
-                                            }
-                                        }
-                                    }
+                                
                     }
                     },
                     new ColumnSet()
@@ -356,32 +284,32 @@ namespace Microsoft.Bot.Sample.LuisBot
                                 new Column()
                                     {
                                        Size =ColumnSize.Stretch,
-                                        Items = new List<CardElement>()
-                                        {
-                                            new Image()
-                                            {
-                                                Url = "",
-                                                Size = ImageSize.Auto,
-                                                Style = ImageStyle.Normal,
-                                                HorizontalAlignment=HorizontalAlignment.Center
-                                            }
-                                        }
+                                        //Items = new List<CardElement>()
+                                        //{
+                                        //    new Image()
+                                        //    {
+                                        //        Url = "",
+                                        //        Size = ImageSize.Auto,
+                                        //        Style = ImageStyle.Normal,
+                                        //        HorizontalAlignment=HorizontalAlignment.Center
+                                        //    }
+                                        //}
                                     },
-                                 new Column()
-                                    {
-                                        Items = new List<CardElement>()
-                                        {
-                                             new TextBlock()
-                                            {
-                                                Text =  "",
-                                                Weight = TextWeight.Normal,
-                                                HorizontalAlignment=HorizontalAlignment.Left,
-                                                Size=TextSize.ExtraLarge,
-                                                Wrap = true,
-                                                Color=TextColor.Light,
-                                            }
-                                        }
-                                    }
+                                 //new Column()
+                                 //   {
+                                 //       Items = new List<CardElement>()
+                                 //       {
+                                 //            new TextBlock()
+                                 //           {
+                                 //               Text =  "",
+                                 //               Weight = TextWeight.Normal,
+                                 //               HorizontalAlignment=HorizontalAlignment.Left,
+                                 //               Size=TextSize.ExtraLarge,
+                                 //               Wrap = true,
+                                 //               Color=TextColor.Light,
+                                 //           }
+                                 //       }
+                                 //   }
                     }
                     },
                     new ColumnSet()
@@ -468,32 +396,32 @@ namespace Microsoft.Bot.Sample.LuisBot
                                 new Column()
                                     {
                                         Size =ColumnSize.Stretch,
-                                        Items = new List<CardElement>()
-                                        {
-                                            new Image()
-                                            {
-                                                Url = "",
-                                                Size = ImageSize.Auto,
-                                                Style = ImageStyle.Normal,
-                                                HorizontalAlignment=HorizontalAlignment.Center
-                                            }
-                                        }
+                                        //Items = new List<CardElement>()
+                                        //{
+                                        //    new Image()
+                                        //    {
+                                        //        Url = "",
+                                        //        Size = ImageSize.Auto,
+                                        //        Style = ImageStyle.Normal,
+                                        //        HorizontalAlignment=HorizontalAlignment.Center
+                                        //    }
+                                        //}
                                     },
-                                 new Column()
-                                    {
-                                        Items = new List<CardElement>()
-                                        {
-                                             new TextBlock()
-                                            {
-                                                Text =  "",
-                                                Weight = TextWeight.Normal,
-                                                HorizontalAlignment=HorizontalAlignment.Left,
-                                                Size=TextSize.ExtraLarge,
-                                                Wrap = true,
-                                                Color=TextColor.Light,
-                                            }
-                                        }
-                                    }
+                                 //new Column()
+                                 //   {
+                                 //       Items = new List<CardElement>()
+                                 //       {
+                                 //            new TextBlock()
+                                 //           {
+                                 //               Text =  "",
+                                 //               Weight = TextWeight.Normal,
+                                 //               HorizontalAlignment=HorizontalAlignment.Left,
+                                 //               Size=TextSize.ExtraLarge,
+                                 //               Wrap = true,
+                                 //               Color=TextColor.Light,
+                                 //           }
+                                 //       }
+                                 //   }
                     }
                     },
                     new ColumnSet()
@@ -503,32 +431,32 @@ namespace Microsoft.Bot.Sample.LuisBot
                                 new Column()
                                     {
                                        Size =ColumnSize.Stretch,
-                                        Items = new List<CardElement>()
-                                        {
-                                            new Image()
-                                            {
-                                                Url = "",
-                                                Size = ImageSize.Auto,
-                                                Style = ImageStyle.Normal,
-                                                HorizontalAlignment=HorizontalAlignment.Center
-                                            }
-                                        }
+                                        //Items = new List<CardElement>()
+                                        //{
+                                        //    new Image()
+                                        //    {
+                                        //        Url = "",
+                                        //        Size = ImageSize.Auto,
+                                        //        Style = ImageStyle.Normal,
+                                        //        HorizontalAlignment=HorizontalAlignment.Center
+                                        //    }
+                                        //}
                                     },
-                                 new Column()
-                                    {
-                                        Items = new List<CardElement>()
-                                        {
-                                             new TextBlock()
-                                            {
-                                                Text =  "",
-                                                Weight = TextWeight.Normal,
-                                                HorizontalAlignment=HorizontalAlignment.Left,
-                                                Size=TextSize.ExtraLarge,
-                                                Wrap = true,
-                                                Color=TextColor.Light,
-                                            }
-                                        }
-                                    }
+                                 //new Column()
+                                 //   {
+                                 //       Items = new List<CardElement>()
+                                 //       {
+                                 //            new TextBlock()
+                                 //           {
+                                 //               Text =  "",
+                                 //               Weight = TextWeight.Normal,
+                                 //               HorizontalAlignment=HorizontalAlignment.Left,
+                                 //               Size=TextSize.ExtraLarge,
+                                 //               Wrap = true,
+                                 //               Color=TextColor.Light,
+                                 //           }
+                                 //       }
+                                 //   }
                     }
                     },
                     new ColumnSet()
@@ -538,34 +466,34 @@ namespace Microsoft.Bot.Sample.LuisBot
                                 new Column()
                                     {
                                         Size =ColumnSize.Stretch,
-                                        Items = new List<CardElement>()
-                                        {
-                                            new Image()
-                                            {
-                                                Url = "",
-                                                Size = ImageSize.Auto,
-                                                Style = ImageStyle.Normal,
-                                                HorizontalAlignment=HorizontalAlignment.Center
+                                        //Items = new List<CardElement>()
+                                        //{
+                                        //    new Image()
+                                        //    {
+                                        //        Url = "",
+                                        //        Size = ImageSize.Auto,
+                                        //        Style = ImageStyle.Normal,
+                                        //        HorizontalAlignment=HorizontalAlignment.Center
 
-                                            }
+                                        //    }
 
-                                        }
+                                        //}
                                     },
-                                 new Column()
-                                    {
-                                        Items = new List<CardElement>()
-                                        {
-                                             new TextBlock()
-                                            {
-                                                Text =  "",
-                                                Weight = TextWeight.Normal,
-                                                HorizontalAlignment=HorizontalAlignment.Left,
-                                                Size=TextSize.ExtraLarge,
-                                                Wrap = true,
-                                                Color=TextColor.Light,
-                                            }
-                                        }
-                                    }
+                                 //new Column()
+                                 //   {
+                                 //       Items = new List<CardElement>()
+                                 //       {
+                                 //            new TextBlock()
+                                 //           {
+                                 //               Text =  "",
+                                 //               Weight = TextWeight.Normal,
+                                 //               HorizontalAlignment=HorizontalAlignment.Left,
+                                 //               Size=TextSize.ExtraLarge,
+                                 //               Wrap = true,
+                                 //               Color=TextColor.Light,
+                                 //           }
+                                 //       }
+                                 //   }
                     }
                     },
                     new ColumnSet()
@@ -576,32 +504,32 @@ namespace Microsoft.Bot.Sample.LuisBot
                                 new Column()
                                     {
                                         Size =ColumnSize.Stretch,
-                                        Items = new List<CardElement>()
-                                        {
-                                            new Image()
-                                            {
-                                                Url = "",
-                                                Size = ImageSize.Auto,
-                                                Style = ImageStyle.Normal,
-                                                HorizontalAlignment=HorizontalAlignment.Center
-                                            }
-                                        }
+                                        //Items = new List<CardElement>()
+                                        //{
+                                        //    new Image()
+                                        //    {
+                                        //        Url = "",
+                                        //        Size = ImageSize.Auto,
+                                        //        Style = ImageStyle.Normal,
+                                        //        HorizontalAlignment=HorizontalAlignment.Center
+                                        //    }
+                                        //}
                                     },
-                                 new Column()
-                                    {
-                                        Items = new List<CardElement>()
-                                        {
-                                             new TextBlock()
-                                            {
-                                                Text =  "",
-                                                Weight = TextWeight.Normal,
-                                                HorizontalAlignment=HorizontalAlignment.Left,
-                                                Size=TextSize.ExtraLarge,
-                                                Wrap = true,
-                                                Color=TextColor.Light,
-                                            }
-                                        }
-                                    }
+                                 //new Column()
+                                 //   {
+                                 //       Items = new List<CardElement>()
+                                 //       {
+                                 //            new TextBlock()
+                                 //           {
+                                 //               Text =  "",
+                                 //               Weight = TextWeight.Normal,
+                                 //               HorizontalAlignment=HorizontalAlignment.Left,
+                                 //               Size=TextSize.ExtraLarge,
+                                 //               Wrap = true,
+                                 //               Color=TextColor.Light,
+                                 //           }
+                                 //       }
+                                 //   }
                     }
                     },
                  // third column
@@ -739,33 +667,33 @@ namespace Microsoft.Bot.Sample.LuisBot
                                 new Column()
                                     {
                                        Size =ColumnSize.Stretch,
-                                        Items = new List<CardElement>()
-                                        {
-                                            new Image()
-                                            {
-                                                Url = "",
-                                                Size = ImageSize.Auto,
-                                                Style = ImageStyle.Normal,
-                                                HorizontalAlignment=HorizontalAlignment.Center
-                                            }
+                                        //Items = new List<CardElement>()
+                                        //{
+                                        //    new Image()
+                                        //    {
+                                        //        Url = "",
+                                        //        Size = ImageSize.Auto,
+                                        //        Style = ImageStyle.Normal,
+                                        //        HorizontalAlignment=HorizontalAlignment.Center
+                                        //    }
 
-                                        }
+                                        //}
                                     },
-                                 new Column()
-                                    {
-                                        Items = new List<CardElement>()
-                                        {
-                                             new TextBlock()
-                                            {
-                                                Text =  "",
-                                                Weight = TextWeight.Normal,
-                                                HorizontalAlignment=HorizontalAlignment.Left,
-                                                Size=TextSize.ExtraLarge,
-                                                Wrap = true,
-                                                Color=TextColor.Light,
-                                            }
-                                        }
-                                    }
+                                 //new Column()
+                                 //   {
+                                 //       Items = new List<CardElement>()
+                                 //       {
+                                 //            new TextBlock()
+                                 //           {
+                                 //               Text =  "",
+                                 //               Weight = TextWeight.Normal,
+                                 //               HorizontalAlignment=HorizontalAlignment.Left,
+                                 //               Size=TextSize.ExtraLarge,
+                                 //               Wrap = true,
+                                 //               Color=TextColor.Light,
+                                 //           }
+                                 //       }
+                                 //   }
                     }
                     },
                     new ColumnSet()
@@ -775,32 +703,32 @@ namespace Microsoft.Bot.Sample.LuisBot
                                 new Column()
                                     {
                                        Size =ColumnSize.Stretch,
-                                        Items = new List<CardElement>()
-                                        {
-                                            new Image()
-                                            {
-                                                Url = "",
-                                                Size = ImageSize.Auto,
-                                                Style = ImageStyle.Normal,
-                                                HorizontalAlignment=HorizontalAlignment.Center
-                                            }
-                                        }
+                                        //Items = new List<CardElement>()
+                                        //{
+                                        //    new Image()
+                                        //    {
+                                        //        Url = "",
+                                        //        Size = ImageSize.Auto,
+                                        //        Style = ImageStyle.Normal,
+                                        //        HorizontalAlignment=HorizontalAlignment.Center
+                                        //    }
+                                        //}
                                     },
-                                 new Column()
-                                    {
-                                        Items = new List<CardElement>()
-                                        {
-                                             new TextBlock()
-                                            {
-                                                Text =  "",
-                                                Weight = TextWeight.Normal,
-                                                HorizontalAlignment=HorizontalAlignment.Left,
-                                                Size=TextSize.ExtraLarge,
-                                                Wrap = true,
-                                                Color=TextColor.Light,
-                                            }
-                                        }
-                                    }
+                                 //new Column()
+                                 //   {
+                                 //       Items = new List<CardElement>()
+                                 //       {
+                                 //            new TextBlock()
+                                 //           {
+                                 //               Text =  "",
+                                 //               Weight = TextWeight.Normal,
+                                 //               HorizontalAlignment=HorizontalAlignment.Left,
+                                 //               Size=TextSize.ExtraLarge,
+                                 //               Wrap = true,
+                                 //               Color=TextColor.Light,
+                                 //           }
+                                 //       }
+                                 //   }
                     }
                     },
 
