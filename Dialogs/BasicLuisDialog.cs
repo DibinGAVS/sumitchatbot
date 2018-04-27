@@ -244,6 +244,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                     {
                                 new Column()
                                     {
+                                        Size =ColumnSize.Stretch,
                                         Items = new List<CardElement>()
                                         {
                                             new Image()
@@ -263,7 +264,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                             {
                                                 Text =  "Riskfort",
                                                 Weight = TextWeight.Normal,
-                                                HorizontalAlignment=HorizontalAlignment.Left,
+                                                HorizontalAlignment=HorizontalAlignment.Center,
                                                 Size=TextSize.Medium,
                                                 Wrap = true,
                                                 Color=TextColor.Light,
@@ -633,6 +634,18 @@ namespace Microsoft.Bot.Sample.LuisBot
                         
                     }
                 },
+                 new ColumnSet()
+                {
+                    Columns = new List<Column>()
+                    {
+                        new Column()
+                        {
+                            Size = ColumnSize.Stretch,
+
+                        },
+
+                    }
+                },
                 new ColumnSet()
                 {
                     Columns = new List<Column>()
@@ -678,7 +691,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                 new Image()
                                     {
                                     Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_application.png",
-                                    Size = ImageSize.Large,
+                                    Size = ImageSize.Medium,
                                     Style = ImageStyle.Normal,
                                     HorizontalAlignment = HorizontalAlignment.Center
                                     }
@@ -694,7 +707,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                      new Image()
                                     {
                                     Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_risk.png",
-                                    Size = ImageSize.Medium,
+                                    Size = ImageSize.Small,
                                     Style = ImageStyle.Normal,
                                     HorizontalAlignment = HorizontalAlignment.Center
                                     },
@@ -731,7 +744,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                      new Image()
                                     {
                                     Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_alert.png",
-                                    Size = ImageSize.Medium,
+                                    Size = ImageSize.Small,
                                     Style = ImageStyle.Normal,
                                     HorizontalAlignment = HorizontalAlignment.Center
                                     },
@@ -765,7 +778,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                      new Image()
                                     {
                                     Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_healthy.png",
-                                    Size = ImageSize.Medium,
+                                    Size = ImageSize.Small,
                                     Style = ImageStyle.Normal,
                                     HorizontalAlignment = HorizontalAlignment.Center
                                     },
@@ -1170,6 +1183,214 @@ namespace Microsoft.Bot.Sample.LuisBot
                         }
                         }
                     },
+
+                                new ColumnSet()
+                {
+                    Columns = new List<Column>()
+                    {
+                        new Column()
+                        {
+                            Size = "10",
+                            Items = new List<CardElement>()
+                            {
+                                new AdaptiveCards.Image()
+
+                                {
+                                    Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_risk.png",
+                                    Size = ImageSize.Auto,
+                                    Style = ImageStyle.Normal,
+                                    HorizontalAlignment = HorizontalAlignment.Right
+                                }
+                            }
+                        },
+                         new Column()
+                        {
+                            Size = "30",
+                            Items = new List<CardElement>()
+                            {
+                                new TextBlock()
+                                {
+                                    Text =  "DBBank",
+                                    HorizontalAlignment = HorizontalAlignment.Left,
+                                    Color = TextColor.Light,
+                                    Wrap = false
+                                }
+                            }
+                        },
+                         new Column()
+                        {
+                            Size = "5",
+
+                        },
+                         new Column()
+                        {
+                            Size = "10",
+                            Items = new List<CardElement>()
+                            {
+                                new AdaptiveCards.Image()
+
+                                {
+                                    Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_alert.png",
+                                    Size = ImageSize.Auto,
+                                    Style = ImageStyle.Normal,
+                                    HorizontalAlignment = HorizontalAlignment.Right
+                                }
+                            }
+                         }, new Column()
+                        {
+                            Size = "30",
+                            Items = new List<CardElement>()
+                            {
+                                new TextBlock()
+                                {
+                                    Text =  "IAI",
+                                    HorizontalAlignment = HorizontalAlignment.Left,
+                                    Color = TextColor.Light,
+                                    Wrap = false
+                                }
+                            }
+                        },
+                         new Column()
+                        {
+                            Size = "5",
+
+                        },
+                          new Column()
+                        {
+                            Size = "10",
+                            Items = new List<CardElement>()
+                            {
+                                new AdaptiveCards.Image()
+
+                                {
+                                    Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_healthy.png",
+                                    Size = ImageSize.Auto,
+                                    Style = ImageStyle.Normal,
+                                    HorizontalAlignment = HorizontalAlignment.Right
+                                }
+                            }
+                          },
+                          new Column()
+                        {
+                            Size = "30",
+                            Items = new List<CardElement>()
+                            {
+                                new TextBlock()
+                                {
+                                    Text =  "EAI",
+                                    HorizontalAlignment = HorizontalAlignment.Left,
+                                    Color = TextColor.Light,
+                                    Wrap = false
+                                }
+                            }
+                        }
+                        }
+                    },
+                //Sixth Columnset
+                new ColumnSet()
+                {
+                    Columns = new List<Column>()
+                    {
+                        new Column()
+                        {
+                            Size = "10",
+                            Items = new List<CardElement>()
+                            {
+                                new AdaptiveCards.Image()
+
+                                {
+                                    Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_risk.png",
+                                    Size = ImageSize.Auto,
+                                    Style = ImageStyle.Normal,
+                                    HorizontalAlignment = HorizontalAlignment.Right
+                                }
+                            }
+                        },
+                         new Column()
+                        {
+                            Size = "30",
+                            Items = new List<CardElement>()
+                            {
+                                new TextBlock()
+                                {
+                                    Text =  "iCore India",
+                                    HorizontalAlignment = HorizontalAlignment.Left,
+                                    Color = TextColor.Light,
+                                    Wrap = false
+                                }
+                            }
+                        },
+                         new Column()
+                        {
+                            Size = "5",
+
+                        },
+                         new Column()
+                        {
+                            Size = "10",
+                            Items = new List<CardElement>()
+                            {
+                                new AdaptiveCards.Image()
+
+                                {
+                                    Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_alert.png",
+                                    Size = ImageSize.Auto,
+                                    Style = ImageStyle.Normal,
+                                    HorizontalAlignment = HorizontalAlignment.Right
+                                }
+                            }
+                         }, new Column()
+                        {
+                            Size = "30",
+                            Items = new List<CardElement>()
+                            {
+                                new TextBlock()
+                                {
+                                    Text =  "SMS Gateway",
+                                    HorizontalAlignment = HorizontalAlignment.Left,
+                                    Color = TextColor.Light,
+                                    Wrap = false
+                                }
+                            }
+                        },
+                         new Column()
+                        {
+                            Size = "5",
+
+                        },
+                          new Column()
+                        {
+                            Size = "10",
+                            Items = new List<CardElement>()
+                            {
+                                new AdaptiveCards.Image()
+
+                                {
+                                    Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_healthy.png",
+                                    Size = ImageSize.Auto,
+                                    Style = ImageStyle.Normal,
+                                    HorizontalAlignment = HorizontalAlignment.Right
+                                }
+                            }
+                          },
+                          new Column()
+                        {
+                            Size = "30",
+                            Items = new List<CardElement>()
+                            {
+                                new TextBlock()
+                                {
+                                    Text =  "iCards Online",
+                                    HorizontalAlignment = HorizontalAlignment.Left,
+                                    Color = TextColor.Light,
+                                    Wrap = false
+                                }
+                            }
+                        }
+                        }
+                    },
+
+
                 // Empty ColumnSet
                 new ColumnSet()
                {
