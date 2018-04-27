@@ -300,48 +300,50 @@ namespace Microsoft.Bot.Sample.LuisBot
                     {
                                     new Column()
                                     {
-                                         Size =ColumnSize.Stretch,
+                                         Size ="40",
                                         Items = new List<CardElement>()
                                         {
                                             new Image()
                                             {
                                                 Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_single_app.png",
-                                                Size = ImageSize.Small,
-                                                Style = ImageStyle.Normal
+                                                Size = ImageSize.Auto,
                                             }
                                         }
                                     },
                                      new Column()
                                     {
+                                         Size="10",
                                         Items = new List<CardElement>()
                                         {
                                              new Image()
                                             {
                                                 Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_alert_large.png",
                                                 Size = ImageSize.Small,
-                                                Style = ImageStyle.Normal
+                                                Style = ImageStyle.Normal,
+                                                HorizontalAlignment=HorizontalAlignment.Right
                                             },
                                         }
                                      },
                                     new Column()
                                     {
+                                        Size="20",
                                         Items = new List<CardElement>()
                                         {
                                             new TextBlock()
                                             {
                                                 Text =  "20 Alerts",
                                                 Weight = TextWeight.Normal,
-                                                HorizontalAlignment=HorizontalAlignment.Center,
+                                                HorizontalAlignment=HorizontalAlignment.Left,
                                                 Size=TextSize.Normal,
                                                 Wrap = true,
                                                 Color=TextColor.Light,
-                                                Separation=SeparationStyle.Strong,
                                             },
                                         }
                                     },
                                     new Column()
                                     {
                                         Separation=SeparationStyle.Strong,
+                                        Size="10",
                                         Items= new List<CardElement>()
                                         {
                                             new Image()
@@ -349,18 +351,20 @@ namespace Microsoft.Bot.Sample.LuisBot
                                                 Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_correlation.png",
                                                 Size = ImageSize.Small,
                                                 Style = ImageStyle.Person,
+                                                HorizontalAlignment=HorizontalAlignment.Right
                                             }
                                         }
                                     },
                                     new Column()
                                     {
+                                        Size="20",
                                         Items= new List<CardElement>()
                                         {
                                              new TextBlock()
                                             {
                                                 Text = "12 Correlation",
                                                 Weight = TextWeight.Normal,
-                                                HorizontalAlignment=HorizontalAlignment.Center,
+                                                HorizontalAlignment=HorizontalAlignment.Left,
                                                 Size=TextSize.Normal,
                                                 Wrap = true,
                                                 Color=TextColor.Light
@@ -376,9 +380,9 @@ namespace Microsoft.Bot.Sample.LuisBot
                                 new Column()
                                     {
                                         Size =ColumnSize.Stretch,
-                                        
+
                                     },
-                                 
+
                     }
                     },
                     new ColumnSet()
@@ -388,9 +392,9 @@ namespace Microsoft.Bot.Sample.LuisBot
                                 new Column()
                                     {
                                        Size =ColumnSize.Stretch,
-                                        
+
                                     },
-                                 
+
                     }
                     },
                     new ColumnSet()
@@ -400,9 +404,9 @@ namespace Microsoft.Bot.Sample.LuisBot
                                 new Column()
                                     {
                                         Size =ColumnSize.Stretch,
-                                       
+
                                     },
-                                 
+
                     }
                     },
                     new ColumnSet()
@@ -413,9 +417,9 @@ namespace Microsoft.Bot.Sample.LuisBot
                                 new Column()
                                     {
                                         Size =ColumnSize.Stretch,
-                                        
+
                                     },
-                                
+
                     }
                     },
                     new ColumnSet()
@@ -444,9 +448,10 @@ namespace Microsoft.Bot.Sample.LuisBot
                     {
                     Columns = new List<Column>()
                     {
+                         
                              new Column()
                                     {
-                                 Size="10",
+                                 Size="20",
                                         Items = new List<CardElement>()
                                         {
                                                 new Image()
@@ -468,9 +473,13 @@ namespace Microsoft.Bot.Sample.LuisBot
                                         }
                                     },
                              new Column()
+                             {
+                                 Separation=SeparationStyle.Strong,
+                             },
+                             new Column()
                                     {
-                                 Size="12",
-                                        Separation=SeparationStyle.Strong,
+                                 Size="20",
+                                        
                                         Items = new List<CardElement>()
                                         {
                                                 new Image()
@@ -493,9 +502,13 @@ namespace Microsoft.Bot.Sample.LuisBot
                                         }
                                     },
                              new Column()
+                             {
+                                  Separation=SeparationStyle.Strong,
+                             },
+                             new Column()
                                     {
-                                 Size="15",
-                                        Separation=SeparationStyle.Strong,
+                                 Size="20",
+                                       
                                         Items = new List<CardElement>()
                                         {
                                                 new Image()
@@ -517,10 +530,13 @@ namespace Microsoft.Bot.Sample.LuisBot
 
                                         }
                                     },
+                               new Column()
+                             {
+                                  Separation=SeparationStyle.Strong,
+                             },
                              new Column()
                                     {
-                                 Size="15",
-                                        Separation=SeparationStyle.Strong,
+                                 Size="20",
                                         Items = new List<CardElement>()
                                         {
                                                 new Image()
@@ -543,9 +559,12 @@ namespace Microsoft.Bot.Sample.LuisBot
                                         }
                                     },
                              new Column()
+                             {
+                                  Separation=SeparationStyle.Strong,
+                             },
+                             new Column()
                                     {
-                                 Size="15",
-                                        Separation=SeparationStyle.Strong,
+                                 Size="20",
                                         Items = new List<CardElement>()
                                         {
                                                 new Image()
@@ -567,7 +586,7 @@ namespace Microsoft.Bot.Sample.LuisBot
 
                                         }
                                     },
-
+                             
                             }
 
                          },
@@ -578,9 +597,9 @@ namespace Microsoft.Bot.Sample.LuisBot
                                 new Column()
                                     {
                                        Size =ColumnSize.Stretch,
-                                        
+
                                     },
-                                
+
                     }
                     },
                     new ColumnSet()
@@ -590,9 +609,9 @@ namespace Microsoft.Bot.Sample.LuisBot
                                 new Column()
                                     {
                                        Size =ColumnSize.Stretch,
-                                      
+
                                     },
-                               
+
                     }
                     },
                      new ColumnSet()
@@ -676,7 +695,7 @@ namespace Microsoft.Bot.Sample.LuisBot
             await context.SayAsync(Text, Speak, new MessageOptions() { InputHint = Connector.InputHints.ExpectingInput });
         }
 
-       
+
         private static Attachment GetAdaptiveCard()
         {
             var Adaptcard = new AdaptiveCard
@@ -689,6 +708,10 @@ namespace Microsoft.Bot.Sample.LuisBot
                    new Container()
                     {
                        Speak="Container",
+                       SelectAction= new OpenUrlAction()
+                       {
+                           Url="https://www.google.com/",
+                       },
                  Items = new List<CardElement>()
                     {
                 new ColumnSet()
@@ -698,11 +721,16 @@ namespace Microsoft.Bot.Sample.LuisBot
                         new Column()
                         {
                             Size = ColumnSize.Stretch,
-                           
+
                         },
-                        
+
                     }
-                },
+                }
+                } },
+ new Container()
+                    {
+      Items = new List<CardElement>()
+                    {
                  new ColumnSet()
                 {
                     Columns = new List<Column>()
@@ -722,12 +750,12 @@ namespace Microsoft.Bot.Sample.LuisBot
                         new Column()
                         {
                             Size = ColumnSize.Stretch,
-                            
+
                         },
                         new Column()
                         {
                             Size = ColumnSize.Stretch,
-                           
+
                         }
                     }
                 },
@@ -738,12 +766,12 @@ namespace Microsoft.Bot.Sample.LuisBot
                         new Column()
                         {
                             Size = ColumnSize.Stretch,
-                            
+
                         },
                         new Column()
                         {
                             Size = ColumnSize.Stretch,
-                          
+
                         }
                     }
                 },
@@ -886,12 +914,12 @@ namespace Microsoft.Bot.Sample.LuisBot
                         new Column()
                         {
                             Size = ColumnSize.Stretch,
-                           
+
                         },
                         new Column()
                         {
                             Size = ColumnSize.Stretch,
-                            
+
                         }
                     }
                  }
@@ -903,12 +931,12 @@ namespace Microsoft.Bot.Sample.LuisBot
                         new Column()
                         {
                             Size = ColumnSize.Stretch,
-                            
+
                         },
                         new Column()
                         {
                             Size = ColumnSize.Stretch,
-                            
+
                         }
                     }
                  },
@@ -919,12 +947,12 @@ namespace Microsoft.Bot.Sample.LuisBot
                         new Column()
                         {
                             Size = ColumnSize.Stretch,
-                           
+
                         },
                         new Column()
                         {
                             Size = ColumnSize.Stretch,
-                            
+
                         }
                     }
                  },
@@ -935,12 +963,12 @@ namespace Microsoft.Bot.Sample.LuisBot
                         new Column()
                         {
                             Size = ColumnSize.Stretch,
-                            
+
                         },
                         new Column()
                         {
                             Size = ColumnSize.Stretch,
-                           
+
                         }
                     }
                  },
@@ -982,7 +1010,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                          new Column()
                         {
                             Size = "5"
-                            
+
                         },
                          new Column()
                         {
@@ -1015,7 +1043,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                          new Column()
                         {
                             Size = "5"
-                           
+
                         },
                           new Column()
                         {
@@ -1085,7 +1113,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                          new Column()
                         {
                             Size = "5"
-                          
+
                         },
                          new Column()
                         {
@@ -1118,7 +1146,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                          new Column()
                         {
                             Size = "5"
-                            
+
                         },
                           new Column()
                         {
@@ -1188,7 +1216,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                          new Column()
                         {
                             Size = "5"
-                           
+
                         },
                          new Column()
                         {
@@ -1221,7 +1249,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                          new Column()
                         {
                             Size = "5"
-                           
+
                         },
                           new Column()
                         {
@@ -1470,12 +1498,12 @@ namespace Microsoft.Bot.Sample.LuisBot
                         new Column()
                         {
                             Size = ColumnSize.Stretch,
-                           
+
                         },
                         new Column()
                         {
                             Size = ColumnSize.Stretch,
-                          
+
                         }
                     }
                  },
@@ -1486,12 +1514,12 @@ namespace Microsoft.Bot.Sample.LuisBot
                         new Column()
                         {
                             Size = ColumnSize.Stretch,
-                           
+
                         },
                         new Column()
                         {
                             Size = ColumnSize.Stretch,
-                            
+
                         }
                     }
                  },
@@ -1502,12 +1530,12 @@ namespace Microsoft.Bot.Sample.LuisBot
                         new Column()
                         {
                             Size = ColumnSize.Stretch,
-                           
+
                         },
                         new Column()
                         {
                             Size = ColumnSize.Stretch,
-                            
+
                         }
                     }
                  }
