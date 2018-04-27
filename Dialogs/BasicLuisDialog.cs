@@ -199,7 +199,7 @@ namespace Microsoft.Bot.Sample.LuisBot
             {
                 BackgroundImage = "https://edelmangavelbot.azurewebsites.net/Images/ic_background_02.png",
                 Title = "Riskfort Health Status",
-                Speak = "Riskfort Health Status",
+                Speak = "<s>Riskfort Health Status</s>",
                 Body = new List<CardElement>()
               {
                   new Container()
@@ -215,9 +215,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                 new Column()
                                     {
                                         Size =ColumnSize.Stretch,
-                                       
                                     },
-                               
                     }
                     },
                     new ColumnSet()
@@ -228,7 +226,6 @@ namespace Microsoft.Bot.Sample.LuisBot
                                     {
                                         Size =ColumnSize.Stretch,
                                     },
-                                 
                     }
                     },
                     new ColumnSet()
@@ -238,9 +235,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                 new Column()
                                     {
                                         Size =ColumnSize.Stretch,
-                                       
                                     },
-                                
                     }
                     },
                     new ColumnSet()
@@ -284,9 +279,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                 new Column()
                                     {
                                        Size =ColumnSize.Stretch,
-                                       
                                     },
-                                 
                     }
                     },
                     new ColumnSet()
@@ -620,7 +613,7 @@ namespace Microsoft.Bot.Sample.LuisBot
             {
                 BackgroundImage = "https://edelmangavelbot.azurewebsites.net/Images/img_background_01.png",
                 Title = "Over All Applciation Health",
-                Speak = "Over All Applciation Health.",
+                Speak = "<s>Over All Applciation Health.</s>",
                 Body = new List<CardElement>()
                 {
                    new Container()
@@ -685,7 +678,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                 new Image()
                                     {
                                     Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_application.png",
-                                    Size = ImageSize.Auto,
+                                    Size = ImageSize.Large,
                                     Style = ImageStyle.Normal,
                                     HorizontalAlignment = HorizontalAlignment.Center
                                     }
@@ -701,7 +694,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                      new Image()
                                     {
                                     Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_risk.png",
-                                    Size = ImageSize.Auto,
+                                    Size = ImageSize.Medium,
                                     Style = ImageStyle.Normal,
                                     HorizontalAlignment = HorizontalAlignment.Center
                                     },
@@ -738,7 +731,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                      new Image()
                                     {
                                     Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_alert.png",
-                                    Size = ImageSize.Auto,
+                                    Size = ImageSize.Medium,
                                     Style = ImageStyle.Normal,
                                     HorizontalAlignment = HorizontalAlignment.Center
                                     },
@@ -772,7 +765,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                      new Image()
                                     {
                                     Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_healthy.png",
-                                    Size = ImageSize.Auto,
+                                    Size = ImageSize.Medium,
                                     Style = ImageStyle.Normal,
                                     HorizontalAlignment = HorizontalAlignment.Center
                                     },
