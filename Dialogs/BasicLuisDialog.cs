@@ -762,7 +762,11 @@ namespace Microsoft.Bot.Sample.LuisBot
                                     Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_application.png",
                                     Size = ImageSize.Auto,
                                     Style = ImageStyle.Normal,
-                                    HorizontalAlignment = HorizontalAlignment.Center
+                                    HorizontalAlignment = HorizontalAlignment.Center,
+                                    SelectAction = new OpenUrlAction()
+                                    {
+                                        Url ="https://www.google.com/"
+                                    }
                                     }
                                 }
                             },
