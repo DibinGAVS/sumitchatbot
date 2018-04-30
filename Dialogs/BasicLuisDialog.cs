@@ -255,7 +255,7 @@ namespace Microsoft.Bot.Sample.LuisBot
 
                                 Items = new List<CardElement>()
                                 {
-
+                                   
                                 new TextBlock()
                                     {
                                     Text =  "15",
@@ -312,7 +312,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                 Separation = SeparationStyle.Strong,
                                 Items = new List<CardElement>()
                                 {
-
+                                   
                                 new TextBlock()
                                     {
                                     Text =  "21",
@@ -1223,7 +1223,7 @@ namespace Microsoft.Bot.Sample.LuisBot
         public async Task GreetingIntent(IDialogContext context, LuisResult result)
         {
 
-
+           
         }
 
         [LuisIntent("Cancel")]
@@ -1252,7 +1252,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                 {
                    new Container()
                     {
-
+                      
                  Items = new List<CardElement>()
                     {
                 new ColumnSet()
@@ -1332,7 +1332,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                     Size = ImageSize.Auto,
                                     Style = ImageStyle.Normal,
                                     HorizontalAlignment = HorizontalAlignment.Center,
-
+                                   
                                     }
                                 }
                             },
@@ -1373,7 +1373,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                  Separation = SeparationStyle.Strong,
                                 Items = new List<CardElement>()
                                 {
-
+                                 
                                 new TextBlock()
                                     {
                                     Text =  "8",
@@ -1400,7 +1400,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                 Separation = SeparationStyle.Strong,
                                 Items = new List<CardElement>()
                                 {
-
+                                
                                 new TextBlock()
                                     {
                                     Text =  "2",
@@ -2096,12 +2096,12 @@ namespace Microsoft.Bot.Sample.LuisBot
                         new Column()
                         {
                             Size = ColumnSize.Stretch,
-
+                            
                         },
                         new Column()
                         {
                             Size = ColumnSize.Stretch,
-
+                           
                         }
                     }
                 },
@@ -2112,12 +2112,12 @@ namespace Microsoft.Bot.Sample.LuisBot
                         new Column()
                         {
                             Size = ColumnSize.Stretch,
-
+                            
                         },
                         new Column()
                         {
                             Size = ColumnSize.Stretch,
-
+                            
                         }
                     }
                 },
@@ -2128,12 +2128,12 @@ namespace Microsoft.Bot.Sample.LuisBot
                         new Column()
                         {
                             Size = ColumnSize.Stretch,
-
+                           
                         },
                         new Column()
                         {
                             Size = ColumnSize.Stretch,
-
+                          
                         }
                     }
                 },
@@ -2144,12 +2144,12 @@ namespace Microsoft.Bot.Sample.LuisBot
                         new Column()
                         {
                             Size = ColumnSize.Stretch,
-
+                            
                         },
                         new Column()
                         {
                             Size = ColumnSize.Stretch,
-
+                            
                         }
                     }
                 },
@@ -2196,7 +2196,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                     },
                                     new Column()
                                     {
-                                        Size = "50",
+                                        Size = "60",
                                         Items = new List<CardElement>()
                                         {
                                             new TextBlock()
@@ -2226,12 +2226,12 @@ namespace Microsoft.Bot.Sample.LuisBot
                         new Column()
                         {
                             Size = ColumnSize.Stretch,
-
+                            
                         },
                         new Column()
                         {
                             Size = ColumnSize.Stretch,
-
+                           
                         }
                     }
                 },
@@ -2242,12 +2242,12 @@ namespace Microsoft.Bot.Sample.LuisBot
                         new Column()
                         {
                             Size = ColumnSize.Stretch,
-
+                           
                         },
                         new Column()
                         {
                             Size = ColumnSize.Stretch,
-
+                           
                         }
                     }
                 },
@@ -2258,12 +2258,12 @@ namespace Microsoft.Bot.Sample.LuisBot
                         new Column()
                         {
                             Size = ColumnSize.Stretch,
-
+                           
                         },
                         new Column()
                         {
                             Size = ColumnSize.Stretch,
-
+                           
                         }
                     }
                 },
@@ -2274,7 +2274,6 @@ namespace Microsoft.Bot.Sample.LuisBot
                         {
                     new Column()
                     {
-                        Size = "10",
                         Items = new List<CardElement>()
                         {
                                      new AdaptiveCards.Image()
@@ -2287,7 +2286,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                  new AdaptiveCards.Image()
                                     {
                                     Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_risk.png",
-                                    Size = ImageSize.Small,
+                                    Size = ImageSize.Medium,
                                     Style = ImageStyle.Normal,
                                     HorizontalAlignment = HorizontalAlignment.Right
                                     },
@@ -2301,14 +2300,14 @@ namespace Microsoft.Bot.Sample.LuisBot
                                  new AdaptiveCards.Image()
                                     {
                                     Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_healthy.png",
-                                    Size = ImageSize.Small,
+                                    Size = ImageSize.Medium,
                                     Style = ImageStyle.Normal,
                                     HorizontalAlignment = HorizontalAlignment.Right
                                     },
                                    new AdaptiveCards.Image()
                                     {
                                     Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_healthy.png",
-                                    Size = ImageSize.Small,
+                                    Size = ImageSize.Medium,
                                     Style = ImageStyle.Normal,
                                     HorizontalAlignment = HorizontalAlignment.Right
                                     },
@@ -2316,7 +2315,6 @@ namespace Microsoft.Bot.Sample.LuisBot
                     },
                      new Column()
                     {
-                         Size="30",
                         Items = new List<CardElement>()
                         {
                                      new TextBlock()
@@ -2358,7 +2356,6 @@ namespace Microsoft.Bot.Sample.LuisBot
                     },
                      new Column()
                     {
-                         Size="10",
                          Separation =SeparationStyle.Strong,
                         Items = new List<CardElement>()
                         {
@@ -2372,7 +2369,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                  new AdaptiveCards.Image()
                                     {
                                     Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_risk.png",
-                                    Size = ImageSize.Small,
+                                    Size = ImageSize.Medium,
                                     Style = ImageStyle.Normal,
                                     HorizontalAlignment = HorizontalAlignment.Right
                                     },
@@ -2386,14 +2383,14 @@ namespace Microsoft.Bot.Sample.LuisBot
                                  new AdaptiveCards.Image()
                                     {
                                     Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_risk.png",
-                                    Size = ImageSize.Small,
+                                    Size = ImageSize.Medium,
                                     Style = ImageStyle.Normal,
                                     HorizontalAlignment = HorizontalAlignment.Right
                                     },
                                    new AdaptiveCards.Image()
                                     {
                                     Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_risk.png",
-                                    Size = ImageSize.Small,
+                                    Size = ImageSize.Medium,
                                     Style = ImageStyle.Normal,
                                     HorizontalAlignment = HorizontalAlignment.Right
                                     },
@@ -2401,7 +2398,6 @@ namespace Microsoft.Bot.Sample.LuisBot
                     },
                         new Column()
                     {
-                            Size = "30",                       
                         Items = new List<CardElement>()
                         {
                                      new TextBlock()
@@ -2451,12 +2447,11 @@ namespace Microsoft.Bot.Sample.LuisBot
                         new Column()
                         {
                             Size = ColumnSize.Stretch,
-
+                            
                         },
                         new Column()
                         {
                             Size = ColumnSize.Stretch,
-
                         }
                     }
                  }
@@ -2468,12 +2463,10 @@ namespace Microsoft.Bot.Sample.LuisBot
                         new Column()
                         {
                             Size = ColumnSize.Stretch,
-
                         },
                         new Column()
                         {
                             Size = ColumnSize.Stretch,
-
                         }
                     }
                  },
@@ -2484,12 +2477,10 @@ namespace Microsoft.Bot.Sample.LuisBot
                         new Column()
                         {
                             Size = ColumnSize.Stretch,
-
                         },
                         new Column()
                         {
                             Size = ColumnSize.Stretch,
-
                         }
                     }
                  },
@@ -2499,24 +2490,22 @@ namespace Microsoft.Bot.Sample.LuisBot
                     {
                         new Column()
                         {
-                            Size = ColumnSize.Stretch,
-
+                            Size = ColumnSize.Stretch,                            
                         },
                         new Column()
                         {
-                            Size = ColumnSize.Stretch,
-
+                            Size = ColumnSize.Stretch,                           
                         }
                     }
                  },
-
+                    
                 }
-            };
-            Attachment attachment = new Attachment()
-            {
-                ContentType = AdaptiveCard.ContentType,
-                Content = Adaptcard
-            };
+};
+Attachment attachment = new Attachment()
+{
+    ContentType = AdaptiveCard.ContentType,
+    Content = Adaptcard
+};
 
             //replyToConversation.Attachments.Add(attachment);
             return attachment;
