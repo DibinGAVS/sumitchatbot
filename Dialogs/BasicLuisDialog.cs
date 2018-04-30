@@ -2196,7 +2196,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                     },
                                     new Column()
                                     {
-                                        Size = "60",
+                                        Size = "50",
                                         Items = new List<CardElement>()
                                         {
                                             new TextBlock()
@@ -2274,6 +2274,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                         {
                     new Column()
                     {
+                        Size = "10",
                         Items = new List<CardElement>()
                         {
                                      new AdaptiveCards.Image()
@@ -2286,7 +2287,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                  new AdaptiveCards.Image()
                                     {
                                     Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_risk.png",
-                                    Size = ImageSize.Medium,
+                                    Size = ImageSize.Small,
                                     Style = ImageStyle.Normal,
                                     HorizontalAlignment = HorizontalAlignment.Right
                                     },
@@ -2300,14 +2301,14 @@ namespace Microsoft.Bot.Sample.LuisBot
                                  new AdaptiveCards.Image()
                                     {
                                     Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_healthy.png",
-                                    Size = ImageSize.Medium,
+                                    Size = ImageSize.Small,
                                     Style = ImageStyle.Normal,
                                     HorizontalAlignment = HorizontalAlignment.Right
                                     },
                                    new AdaptiveCards.Image()
                                     {
                                     Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_healthy.png",
-                                    Size = ImageSize.Medium,
+                                    Size = ImageSize.Small,
                                     Style = ImageStyle.Normal,
                                     HorizontalAlignment = HorizontalAlignment.Right
                                     },
@@ -2315,6 +2316,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                     },
                      new Column()
                     {
+                         Size="30",
                         Items = new List<CardElement>()
                         {
                                      new TextBlock()
@@ -2356,6 +2358,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                     },
                      new Column()
                     {
+                         Size="10",
                          Separation =SeparationStyle.Strong,
                         Items = new List<CardElement>()
                         {
@@ -2369,7 +2372,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                  new AdaptiveCards.Image()
                                     {
                                     Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_risk.png",
-                                    Size = ImageSize.Medium,
+                                    Size = ImageSize.Small,
                                     Style = ImageStyle.Normal,
                                     HorizontalAlignment = HorizontalAlignment.Right
                                     },
@@ -2383,14 +2386,14 @@ namespace Microsoft.Bot.Sample.LuisBot
                                  new AdaptiveCards.Image()
                                     {
                                     Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_risk.png",
-                                    Size = ImageSize.Medium,
+                                    Size = ImageSize.Small,
                                     Style = ImageStyle.Normal,
                                     HorizontalAlignment = HorizontalAlignment.Right
                                     },
                                    new AdaptiveCards.Image()
                                     {
                                     Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_risk.png",
-                                    Size = ImageSize.Medium,
+                                    Size = ImageSize.Small,
                                     Style = ImageStyle.Normal,
                                     HorizontalAlignment = HorizontalAlignment.Right
                                     },
@@ -2398,6 +2401,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                     },
                         new Column()
                     {
+                            Size = "30",                       
                         Items = new List<CardElement>()
                         {
                                      new TextBlock()
