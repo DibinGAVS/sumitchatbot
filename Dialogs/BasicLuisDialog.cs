@@ -257,13 +257,7 @@ namespace Microsoft.Bot.Sample.LuisBot
 
                                 Items = new List<CardElement>()
                                 {
-                                     new Image()
-                                    {
-                                    Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_risk.png",
-                                    Size = ImageSize.Small,
-                                    Style = ImageStyle.Normal,
-                                    HorizontalAlignment = HorizontalAlignment.Center
-                                    },
+                                   
                                 new TextBlock()
                                     {
                                     Text =  "15",
@@ -293,13 +287,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                  Separation = SeparationStyle.Strong,
                                 Items = new List<CardElement>()
                                 {
-                                     new Image()
-                                    {
-                                    Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_alert.png",
-                                    Size = ImageSize.Small,
-                                    Style = ImageStyle.Normal,
-                                    HorizontalAlignment = HorizontalAlignment.Center
-                                    },
+
                                 new TextBlock()
                                     {
                                     Text =  "8",
@@ -326,13 +314,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                 Separation = SeparationStyle.Strong,
                                 Items = new List<CardElement>()
                                 {
-                                     new Image()
-                                    {
-                                    Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_healthy.png",
-                                    Size = ImageSize.Small,
-                                    Style = ImageStyle.Normal,
-                                    HorizontalAlignment = HorizontalAlignment.Center,
-                                    },
+                                   
                                 new TextBlock()
                                     {
                                     Text =  "21",
@@ -797,6 +779,22 @@ namespace Microsoft.Bot.Sample.LuisBot
                         }
                     }
                 },
+                   new ColumnSet()
+                {
+                    Columns = new List<Column>()
+                    {
+                        new Column()
+                        {
+                            Size = ColumnSize.Stretch,
+
+                        },
+                        new Column()
+                        {
+                            Size = ColumnSize.Stretch,
+
+                        }
+                    }
+                },
                     // First Column
                    new ColumnSet()
                     {
@@ -841,17 +839,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                         Size =ColumnSize.Stretch,
                                     },
                     }
-                    },
-                    new ColumnSet()
-                    {
-                    Columns = new List<Column>()
-                    {
-                                new Column()
-                                    {
-                                       Size =ColumnSize.Stretch,
-                                    },
-                    }
-                    },
+                    },                    
                     // Second Column
                     new ColumnSet()
                     {
@@ -859,7 +847,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                     {
                                     new Column()
                                     {
-                                         Size ="50",
+                                         Size ="30",
                                         Items = new List<CardElement>()
                                         {
                                             new Image()
@@ -871,20 +859,20 @@ namespace Microsoft.Bot.Sample.LuisBot
                                     },
                                      new Column()
                                     {
-                                         Size="5",
+                                         Size="10",
                                         Items = new List<CardElement>()
                                         {
                                              new Image()
                                             {
                                                 Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_alert_large.png",
-                                                Size = ImageSize.Small,
+                                                Size = ImageSize.Medium,
                                                 HorizontalAlignment=HorizontalAlignment.Right
                                             },
                                         }
                                      },
                                     new Column()
                                     {
-                                        Size="20",
+                                        Size="25",
                                         Items = new List<CardElement>()
                                         {
                                             new TextBlock()
@@ -901,20 +889,20 @@ namespace Microsoft.Bot.Sample.LuisBot
                                     new Column()
                                     {
                                         Separation=SeparationStyle.Strong,
-                                        Size="5",
+                                        Size="10",
                                         Items= new List<CardElement>()
                                         {
                                             new Image()
                                             {
                                                 Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_correlation.png",
-                                                Size = ImageSize.Small,
+                                                Size = ImageSize.Medium,
                                                 HorizontalAlignment=HorizontalAlignment.Right
                                             }
                                         }
                                     },
                                     new Column()
                                     {
-                                        Size="20",
+                                        Size="25",
                                         Items= new List<CardElement>()
                                         {
                                              new TextBlock()
@@ -925,7 +913,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                                 Size=TextSize.Normal,
                                                 Wrap = true,
                                                 Color=TextColor.Light
-                                            }
+                                           }
                                         }
                                     }
                                 }
@@ -989,16 +977,6 @@ namespace Microsoft.Bot.Sample.LuisBot
                                     },
                     }
                     },
-                    new ColumnSet()
-                    {
-                    Columns = new List<Column>()
-                    {
-                                new Column()
-                                    {
-                                        Size =ColumnSize.Stretch,
-                                    },
-                    }
-                    },
                  // third column
                  
                     new ColumnSet()
@@ -1014,7 +992,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                                 new Image()
                                             {
                                                 Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_apm_healthy.png",
-                                                Size = ImageSize.Small,
+                                                Size = ImageSize.Medium,
                                                 Style = ImageStyle.Normal,
                                                 HorizontalAlignment = HorizontalAlignment.Center
                                             },
@@ -1031,21 +1009,22 @@ namespace Microsoft.Bot.Sample.LuisBot
 
                                         }
                                     },
-                             new Column()
-                             {
-                                 Separation=SeparationStyle.Strong,
-                             },
+                             //new Column()
+                             //{
+                             //    Separation=SeparationStyle.Strong,
+                             //},
                              new Column()
                                     {
                                  Size="20",
-
+                                  Separation=SeparationStyle.Strong,
                                         Items = new List<CardElement>()
                                         {
                                                 new Image()
                                             {
                                                 Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_server_up.png",
-                                                Size = ImageSize.Small,
+                                                Size = ImageSize.Medium,
                                                 Style = ImageStyle.Normal,
+                                                HorizontalAlignment = HorizontalAlignment.Center
 
                                             },
                                             new TextBlock()
@@ -1056,25 +1035,27 @@ namespace Microsoft.Bot.Sample.LuisBot
                                                 Size=TextSize.Normal,
                                                 Color=TextColor.Light,
                                                 Wrap = true,
+                                                HorizontalAlignment = HorizontalAlignment.Center
                                             }
 
                                         }
                                     },
-                             new Column()
-                             {
-                                  Separation=SeparationStyle.Strong,
-                             },
+                             //new Column()
+                             //{
+                             //     Separation=SeparationStyle.Strong,
+                             //},
                              new Column()
                                     {
                                  Size="20",
-
+                                  Separation=SeparationStyle.Strong,
                                         Items = new List<CardElement>()
                                         {
                                                 new Image()
                                             {
                                                 Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_database_down.png",
-                                                Size = ImageSize.Small,
+                                                Size = ImageSize.Medium,
                                                 Style = ImageStyle.Normal,
+                                                 HorizontalAlignment = HorizontalAlignment.Center
 
                                             },
                                             new TextBlock()
@@ -1085,25 +1066,27 @@ namespace Microsoft.Bot.Sample.LuisBot
                                                 Size=TextSize.Normal,
                                                 Color=TextColor.Light,
                                                 Wrap = true,
+                                                 HorizontalAlignment = HorizontalAlignment.Center
                                             }
 
                                         }
                                     },
-                               new Column()
-                             {
-                                  Separation=SeparationStyle.Strong,
-                             },
+                             //  new Column()
+                             //{
+                             //     Separation=SeparationStyle.Strong,
+                             //},
                              new Column()
                                     {
                                  Size="20",
+                                  Separation=SeparationStyle.Strong,
                                         Items = new List<CardElement>()
                                         {
                                                 new Image()
                                             {
                                                 Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_network_up.png",
-                                                Size = ImageSize.Small,
+                                                Size = ImageSize.Medium,
                                                 Style = ImageStyle.Normal,
-
+                                                 HorizontalAlignment = HorizontalAlignment.Center
                                             },
                                             new TextBlock()
                                             {
@@ -1112,26 +1095,28 @@ namespace Microsoft.Bot.Sample.LuisBot
                                                 Weight = TextWeight.Normal,
                                                 Size=TextSize.Normal,
                                                 Wrap = true,
-                                                Color=TextColor.Light
+                                                Color=TextColor.Light,
+                                                 HorizontalAlignment = HorizontalAlignment.Center
                                             }
 
                                         }
                                     },
-                             new Column()
-                             {
-                                  Separation=SeparationStyle.Strong,
-                             },
+                             //new Column()
+                             //{
+                             //     Separation=SeparationStyle.Strong,
+                             //},
                              new Column()
                                     {
                                  Size="20",
+                                  Separation=SeparationStyle.Strong,
                                         Items = new List<CardElement>()
                                         {
                                                 new Image()
                                             {
                                                 Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_storage_down.png",
-                                                Size = ImageSize.Small,
+                                                Size = ImageSize.Medium,
                                                 Style = ImageStyle.Normal,
-
+                                                HorizontalAlignment = HorizontalAlignment.Center
                                             },
                                             new TextBlock()
                                             {
@@ -1141,6 +1126,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                                 Size=TextSize.Normal,
                                                 Color=TextColor.Light,
                                                 Wrap = true,
+                                                HorizontalAlignment = HorizontalAlignment.Center
                                             }
 
                                         }
@@ -1197,18 +1183,18 @@ namespace Microsoft.Bot.Sample.LuisBot
 
                     }
                     },
-                       new ColumnSet()
-                    {
-                    Columns = new List<Column>()
-                                {
-                                new Column()
-                                    {
-                                       Size =ColumnSize.Stretch,
+                    //   new ColumnSet()
+                    //{
+                    //Columns = new List<Column>()
+                    //            {
+                    //            new Column()
+                    //                {
+                    //                   Size =ColumnSize.Stretch,
 
-                                    },
+                    //                },
 
-                    }
-                    },
+                    //}
+                    //},
                    }
                 }
                 }
@@ -1225,6 +1211,7 @@ namespace Microsoft.Bot.Sample.LuisBot
 
             await context.PostAsync(reply);
         }
+
 
 
         [LuisIntent("None")]
@@ -1267,11 +1254,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                 {
                    new Container()
                     {
-                       Speak="Container",
-                       SelectAction= new OpenUrlAction()
-                       {
-                           Url="https://www.google.com/",
-                       },
+                      
                  Items = new List<CardElement>()
                     {
                 new ColumnSet()
@@ -1351,10 +1334,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                     Size = ImageSize.Auto,
                                     Style = ImageStyle.Normal,
                                     HorizontalAlignment = HorizontalAlignment.Center,
-                                    SelectAction = new OpenUrlAction()
-                                    {
-                                        Url ="https://www.google.com/"
-                                    }
+                                   
                                     }
                                 }
                             },
@@ -1365,13 +1345,7 @@ namespace Microsoft.Bot.Sample.LuisBot
 
                                 Items = new List<CardElement>()
                                 {
-                                     new Image()
-                                    {
-                                    Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_risk.png",
-                                    Size = ImageSize.Small,
-                                    Style = ImageStyle.Normal,
-                                    HorizontalAlignment = HorizontalAlignment.Center
-                                    },
+                                 
                                 new TextBlock()
                                     {
                                     Text =  "15",
@@ -1402,13 +1376,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                  Separation = SeparationStyle.Strong,
                                 Items = new List<CardElement>()
                                 {
-                                     new Image()
-                                    {
-                                    Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_alert.png",
-                                    Size = ImageSize.Small,
-                                    Style = ImageStyle.Normal,
-                                    HorizontalAlignment = HorizontalAlignment.Center
-                                    },
+                                  
                                 new TextBlock()
                                     {
                                     Text =  "8",
@@ -1435,13 +1403,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                 Separation = SeparationStyle.Strong,
                                 Items = new List<CardElement>()
                                 {
-                                     new Image()
-                                    {
-                                    Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_healthy.png",
-                                    Size = ImageSize.Small,
-                                    Style = ImageStyle.Normal,
-                                    HorizontalAlignment = HorizontalAlignment.Center
-                                    },
+                                  
                                 new TextBlock()
                                     {
                                     Text =  "2",
@@ -1484,22 +1446,22 @@ namespace Microsoft.Bot.Sample.LuisBot
                     }
                  }
                 ,
-                new ColumnSet()
-                {
-                    Columns = new List<Column>()
-                    {
-                        new Column()
-                        {
-                            Size = ColumnSize.Stretch,
+                //new ColumnSet()
+                //{
+                //    Columns = new List<Column>()
+                //    {
+                //        new Column()
+                //        {
+                //            Size = ColumnSize.Stretch,
 
-                        },
-                        new Column()
-                        {
-                            Size = ColumnSize.Stretch,
+                //        },
+                //        new Column()
+                //        {
+                //            Size = ColumnSize.Stretch,
 
-                        }
-                    }
-                 },
+                //        }
+                //    }
+                // },
                 new ColumnSet()
                 {
                     Columns = new List<Column>()
