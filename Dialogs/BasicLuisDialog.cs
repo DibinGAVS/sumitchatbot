@@ -677,8 +677,523 @@ namespace Microsoft.Bot.Sample.LuisBot
         [LuisIntent("Greeting")]
         public async Task GreetingIntent(IDialogContext context, LuisResult result)
         {
-            string status = "Hey!";
-            await context.SayAsync(status, status, new MessageOptions() { InputHint = Connector.InputHints.ExpectingInput });
+
+            AdaptiveCard DbServerCard = new AdaptiveCard()
+            {
+                BackgroundImage = "https://edelmangavelbot.azurewebsites.net/Images/ic_background_05.png",
+                Title = "Health of db servers",
+                Speak = "<s>Health of db servers.</s>",
+                Body = new List<CardElement>()
+                {
+                   new Container()
+                    {
+                 Items = new List<CardElement>()
+                    {
+                new ColumnSet()
+                {
+                    Columns = new List<Column>()
+                    {
+                        new Column()
+                        {
+                            Size = ColumnSize.Stretch,
+
+                        },
+
+                    }
+                }
+                } },
+ new Container()
+                    {
+      Items = new List<CardElement>()
+                    {
+                 new ColumnSet()
+                {
+                    Columns = new List<Column>()
+                    {
+                        new Column()
+                        {
+                            Size = ColumnSize.Stretch,
+
+                        },
+
+                    }
+                },
+                new ColumnSet()
+                {
+                    Columns = new List<Column>()
+                    {
+                        new Column()
+                        {
+                            Size = ColumnSize.Stretch,
+
+                        },
+                        new Column()
+                        {
+                            Size = ColumnSize.Stretch,
+
+                        }
+                    }
+                },
+                new ColumnSet()
+                {
+                    Columns = new List<Column>()
+                    {
+                        new Column()
+                        {
+                            Size = ColumnSize.Stretch,
+
+                        },
+                        new Column()
+                        {
+                            Size = ColumnSize.Stretch,
+
+                        }
+                    }
+                },
+                //First Column
+                new ColumnSet()
+                    {
+                        Columns = new List<Column>()
+                        {
+                        new Column()
+                            {
+                            Size = "40"  ,
+                            Items = new List<CardElement>()
+                                {
+                                new Image()
+                                    {
+                                    Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_server.png",
+                                    Size = ImageSize.Auto,
+                                    Style = ImageStyle.Normal,
+                                    HorizontalAlignment = HorizontalAlignment.Center,
+                                    }
+                                }
+                            },
+                        new Column()
+                            {
+                                Size = "20",
+                                Style = ContainerStyle.Normal,
+
+                                Items = new List<CardElement>()
+                                {
+                                     new Image()
+                                    {
+                                    Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_risk.png",
+                                    Size = ImageSize.Small,
+                                    Style = ImageStyle.Normal,
+                                    HorizontalAlignment = HorizontalAlignment.Center
+                                    },
+                                new TextBlock()
+                                    {
+                                    Text =  "15",
+                                    Weight = TextWeight.Bolder,
+                                    Size = TextSize.ExtraLarge,
+                                    IsSubtle = true,
+                                      Color = TextColor.Attention,
+                                    HorizontalAlignment = HorizontalAlignment.Center,
+                                    Wrap = true
+                                    }
+                                ,
+                                new TextBlock()
+                                    {
+                                    Text = "Server",
+                                    Size = TextSize.Small,
+                                    Color = TextColor.Light,
+                                    Wrap = true,
+                                     HorizontalAlignment = HorizontalAlignment.Center,
+                                       Separation= SeparationStyle.None
+                                    }
+                                }
+                            },
+                        new Column()
+                            {
+                                Size = "20",
+                                 Style = ContainerStyle.Normal,
+                                 Separation = SeparationStyle.Strong,
+                                Items = new List<CardElement>()
+                                {
+                                     new Image()
+                                    {
+                                    Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_alert.png",
+                                    Size = ImageSize.Small,
+                                    Style = ImageStyle.Normal,
+                                    HorizontalAlignment = HorizontalAlignment.Center
+                                    },
+                                new TextBlock()
+                                    {
+                                    Text =  "8",
+                                    Weight = TextWeight.Bolder,
+                                    Size = TextSize.ExtraLarge,  Color = TextColor.Warning,
+                                    IsSubtle = true,
+                                    HorizontalAlignment = HorizontalAlignment.Center,
+                                    Wrap = true
+                                    }
+                                ,
+                                new TextBlock()
+                                    {
+                                    Text = "Healthy",
+                                    Size = TextSize.Small,
+                                    Color = TextColor.Light,
+                                    Wrap = true,
+                                     HorizontalAlignment = HorizontalAlignment.Center,
+                                       Separation= SeparationStyle.None
+                                    }
+                                }
+                            },new Column()
+                            {
+                                Size = "20",
+                                Separation = SeparationStyle.Strong,
+                                Items = new List<CardElement>()
+                                {
+                                     new Image()
+                                    {
+                                    Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_healthy.png",
+                                    Size = ImageSize.Small,
+                                    Style = ImageStyle.Normal,
+                                    HorizontalAlignment = HorizontalAlignment.Center
+                                    },
+                                new TextBlock()
+                                    {
+                                    Text =  "21",
+                                    Weight = TextWeight.Bolder,
+                                    Size = TextSize.ExtraLarge,  Color = TextColor.Good,
+                                    IsSubtle = true,
+                                    HorizontalAlignment = HorizontalAlignment.Center,
+                                    Wrap = true
+                                    }
+                                ,
+                                new TextBlock()
+                                    {
+                                    Text = "Warning",
+                                    Size = TextSize.Small,
+                                    Color = TextColor.Light,
+                                    Wrap = true,
+                                     HorizontalAlignment = HorizontalAlignment.Center,
+                                       Separation= SeparationStyle.None
+                                    }
+                                }
+                            }
+
+                        }
+                    }
+                ,
+                new ColumnSet()
+                {
+                    Columns = new List<Column>()
+                    {
+                        new Column()
+                        {
+                            Size = ColumnSize.Stretch,
+
+                        },
+                        new Column()
+                        {
+                            Size = ColumnSize.Stretch,
+
+                        }
+                    }
+                 }
+                ,
+                new ColumnSet()
+                {
+                    Columns = new List<Column>()
+                    {
+                        new Column()
+                        {
+                            Size = ColumnSize.Stretch,
+
+                        },
+                        new Column()
+                        {
+                            Size = ColumnSize.Stretch,
+
+                        }
+                    }
+                 },
+                new ColumnSet()
+                {
+                    Columns = new List<Column>()
+                    {
+                        new Column()
+                        {
+                            Size = ColumnSize.Stretch,
+
+                        },
+                        new Column()
+                        {
+                            Size = ColumnSize.Stretch,
+
+                        }
+                    }
+                 },
+                new ColumnSet()
+                {
+                    Columns = new List<Column>()
+                    {
+                        new Column()
+                        {
+                            Size = ColumnSize.Stretch,
+
+                        },
+                        new Column()
+                        {
+                            Size = ColumnSize.Stretch,
+
+                        }
+                    }
+                 },
+                //Second ColumnSet
+                new ColumnSet()
+                {
+                    Columns = new List<Column>()
+                    {
+                        new Column()
+                        {
+                            Size = "10",
+                            Items = new List<CardElement>()
+                            {
+                                new Image()
+
+                                {
+                                    Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_alert.png",
+                                    Size = ImageSize.Auto,
+                                    Style = ImageStyle.Normal,
+                                    HorizontalAlignment = HorizontalAlignment.Right
+                                }
+                            }
+                        },
+                         new Column()
+                        {
+                            Size = "30",
+
+                            Items = new List<CardElement>()
+                            {
+                                new TextBlock()
+                                {
+                                    Text =  "IMPS",
+                                    HorizontalAlignment = HorizontalAlignment.Left,
+                                    Color = TextColor.Light,
+                                    Wrap = false
+                                }
+                            }
+                        },
+                         new Column()
+                        {
+                            Size = "5"
+
+                        },
+                         new Column()
+                        {
+                            Size = "10",
+                            Items = new List<CardElement>()
+                            {
+                                new Image()
+
+                                {
+                                    Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_alert.png",
+                                    Size = ImageSize.Auto,
+                                    Style = ImageStyle.Normal,
+                                    HorizontalAlignment = HorizontalAlignment.Right
+                                }
+                            }
+                         }, new Column()
+                        {
+                            Size = "30",
+                            Items = new List<CardElement>()
+                            {
+                                new TextBlock()
+                                {
+                                    Text =  "iCore India",
+                                    HorizontalAlignment = HorizontalAlignment.Left,
+                                    Color = TextColor.Light,
+                                    Wrap = false
+                                }
+                            }
+                        },
+                         new Column()
+                        {
+                            Size = "5"
+
+                        },
+                          new Column()
+                        {
+                            Size = "10",
+                            Items = new List<CardElement>()
+                            {
+                                new Image()
+
+                                {
+                                    Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_alert.png",
+                                    Size = ImageSize.Auto,
+                                    Style = ImageStyle.Normal,
+                                    HorizontalAlignment = HorizontalAlignment.Right
+                                }
+                            }
+                          },
+                          new Column()
+                        {
+                            Size = "30",
+                            Items = new List<CardElement>()
+                            {
+                                new TextBlock()
+                                {
+                                    Text =  "iCards Online 4",
+                                    HorizontalAlignment = HorizontalAlignment.Left,
+                                    Color = TextColor.Light,
+                                    Wrap = false
+                                }
+                            }
+                        }
+                        }
+                    },
+                //Third Columnset
+                new ColumnSet()
+                {
+                    Columns = new List<Column>()
+                    {
+                        new Column()
+                        {
+                            Size = "10",
+                            Items = new List<CardElement>()
+                            {
+                                new Image()
+
+                                {
+                                    Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_alert.png",
+                                    Size = ImageSize.Auto,
+                                    Style = ImageStyle.Normal,
+                                    HorizontalAlignment = HorizontalAlignment.Right
+                                }
+                            }
+                        },
+                         new Column()
+                        {
+                            Size = "30",
+                            Items = new List<CardElement>()
+                            {
+                                new TextBlock()
+                                {
+                                    Text =  "Riskfort",
+                                    HorizontalAlignment = HorizontalAlignment.Left,
+                                    Color = TextColor.Light,
+                                    Wrap = false
+                                }
+                            }
+                        },
+                         new Column()
+                        {
+                            Size = "5"
+
+                        },
+                         new Column()
+                        {
+                            Size = "10",
+                            Items = new List<CardElement>()
+                            {
+                                new Image()
+
+                                {
+                                    Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_alert.png",
+                                    Size = ImageSize.Auto,
+                                    Style = ImageStyle.Normal,
+                                    HorizontalAlignment = HorizontalAlignment.Right
+                                }
+                            }
+                         }, new Column()
+                        {
+                            Size = "30",
+                            Items = new List<CardElement>()
+                            {
+                                new TextBlock()
+                                {
+                                    Text =  "iView",
+                                    HorizontalAlignment = HorizontalAlignment.Left,
+                                    Color = TextColor.Light,
+                                    Wrap = false
+                                }
+                            }
+                        },
+                         new Column()
+                        {
+                            Size = "5"
+
+                        },
+                          new Column()
+                        {
+                            Size = "10",
+                          },
+                          new Column()
+                        {
+                            Size = "30",
+                        }
+                        }
+                    },
+             
+
+                // Empty ColumnSet
+                new ColumnSet()
+               {
+                    Columns = new List<Column>()
+                    {
+                        new Column()
+                        {
+                            Size = ColumnSize.Stretch,
+
+                        },
+                        new Column()
+                        {
+                            Size = ColumnSize.Stretch,
+
+                        }
+                    }
+                 },
+                new ColumnSet()
+                {
+                    Columns = new List<Column>()
+                    {
+                        new Column()
+                        {
+                            Size = ColumnSize.Stretch,
+
+                        },
+                        new Column()
+                        {
+                            Size = ColumnSize.Stretch,
+
+                        }
+                    }
+                 },
+                new ColumnSet()
+                {
+                    Columns = new List<Column>()
+                    {
+                        new Column()
+                        {
+                            Size = ColumnSize.Stretch,
+
+                        },
+                        new Column()
+                        {
+                            Size = ColumnSize.Stretch,
+
+                        }
+                    }
+                 }
+            }
+                 }
+                }
+            };
+            // Create the attachment.
+
+            Attachment attachment = new Attachment()
+            {
+                ContentType = AdaptiveCard.ContentType,
+                Content = DbServerCard
+            };
+            var reply = context.MakeMessage();
+            reply.Attachments.Add(attachment);
+
+            await context.PostAsync(reply);
         }
 
         [LuisIntent("Cancel")]

@@ -193,7 +193,11 @@
     <Content Include="Images\ic_apm_down.png" />
     <Content Include="Images\ic_apm_healthy.png" />
     <Content Include="Images\ic_application.png" />
+    <Content Include="Images\ic_background_01.png" />
     <Content Include="Images\ic_background_02.png" />
+    <Content Include="Images\ic_background_05.png" />
+    <Content Include="Images\ic_background_06.png" />
+    <Content Include="Images\ic_background_07.png" />
     <Content Include="Images\ic_correlation.png" />
     <Content Include="Images\ic_database.png" />
     <Content Include="Images\ic_database_down.png" />
@@ -201,6 +205,7 @@
     <Content Include="Images\ic_healthy.png" />
     <Content Include="Images\ic_network.png" />
     <Content Include="Images\ic_network_up.png" />
+    <Content Include="Images\ic_nework_down.png" />
     <Content Include="Images\ic_risk.png" />
     <Content Include="Images\ic_server.png" />
     <Content Include="Images\ic_server_down.png" />
@@ -208,6 +213,7 @@
     <Content Include="Images\ic_single_app.png" />
     <Content Include="Images\ic_storage.png" />
     <Content Include="Images\ic_storage_down.png" />
+    <Content Include="Images\ic_storage_up.png" />
     <Content Include="Images\ic_tick.png" />
     <Content Include="Images\ic_wrong.png" />
     <Content Include="Images\img_background_01.png" />
