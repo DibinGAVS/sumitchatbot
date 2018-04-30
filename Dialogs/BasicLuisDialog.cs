@@ -2083,7 +2083,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                 Version = "1.0",
                 FallbackText = "",
                 MinVersion = "0.5",
-                BackgroundImage = "https://edelmangavelbot.azurewebsites.net/Images/img_background_05.png",
+                BackgroundImage = "https://edelmangavelbot.azurewebsites.net/Images/ic_background_05.png",
                 Title = "Over All Applciation Health",
                 Speak = "Over All Applciation Health.",
                 Body = new List<CardElement>()
