@@ -2279,7 +2279,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                      new AdaptiveCards.Image()
                                     {
                                     Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_healthy.png",
-                                    Size = ImageSize.Small,
+                                    Size = ImageSize.Medium,
                                     Style = ImageStyle.Normal,
                                     HorizontalAlignment = HorizontalAlignment.Right
                                     },
@@ -2293,7 +2293,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                    new AdaptiveCards.Image()
                                     {
                                     Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_healthy.png",
-                                    Size = ImageSize.Small,
+                                    Size = ImageSize.Medium,
                                     Style = ImageStyle.Normal,
                                     HorizontalAlignment = HorizontalAlignment.Right
                                     },
@@ -2362,7 +2362,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                      new AdaptiveCards.Image()
                                     {
                                     Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_healthy.png",
-                                    Size = ImageSize.Small,
+                                    Size = ImageSize.Medium,
                                     Style = ImageStyle.Normal,
                                     HorizontalAlignment = HorizontalAlignment.Right
                                     },
@@ -2376,7 +2376,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                    new AdaptiveCards.Image()
                                     {
                                     Url = "https://edelmangavelbot.azurewebsites.net/Images/ic_healthy.png",
-                                    Size = ImageSize.Small,
+                                    Size = ImageSize.Medium,
                                     Style = ImageStyle.Normal,
                                     HorizontalAlignment = HorizontalAlignment.Right
                                     },
