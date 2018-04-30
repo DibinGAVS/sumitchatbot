@@ -1345,7 +1345,6 @@ namespace Microsoft.Bot.Sample.LuisBot
 
                                 Items = new List<CardElement>()
                                 {
-                                 
                                 new TextBlock()
                                     {
                                     Text =  "15",
@@ -1376,7 +1375,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                  Separation = SeparationStyle.Strong,
                                 Items = new List<CardElement>()
                                 {
-                                  
+                                 
                                 new TextBlock()
                                     {
                                     Text =  "8",
@@ -1403,7 +1402,7 @@ namespace Microsoft.Bot.Sample.LuisBot
                                 Separation = SeparationStyle.Strong,
                                 Items = new List<CardElement>()
                                 {
-                                  
+                                
                                 new TextBlock()
                                     {
                                     Text =  "2",
