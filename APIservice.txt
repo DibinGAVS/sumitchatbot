@@ -1,0 +1,62 @@
+
+ 
+Heatmap:
+ 
+http://gaveludpp.icicibankltd.com:8080/gavel-chatbot/#/heatmap?timePeriod=3&viewPoints=1
+
+Top ten issues:
+http://gaveludpp.icicibankltd.com:8080/gavel-chatbot/#/top10Issues
+ 
+http://gaveludpp.icicibankltd.com:8080/gavel-chatbot/#/top10Issues?appName=RIB
+ 
+http://gaveludpp.icicibankltd.com:8080/gavel-chatbot/#/top10Issues?appName=RIB&dateTime=4
+
+overall health:
+http://gaveludpp.icicibankltd.com:8080/gavel-chatbot/#/overAllChart?state=all&timePeriod=3
+
+application_summary:
+http://gaveludpp.icicibankltd.com:8080/gavel-chatbot/#/alertsChart?state=all&appName=SMS Gateway&timePeriod=3
+
+application_status - alerts:
+http://gaveludpp.icicibankltd.com:8080/gavel-chatbot/#/allalerts?appId=AP016&appName=SMS Gateway&timePeriod=3&viewPoints=1
+http://gaveludpp.icicibankltd.com:8080/gavel-chatbot/#/allalerts?appId=ALL&timePeriod=3&viewPoints=1
+
+application_status - correlations:
+http://gaveludpp.icicibankltd.com:8080/gavel-chatbot/#/correlationLists?alertId=AP016&appName=SMS Gateway&timePeriod=3&viewPoints=1
+http://gaveludpp.icicibankltd.com:8080/gavel-chatbot/#/correlationLists?alertId=ALL&timePeriod=3&viewPoints=1
+
+application_status:
+http://gaveludpp.icicibankltd.com:8080/gavel-chatbot/#/appsChart?state=all&appName=SMS Gateway&timePeriod=3
+
+overall_risk
+http://gaveludpp.icicibankltd.com:8080/gavel-chatbot/#/riskApps?dateTime=3
+http://gaveludpp.icicibankltd.com:8080/gavel-chatbot/#/riskApps
+
+overall_risk-applicationrisk:
+http://gaveludpp.icicibankltd.com:8080/gavel-chatbot/#/appsChart?state=all&appName=SMS Gateway&timePeriod=3
+
+overall_correlation:
+http://gaveludpp.icicibankltd.com:8080/gavel-chatbot/#/correlationLists?alertId=ALL&timePeriod=3
+
+application_correlation:
+http://gaveludpp.icicibankltd.com:8080/gavel-chatbot/#/correlationLists?alertId=AP005&timePeriod=3
+
+application_risks:
+http://gaveludpp.icicibankltd.com:8080/gavel-chatbot/#/allalerts?appId=AP016&appName=SMS Gateway&timePeriod=&viewPoints=1
+http://gaveludpp.icicibankltd.com:8080/gavel-chatbot/#/allalerts?appId=ALL&timePeriod=3&viewPoints=1
+
+overall_appsummary:
+
+http://gaveludpp.icicibankltd.com:8080/gavel-chatbot/#/alertsChart?state=all&timePeriod=3
+
+overall_appstatus:
+http://gaveludpp.icicibankltd.com:8080/gavel-chatbot/#/appsChart?state=all&timePeriod=3
+
+overall_risk-applicationrisk_alerts:
+http://gaveludpp.icicibankltd.com:8080/gavel-chatbot/#/allalerts?appId=AP016&appName=SMS Gateway&timePeriod=3&viewPoints=1
+http://gaveludpp.icicibankltd.com:8080/gavel-chatbot/#/allalerts?appId=ALL&timePeriod=3
+
+overall_risk-applicationrisk_correlations:
+http://gaveludpp.icicibankltd.com:8080/gavel-chatbot/#/correlationLists?alertId=AP016&appName=SMS Gateway&timePeriod=&viewPoints=1
+http://gaveludpp.icicibankltd.com:8080/gavel-chatbot/#/correlationLists?alertId=ALL&timePeriod=3&viewPoints=1
+
